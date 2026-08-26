@@ -1,0 +1,5 @@
+# Legendas brutas do YouTube — regeráveis com novo-episodio.sh, pesam ~3 MB cada
+transcricoes/raw/*.json3
+transcricoes/raw/*.vtt
+
+.DS_Store
