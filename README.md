@@ -55,6 +55,8 @@ O script avisa. Nesse caso é preciso Whisper (`yt-dlp -x --audio-format mp3` e 
 
 As URLs originais ficam em `transcricoes/raw/urls.txt`.
 
+**Créditos.** As entrevistas pertencem aos canais que as produziram — Café com Ferri, Futurum Talks, ROI Hunters, TalksbyLeo, Startups/MVP, Made in Brasil, Os Sócios, Powercast, Entusiasta, Marcas Rebeldes e Excepcionais. Este acervo reúne transcrições geradas a partir das legendas automáticas dos vídeos públicos, para estudo e consulta. Assista aos episódios completos nos canais originais — os links estão em `urls.txt`.
+
 ---
 
 ## O skill
