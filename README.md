@@ -14,6 +14,7 @@ Transcrições das entrevistas do Rony Meisler em podcasts, e o skill de Claude 
 | `transcricoes/raw/` | Legendas originais do YouTube (`.json3`, fora do git) + o conversor. |
 | `skill/` | O skill `rony-meisler`. Symlinkado em `~/.claude/skills/`, então editar aqui atualiza o skill. |
 | `novo-episodio.sh` | Pipeline de um comando para adicionar uma entrevista nova. |
+| `automacao/` | As automações que rodam sozinhas. Hoje: referências do Instagram → Sandcastles → Notion. |
 
 ---
 
