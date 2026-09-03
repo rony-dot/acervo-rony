@@ -56,11 +56,25 @@ segunda, não da máquina.
 | `não suportado` | link de plataforma que o Sandcastles não analisa |
 | `erro` | falhou; o motivo está no corpo da página |
 
+### Estado: falta ligar pela UI
+
+A rotina existe (`trig_01Dbeu3Qn3oCEkYHbZkRUcs7`) mas está **pausada**, porque uma rotina criada
+pela API do Claude Code não recebe os conectores: a sessão que ela dispara sobe sem as ferramentas
+do Notion e do Sandcastles, e a rodada morre em 13 segundos sem fazer nada. Testado três vezes.
+
+**Para ligar:** claude.ai → Routines → nova rotina, de hora em hora, colando o prompt de
+`referencias-instagram/ROTINA.md` (o texto entre `--- PROMPT ---` e `--- FIM DO PROMPT ---`) e
+marcando os conectores **Notion** e **Sandcastles**. Depois é só apagar a rotina pausada.
+As rotinas que já funcionam — Radar Diário, Digest semanal, Painel de Vendas — foram criadas assim.
+
+Enquanto não estiver ligada, o caminho é pedir no chat: "transcreve esses e joga no Notion", com os
+links. A rodada manual usa exatamente o mesmo prompt.
+
 ### Coordenadas
 
 | O quê | Id |
 |---|---|
-| Rotina (Routine) | `trig_01Dbeu3Qn3oCEkYHbZkRUcs7` — "Referências Instagram → Sandcastles → Notion", cron `1 * * * *` (de hora em hora, no minuto 1 UTC) |
+| Rotina (Routine), pausada | `trig_01Dbeu3Qn3oCEkYHbZkRUcs7` — cron `1 * * * *` (de hora em hora, no minuto 1 UTC) |
 | Pasta-inbox no Sandcastles | `f053f61a-d2c3-4221-b587-2681c409a501` |
 | Base Referências — Vídeos | `df3243fe-5156-8375-b0ca-81867311eaf0` · data source `a6d243fe-5156-83ee-8e15-87615b519cc8` |
 | Canais monitorados | data source `d4d243fe-5156-82db-9eb7-073ae562dae2` |
@@ -80,6 +94,8 @@ Notion" com o link.
 ### Mexer na rotina
 
 - **Pausar:** desligue a rotina em claude.ai → Routines, ou peça no chat.
+- **Criar pela API não serve:** a rotina sobe sem conectores e a rodada não escreve nada. Tem que
+  ser pela UI de Routines, que é onde se anexam Notion e Sandcastles.
 - **Mudar o comportamento:** edite `referencias-instagram/ROTINA.md` — é a fonte da verdade — e
   peça para atualizar a rotina com o texto novo. O que roda é uma cópia do prompt, então os dois
   precisam andar juntos.
