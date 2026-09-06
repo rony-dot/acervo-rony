@@ -6,7 +6,7 @@ Extração completa do deck **"Posts Estáticos"** (Google Slides, 108 slides, 2
 |---|---|
 | `CATALOGO.md` | Lista geral: 73 blocos de referência, slide a slide, com o texto de cada página de carrossel transcrito |
 | `TOP50.md` | Os 50 selecionados para adaptar ao padrão visual, com ranking, justificativa, pilar, estágio de funil e esforço |
-| `posts-estaticos.html` | As duas coisas em uma página navegável, com busca no catálogo |
+| `posts-estaticos.html` | As duas coisas em uma página navegável — no catálogo, cada bloco abre com o texto ao lado das artes |
 | `acervo-visual.html` | Catálogo visual: o texto de cada post ao lado das 388 artes extraídas, com lightbox |
 
 ## Como a extração foi feita
@@ -32,5 +32,5 @@ Todo o conteúdo transcrito está em **português do Brasil**, inclusive quando 
 ## Como usar
 
 Para escolher a pauta da semana: abra o `TOP50.md` e pegue o próximo item do tier corrente.
-Para achar uma referência específica: use a busca do `posts-estaticos.html` (por tema, por @perfil ou por número de slide).
-Para ver a arte junto do texto: `acervo-visual.html` — 388 artes em grade, filtro "só top 50", clique para ampliar. As artes são WebP embutidos como data URI (orçamento de ~260 mil pixels por imagem, para a página caber no limite de 16 MB de um Artifact).
+Para achar uma referência específica: use a busca do `posts-estaticos.html` (por tema, por @perfil ou por número de slide) e abra o bloco — o texto vem com as artes ao lado.
+Para navegar só pelas artes, sem o Top 50 no caminho: `acervo-visual.html` — os mesmos 73 blocos já abertos, com filtro "só top 50". As artes são WebP embutidos como data URI (orçamento de ~260 mil pixels por imagem, para a página caber no limite de 16 MB de um Artifact).
