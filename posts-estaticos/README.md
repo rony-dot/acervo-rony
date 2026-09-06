@@ -1,0 +1,25 @@
+# Posts Estáticos — catálogo do acervo de referências
+
+Extração completa do deck **"Posts Estáticos"** (Google Slides, 108 slides, 228 MB), lido print a print.
+
+| Arquivo | O quê |
+|---|---|
+| `CATALOGO.md` | Lista geral: 73 blocos de referência, slide a slide, com o texto de cada página de carrossel transcrito |
+| `TOP50.md` | Os 50 selecionados para adaptar ao padrão visual, com ranking, justificativa, pilar, estágio de funil e esforço |
+| `posts-estaticos.html` | As duas coisas em uma página navegável, com busca no catálogo |
+
+## Como a extração foi feita
+
+O texto nativo dos slides só traz as anotações — os posts em si são imagens. O pipeline foi:
+
+1. Exportar a apresentação como PDF (61 MB).
+2. `pymupdf` para extrair as 412 imagens embutidas com a posição de cada uma na página (a posição é o que permite saber quais prints formam um mesmo carrossel).
+3. Recortes otimizados por tipo: imagem inteira para cards de story, corte do corpo para screenshots de celular, e *tiles* da página em alta resolução (300–420 dpi) para as páginas com dezenas de prints sobrepostos.
+4. Leitura visual de cada peça e transcrição para `cat/pNNN.md`, depois consolidada.
+
+Slides 1–26 são a parte de estratégia e governança do departamento de conteúdo, não referências de post. As referências vão do slide 27 ao 105.
+
+## Como usar
+
+Para escolher a pauta da semana: abra o `TOP50.md` e pegue o próximo item do tier corrente.
+Para achar uma referência específica: use a busca do `.html` (por tema, por @perfil ou por número de slide).
