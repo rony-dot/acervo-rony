@@ -7,6 +7,8 @@
 4. **Facilidade de trazer pro seu padrão** — preto/branco/amarelo, foto sua, tipografia. Quanto menos produção, melhor.
 5. **Funil** — o deck manda 40% boca / 40% meio / 20% fundo. Marquei o estágio de cada um.
 
+**Idioma:** as citações dos posts estão traduzidas para o português do Brasil, inclusive quando a arte original está em inglês. Perfis (@), marcas e nomes próprios ficam no original.
+
 **Legenda de esforço:** 🟢 = arte pronta em minutos (1 card) · 🟡 = carrossel de 5-10 páginas · 🔴 = precisa de produção (foto, IA, série)
 
 ---
@@ -14,17 +16,17 @@
 ## TIER 1 — Fazer nas primeiras 2 semanas (1 a 12)
 O backlog de arranque. Alto engajamento comprovado + autoridade máxima sua + baixo custo de produção.
 
-**1. `81-A` — "F*ck your fast fashion clothing brand and your cheap storytelling tactics"** 🟡 · Marca · Boca
+**1. `81-A` — "F*da-se a sua marca de fast fashion e as suas táticas baratas de storytelling"** 🟡 · Marca · Boca
 O post mais "Rony" do deck inteiro: rebeldia, anti-guru, crítica a marca de roupa sem cultura por trás. *"Não existe cultura nem luta por trás dessas novas marcas. Só paixão mal direcionada."* Ninguém no Brasil tem a autoridade que você tem pra assinar isso — você construiu a marca com a cultura por trás. **Adaptação:** troque os exemplos gringos (Loewe, Prada, Virgil) por BR, e feche com a pergunta dele: *"que forma de protesto sua marca está fazendo pra construir cultura?"* Esse é o seu "zag".
 
 **2. `102-A` — "8 pesquisas de marketing que todo mundo precisa conhecer" (@sweathead)** 🟡 · Marca · Meio
 Oito evidências científicas de que branding vence performance: personagem de marca bate celebridade · campanha famosa melhora tudo · a maioria não te compra com frequência, mas você tem que anunciar sempre · criatividade é o 2º maior driver de lucratividade de anúncio · ativos distintivos de marca exigem disciplina · anúncio tem que contar história, não parecer PowerPoint · emoção é a porta de entrada do sistema 1 · **60% da energia tem que ir para brand-building**. É "marca é o novo petróleo" com fonte acadêmica. Salva e compartilha muito.
 
-**3. `91-A` — "Spend time with the mad ones" (@zachpogrob)** 🟢 · Posicionamento · Boca
+**3. `91-A` — "Passe tempo com os loucos" (@zachpogrob)** 🟢 · Posicionamento · Boca
 **35,7 mil likes e 11 mil compartilhamentos — o post mais compartilhado do acervo, e é só texto em fundo branco.** *"Os loucos são os escolhidos. Eles empurram. Eles atraem. Espalham energia. Arrastam os outros para o futuro deles. Num mundo louco, os loucos são os únicos sãos que sobraram."* Isso é a Reserva inteira em um card. **Adaptação:** traduzir e assinar com sua tipografia manuscrita; foto sua ao fundo é opcional — o original venceu sem nenhuma.
 
-**4. `93` — "Como começar uma marca de roupa com $40" (@40dollartee)** 🟡 · Vendas/PME · Fundo
-Tutorial em 10 páginas com "SWIPE": crie o site → ensaio com o celular → crie o design → mande imprimir a amostra → **rode uma pré-venda pra ter dinheiro antes de comprar o lote** → peça o lote → despache → repita. Você literalmente fez isso com R$ 3.000. **Adaptação: "Como começar uma marca de roupa com R$ 3.000 — foi exatamente o que eu fiz em 2004."** Autoridade absoluta, tema "primeiro passo", CTA natural pro Manual de Donos. Se for pra fazer um só desta lista, é esse.
+**4. `93` — "Como começar uma marca de roupa com US$ 40" (@40dollartee)** 🟡 · Vendas/PME · Fundo
+Tutorial em 10 páginas com "ARRASTA": crie o site → ensaio com o celular → crie o design → mande imprimir a amostra → **rode uma pré-venda pra ter dinheiro antes de comprar o lote** → peça o lote → despache → repita. Você literalmente fez isso com R$ 3.000. **Adaptação: "Como começar uma marca de roupa com R$ 3.000 — foi exatamente o que eu fiz em 2004."** Autoridade absoluta, tema "primeiro passo", CTA natural pro Manual de Donos. Se for pra fazer um só desta lista, é esse.
 
 **5. `65` — UNIQLO: o funcionário de supermercado que virou o homem mais rico do Japão (@finfloww)** 🟡 · Marca/Varejo · Meio
 4.916 likes e **3.346 compartilhamentos**. Case de marca de moda contada em 10 pontos numerados, fechando com a tese: *"em vez de ser fast-fashion, é uma marca de casual-wear de alta qualidade e marca própria que ignora totalmente a moda."* É a sua tese sobre a Reserva dita por outra pessoa, sobre outra marca. Você consegue acrescentar camada que o autor original não tem: o que dá pra copiar da UNIQLO no varejo brasileiro.
@@ -73,7 +75,7 @@ Ordenar do caro pro barato · contraste visual · palavras de "pequena magnitude
 **18. `80` — "7 razões pelas quais seus high performers estão pedindo demissão"** 🟡 · Manual de Dono/Gestão · Meio
 Cada razão vem com um bloco "Fix:". Arte do navio afundando com "COMPANY" no casco. O próprio deck já anotou: *"colocar na minha voz adaptando os números de pessoas que eu já contratei."* Faça exatamente isso.
 
-**19. `79-A` — "The NPC Ladder": de "eu só trabalho aqui" até "deixa comigo"** 🟡 · Manual de Dono/Gestão · Meio
+**19. `79-A` — "A Escada do NPC": de "eu só trabalho aqui" até "deixa comigo"** 🟡 · Manual de Dono/Gestão · Meio
 Os 5 degraus: o NPC · o Detector de Movimento Humano · o CEO de Poltrona (gênio em diagnosticar, alérgico a resolver) · o Consertador Preguiçoso · o PC ("deixa comigo"). Framework de carreira brutalmente honesto e altamente compartilhável dentro de empresas. Combina com o `46-C` (Triângulo do Talento, 5 níveis).
 
 **20. `66` — "Ele comprou uma companhia aérea por 25 centavos" (AirAsia, @foundr)** 🟡 · História de negócios · Meio
@@ -82,7 +84,7 @@ Os 5 degraus: o NPC · o Detector de Movimento Humano · o CEO de Poltrona (gên
 **21. `94/101` — Run clubs + cafeterias: a colaboração que virou tendência** 🟡 · Varejo/Comunidade · Boca
 6.513 likes. Comunidade, ritual, estilo de vida, ganha-ganha entre dois negócios. É o funil ACP (Audiência → Comunidade → Produto) ilustrado com um case de rua. **Adaptação: a versão brasileira disso já está acontecendo — mapeie e conte.**
 
-**22. `77` — "Como ter um CEO Day que muda o jogo"** 🟡 · Manual de Dono · Fundo
+**22. `77` — "Como ter um Dia de CEO que muda o jogo"** 🟡 · Manual de Dono · Fundo
 422 likes mas **266 compartilhamentos** — proporção altíssima. Monte a cena · projete a visão · quebre em trimestres. **Adaptação: "O Dia de Dono"** — ritual trimestral, com a sua estrutura. CTA natural pro Manual de Donos.
 
 **23. `63` — Quantas vezes esses fundadores foram rejeitados (@flightfund)** 🟡 · Posicionamento/PME · Boca
@@ -91,7 +93,7 @@ Walt Disney: "sem imaginação", 302 rejeições, US$ 207,7 bi hoje. Melanie Per
 **24. `95-B` — Hormozi: "todo negócio novo tem dívida — só nem sempre é dívida financeira"** 🟢 · Modelo de negócios · Meio
 Dívida de talento · de processo · de gestão · técnica · **de cultura · de marca**. Um card, um conceito, e é vocabulário novo pro dono brasileiro. Você fala de dívida de marca há anos sem esse nome.
 
-**25. `99-A` — "Grandes marcas tatuam seu cérebro" (narrative building, @alexgarcia_atx)** 🟢 · Marca · Meio
+**25. `99-A` — "Grandes marcas tatuam o seu cérebro" (construção de narrativa, @alexgarcia_atx)** 🟢 · Marca · Meio
 *"Conteúdo é comunicação em escala. Então toda vez que você cria um conteúdo, pense nele como sua chance de construir uma narrativa específica na cabeça de alguém."* É a sua tese central em um card. Capa: o swoosh da Nike estendido no varal.
 
 **26. `84` — 7 ideias de conteúdo viral para a sua marca (@alexgarcia_atx)** 🟡 · Marca/Conteúdo · Meio
@@ -167,7 +169,7 @@ Bons, mas ou precisam de mais produção, ou são menos "você", ou repetem um f
 
 **48. `43` — Modelos mentais (@viziandrei): filtro psico-lógico, viés de sobrevivência, paradoxo da abundância, navalha do carisma** 🟡 · Negócios/Comportamento · Meio — A "navalha do carisma" (prefira o advogado que não parece advogado, porque ele teve mais a superar) é uma tese anti-guru perfeita pra você. Arte: gravura clássica vermelha + capitular.
 
-**49. `105` — Como criar um backlog de filmes e fotos (@marvin_kehr)** 🟡 · Conteúdo/Processo · Meio — Lista de tomadas que dá pra gravar em casa, ângulos (close, plano geral, over-the-shoulder, top-down), atividades do cotidiano. É o manual do "backlog de b-roll" que o próprio deck pede — serve mais pro time do que pro feed, mas rende um post de bastidor.
+**49. `105` — Como criar um backlog de filmes e fotos (@marvin_kehr)** 🟡 · Conteúdo/Processo · Meio — Lista de tomadas que dá pra gravar em casa, ângulos (close, plano geral, por cima do ombro, de cima pra baixo), atividades do cotidiano. É o manual do "backlog de b-roll" que o próprio deck pede — serve mais pro time do que pro feed, mas rende um post de bastidor.
 
 **50. `46-F` — Conteúdo compartilhado por funcionário tem 24× mais reshares que conteúdo de marca (@mahagaber)** 🟡 · Marca/Conteúdo · Meio — 2.071 likes e **3.297 compartilhamentos**. Tese: seus funcionários são seus embaixadores mais poderosos, e eles ganham marca pessoal em troca. Você viveu o founder-led quando era tabu ("CEO não dá opinião na internet") — é a continuação natural daquele argumento, agora aplicada ao time inteiro.
 
@@ -175,7 +177,7 @@ Bons, mas ou precisam de mais produção, ou são menos "você", ou repetem um f
 
 ## O que eu deixaria de fora, e por quê
 
-- **`32-B` e `34` (@wealthy.og — "The Wealth Algorithm", "Family Office")** — 17 e 12 páginas de "os bilionários operam em segredo, comente FRAME, só existem 200 cópias". É escassez fabricada e promessa de atalho. É o oposto exato de anti-guru. O engajamento vem do CTA, não do conteúdo.
+- **`32-B` e `34` (@wealthy.og — "O Algoritmo da Riqueza", "Family Office")** — 17 e 12 páginas de "os bilionários operam em segredo, comente FRAME, só existem 200 cópias". É escassez fabricada e promessa de atalho. É o oposto exato de anti-guru. O engajamento vem do CTA, não do conteúdo.
 - **`98-A` como cópia literal** — o playbook do "US$ 7 mi com IA" é bom, mas a moldura ("essa é sua única chance de pegar a corrida do ouro da IA") é guru puro. Fique com os 5 passos, jogue fora a moldura. Por isso ele está em 34 e não no Tier 1.
 - **Os murais de frase em inglês soltas dos slides 27, 29, 30** — sozinhas são genéricas. Valem como matéria-prima para a lista de 19 (item 8), não como posts individuais.
 - **`69` (o Grande Mapa de quem viveu quando)** — lindo, mas é infográfico denso demais pro feed e o próprio deck já anota que precisaria refazer com IA. Fica melhor como Reels ou como material do Manual de Donos.

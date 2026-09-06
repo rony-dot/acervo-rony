@@ -20,6 +20,10 @@ O texto nativo dos slides só traz as anotações — os posts em si são imagen
 
 Slides 1–26 são a parte de estratégia e governança do departamento de conteúdo, não referências de post. As referências vão do slide 27 ao 105.
 
+## Idioma
+
+Todo o conteúdo transcrito está em **português do Brasil**, inclusive quando a arte original está em inglês — a ideia é ler o texto em português e olhar a arte ao lado. Ficam no original: perfis (@), nomes de marcas, nomes próprios e títulos de livros.
+
 ## Páginas publicadas
 
 - Relatório (lista geral + Top 50 + calendário): https://claude.ai/code/artifact/df6aaeb3-b12e-4bab-84b2-f29143296448
