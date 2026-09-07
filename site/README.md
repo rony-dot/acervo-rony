@@ -7,6 +7,7 @@ Só o que está aqui fica público — o resto do repositório (transcrições, 
 |---|---|
 | `index.html` | Relatório: lista geral, Top 50, calendário e o catálogo com as artes |
 | `acervo.html` | Acervo visual: os 73 blocos abertos, texto ao lado das artes |
+| `snippets/aba-digest.html` | Bloco para o **digest** apontar de volta para cá (colar no gerador do digest, não no site publicado) |
 | `robots.txt` + `_headers` | `noindex, nofollow` — o link funciona para quem tem, mas não é indexado |
 
 ## Como republicar depois de mudar o conteúdo

@@ -1,0 +1,27 @@
+<!-- ─────────────────────────────────────────────────────────────
+     ABA "ESTÁTICOS" PARA O DIGEST SEMANAL
+     Cole logo depois do <h1> dentro de <header class="site-header">.
+     Usa as variáveis que já existem no :root do digest
+     (--accent, --border, --muted, --sans) — não precisa de CSS novo
+     além deste bloco.
+     ───────────────────────────────────────────────────────────── -->
+<nav class="hub-nav">
+  <a href="/" class="is-current">Digest da semana</a>
+  <a href="https://acervo-posts-rony.netlify.app" target="_blank" rel="noopener">Acervo de estáticos ↗</a>
+</nav>
+
+<style>
+.hub-nav{
+  display:flex; gap:22px; flex-wrap:wrap; align-items:center;
+  margin:14px 0 0; padding-top:14px;
+  border-top:1px solid var(--border);
+  font-family:var(--sans);
+}
+.hub-nav a{
+  font-size:12px; text-transform:uppercase; letter-spacing:.09em;
+  color:var(--muted); text-decoration:none; white-space:nowrap;
+  padding-bottom:4px; border-bottom:2px solid transparent;
+}
+.hub-nav a:hover{ color:var(--text); border-bottom-color:var(--accent); }
+.hub-nav a.is-current{ color:var(--text); border-bottom-color:var(--accent); }
+</style>

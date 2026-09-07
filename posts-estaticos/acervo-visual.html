@@ -34,6 +34,11 @@ a{color:inherit}
 .brandmark{font-family:"Archivo Black",sans-serif;font-size:13px;white-space:nowrap}
 .brandmark span{background:linear-gradient(transparent 55%,var(--mark) 55%,var(--mark) 92%,transparent 92%);padding:0 2px}
 .tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-left:auto}
+.topnav{display:flex;gap:16px;align-items:center;min-width:0}
+.topnav a{font-family:"IBM Plex Mono",monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;
+  color:var(--ink-3);text-decoration:none;white-space:nowrap;padding:4px 0;border-bottom:2px solid transparent}
+.topnav a:hover{color:var(--ink);border-bottom-color:var(--mark)}
+.topnav a.ext{border-bottom:2px dashed var(--mark);color:var(--ink)}
 .search{flex:1 1 220px;min-width:180px;max-width:340px;font-size:13px;padding:9px 12px;
   background:var(--surface);color:var(--ink);border:1px solid var(--rule-2);border-radius:2px}
 .search::placeholder{color:var(--ink-3)}
@@ -103,6 +108,10 @@ footer{padding:36px 0 60px;color:var(--ink-3);font-size:13.5px}
 
 <header class="top"><div class="wrap">
   <div class="brandmark">ACERVO <span>VISUAL</span></div>
+  <nav class="topnav">
+    <a href="https://claude.ai/code/artifact/df6aaeb3-b12e-4bab-84b2-f29143296448">Relatório</a>
+    <a href="https://digest-rebels.netlify.app" class="ext" target="_blank" rel="noopener">Digest semanal &#8599;</a>
+  </nav>
   <div class="tools">
     <input class="search" id="q" type="search" placeholder="buscar: hormozi, preço, varejo, 71…" aria-label="Buscar">
     <button class="tag" id="ftop" aria-pressed="false">só top 50</button>
@@ -506,7 +515,6 @@ footer{padding:36px 0 60px;color:var(--ink-3);font-size:13.5px}
 </main>
 
 <footer><div class="wrap">
-  <p><a href="https://claude.ai/code/artifact/df6aaeb3-b12e-4bab-84b2-f29143296448">&#8592; Voltar para o relatório: lista geral, Top 50 e calendário</a></p>
   <p>As artes são as imagens embutidas na apresentação original, extraídas na ordem de leitura de cada slide e reduzidas para caber na página. Os posts pertencem aos perfis creditados em cada bloco — o acervo é referência de formato, a adaptação é o trabalho.</p>
 </div></footer>
 
