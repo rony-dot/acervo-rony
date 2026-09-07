@@ -26,6 +26,11 @@ Todo o conteúdo transcrito está em **português do Brasil**, inclusive quando 
 
 ## Páginas publicadas
 
+**Link para o time (Netlify, mesma conta do digest):** https://acervo-posts-rony.netlify.app
+Abre em qualquer navegador, sem login. Marcado como `noindex` — não entra no Google.
+
+**Versões no Claude (privadas, só para você):**
+
 - Relatório (lista geral + Top 50 + calendário): https://claude.ai/code/artifact/df6aaeb3-b12e-4bab-84b2-f29143296448
 - Acervo visual (texto + arte lado a lado): https://claude.ai/code/artifact/36569e4d-ca4a-41cf-9e0f-8f461baa30e9
 

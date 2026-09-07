@@ -1,0 +1,6 @@
+# Deploy do acervo de posts estáticos.
+# O site publicado é apenas a pasta site/ — o resto do repositório
+# (transcrições, skill) fica fora.
+[build]
+  publish = "site"
+  command = ""
