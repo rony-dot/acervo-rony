@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ ! -e \"$HOME/.claude/instagram\" ] || [ -L \"$HOME/.claude/instagram\" ]; then mkdir -p \"$HOME/.claude\" && ln -sfn \"$CLAUDE_PROJECT_DIR/instagram\" \"$HOME/.claude/instagram\"; fi"
+          }
+        ]
+      }
+    ]
+  }
+}

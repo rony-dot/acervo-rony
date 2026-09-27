@@ -26,15 +26,26 @@ import json
 import re
 import sys
 
-WORD_RE = re.compile(r"[A-Za-z0-9$%'’-]+")
+WORD_RE = re.compile(r"[A-Za-zÀ-ÖØ-öø-ÿ0-9$%'’-]+")
 SENT_RE = re.compile(r"[^.!?]+[.!?]*")
-CONCRETE_RE = re.compile(r"\$\s?\d|\b\d[\d,.]*\b|(?<!^)\b[A-Z][a-z]{2,}\b", re.MULTILINE)
+# A capital after a full stop starts a sentence; it is not a name.
+CONCRETE_RE = re.compile(r"\$\s?\d|\b\d[\d,.]*\b|(?<!^)(?<![.!?] )\b[A-ZÀ-ÖØ-Þ][a-zß-öø-ÿ]{2,}\b",
+                         re.MULTILINE)
 STOPWORDS = {
     "the", "a", "an", "and", "or", "but", "if", "of", "to", "in", "on", "for",
     "with", "that", "this", "it", "is", "are", "was", "were", "be", "been",
     "you", "your", "i", "my", "me", "we", "our", "they", "them", "he", "she",
     "so", "just", "not", "no", "do", "did", "does", "have", "has", "had",
     "will", "can", "at", "as", "by", "from", "out", "up", "off", "one", "all",
+    # Portuguese
+    "o", "os", "as", "um", "uma", "uns", "umas", "e", "ou", "mas", "se", "de",
+    "do", "da", "dos", "das", "em", "no", "na", "nos", "nas", "num", "numa",
+    "para", "pra", "pro", "por", "pelo", "pela", "com", "sem", "que", "isso",
+    "isto", "esse", "essa", "este", "esta", "aquele", "aquela", "ele", "ela",
+    "eles", "elas", "eu", "você", "vocês", "voce", "vc", "meu", "minha", "seu",
+    "sua", "nós", "nosso", "nossa", "a", "é", "foi", "era", "ser", "ter", "tem",
+    "tinha", "vai", "vou", "não", "já", "só", "mais", "muito", "tudo", "todo",
+    "toda", "como", "quando", "onde", "lá", "aqui", "gente", "cara", "né",
 }
 
 HOOK_WINDOW = 3.0        # seconds. Past this, the thumb has already decided.
@@ -44,6 +55,8 @@ ABSTRACT_RUN = 3         # beats in a row with nothing checkable in them.
 
 def words(text):
     # "$18,000" is one word when it is spoken, so it is one word here too.
+    # Same for "R$ 18.000" in Portuguese, which groups thousands with dots.
+    text = re.sub(r"(?<=\d)\.(?=\d{3}\b)", "", text)
     return WORD_RE.findall(re.sub(r"(?<=\d),(?=\d)", "", text))
 
 

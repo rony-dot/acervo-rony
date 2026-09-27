@@ -28,6 +28,9 @@ Usage
   python3 hookscore.py --hook "I lost $18,000 on one missing contract."
   pbpaste | python3 hookscore.py -
   python3 hookscore.py hooks.txt --json
+  python3 hookscore.py --hook "Perdi R$ 18 mil num contrato." --lang pt
+
+Language: English and Portuguese. --lang auto (the default) picks per hook.
 """
 
 import argparse
@@ -36,14 +39,17 @@ import re
 import statistics
 import sys
 
-WORD_RE = re.compile(r"[A-Za-z0-9$%'’-]+")
+WORD_RE = re.compile(r"[A-Za-zÀ-ÖØ-öø-ÿ0-9$%'’-]+")
 NUMBER_RE = re.compile(
     r"\$\s?\d[\d,]*(?:\.\d+)?"                       # money, whole
     r"|\b\d[\d,]*(?:\.\d+)?\s?"                      # a figure, with or
     r"(?:%|k\b|x\b|hrs?\b|hours?\b|mins?\b|minutes?\b"  # without a unit
-    r"|days?\b|weeks?\b|months?\b|years?\b)?",
+    r"|days?\b|weeks?\b|months?\b|years?\b"
+    r"|mil\b|mi\b|bi\b|milh(?:ão|ões)\b|bilh(?:ão|ões)\b|horas?\b|minutos?\b"
+    r"|dias?\b|semanas?\b|m[eê]s(?:es)?\b|anos?\b)?",
     re.IGNORECASE)
-PROPER_RE = re.compile(r"(?<!^)\b[A-Z][a-z]{2,}\b")
+# A capital after a full stop starts a sentence; it is not a name.
+PROPER_RE = re.compile(r"(?<!^)(?<![.!?] )\b[A-ZÀ-ÖØ-Þ][a-zß-öø-ÿ]{2,}\b")
 HASHTAG_RE = re.compile(r"(?:^|\s)#\w+")
 EMOJI_RE = re.compile(r"[\U0001F300-\U0001FAFF☀-➿]")
 
@@ -108,6 +114,111 @@ DEALBREAKERS = [
      "Emoji in the hook. On-screen text at hook size has room for words or for an emoji, not both."),
 ]
 
+# ---------------------------------------------------------------------------
+# Portuguese. Same five checks, same weights; only the vocabulary changes.
+# Kept as a separate lexicon rather than merged into the English one, because
+# the languages collide: "no" and "do" are stakes/imperatives in English and
+# the most common contractions in Portuguese.
+# "um", "uma" and "primeiro" are left out of the numbers for the same reason
+# "one" and "first" are: filler far more often than a quantity.
+
+SPOKEN_NUMBERS_PT = {
+    "zero", "dois", "duas", "três", "tres", "quatro", "cinco", "seis", "sete",
+    "oito", "nove", "dez", "onze", "doze", "quinze", "vinte", "trinta",
+    "quarenta", "cinquenta", "sessenta", "setenta", "oitenta", "noventa",
+    "cem", "cento", "duzentos", "trezentos", "quinhentos", "mil", "milhão",
+    "milhões", "bilhão", "bilhões", "dezena", "dúzia", "metade", "dobro",
+    "triplo", "mi", "bi",
+}
+MONEY_WORDS_PT = {
+    "reais", "real", "conto", "contos", "pila", "grana", "centavos",
+    "porcento", "milionário", "bilionário", "faturamento", "faturei", "fatura",
+    "lucro", "prejuízo", "caixa", "salário", "aluguel", "margem", "dívida",
+}
+STAKES_PT = {
+    "pare", "nunca", "jamais", "errado", "errada", "erro", "erros",
+    "errei", "perdi", "perder", "perdeu", "perda", "custo", "custa", "custou",
+    "quebrei", "quebrou", "quebra", "quebrar", "faliu", "falência", "falhou",
+    "fracasso", "fracassei", "ninguém", "não", "nem", "desisti", "desistir",
+    "demiti", "demitido", "demitiu", "apaguei", "matou", "mata", "matei",
+    "cortei", "corta", "cortar", "substituiu", "grátis", "graça", "paguei",
+    "cobrei", "contratei", "economizei", "proibido", "ilegal", "pior", "odeio",
+    "desperdicei", "desperdício", "golpe", "mentira", "mentiu", "verdade",
+    "segredo", "escondido", "roubou", "antes", "até", "mas", "porém",
+    "exceto", "problema", "risco", "perigo", "cuidado", "alerta", "arrependo",
+    "arrependimento", "deveria", "ainda", "já", "só", "sem", "versus", "vs",
+    "zero", "medo", "dor", "burrice", "falácia", "mito",
+}
+WEAK_OPENERS_PT = [
+    "então", "bom", "oi", "olá", "e aí", "fala", "galera", "pessoal", "gente",
+    "hoje", "basicamente", "sinceramente", "olha", "escuta", "tipo", "enfim",
+    "vamos", "bora", "eu queria", "eu quero", "eu vou", "vou", "você já",
+    "vocês já", "você sabia", "neste vídeo", "nesse vídeo", "no vídeo",
+    "é o seguinte", "existe", "existem", "tem muita", "isso é", "esse é",
+    "essa é", "quando se trata", "se você já", "sabe", "um dos", "uma das",
+]
+IMPERATIVES_PT = {
+    "pare", "copie", "copia", "rouba", "roube", "apague", "apaga", "tente",
+    "tenta", "assista", "leia", "salve", "salva", "use", "usa", "construa",
+    "faça", "faz", "escreva", "mande", "manda", "pegue", "pega", "comece",
+    "começa", "largue", "larga", "nunca", "sempre", "não", "bota", "coloca",
+    "confira", "vai", "levanta", "ache", "acha", "venda", "vende", "corta",
+    "esquece", "esqueça", "presta", "anota",
+}
+DEALBREAKERS_PT = [
+    (re.compile(r"(?i)^\s*(?:para de (?:rolar|passar)|não (?:passa|pula|rola))"),
+     "Abre com \"para de rolar\". Pedir atenção prova que você ainda não ganhou."),
+    (re.compile(r"(?i)\b(?:n[eo]ste vídeo|n[eo]sse vídeo|no vídeo de hoje|nesse reels?|"
+                r"vou (?:te |lhes? )?mostrar|hoje eu vou|hoje vou)\b"),
+     "Preâmbulo de vídeo. Apaga e abre direto no que interessa."),
+    (re.compile(r"(?i)^\s*(?:oi|olá|e aí|fala,? galera|fala,? pessoal|salve|bom dia|boa tarde|boa noite)\b"),
+     "Saudação. Ninguém abriu o feed para ser cumprimentado."),
+    (HASHTAG_RE,
+     "Hashtag no gancho. Hashtag vai no fim da legenda, se for."),
+    (EMOJI_RE,
+     "Emoji no gancho. No tamanho de gancho cabe palavra ou emoji, não os dois."),
+]
+
+LEXICONS = {
+    "en": {
+        "numbers": SPOKEN_NUMBERS, "money": MONEY_WORDS, "stakes": STAKES,
+        "openers": WEAK_OPENERS, "imperatives": IMPERATIVES,
+        "dealbreakers": DEALBREAKERS,
+        "you": r"\b(you|your|you're|youre|yourself)\b",
+        "me": r"\b(i|my|me|we|our)\b",
+    },
+    "pt": {
+        "numbers": SPOKEN_NUMBERS_PT, "money": MONEY_WORDS_PT, "stakes": STAKES_PT,
+        "openers": WEAK_OPENERS_PT, "imperatives": IMPERATIVES_PT,
+        "dealbreakers": DEALBREAKERS_PT,
+        "you": r"\b(você|vocês|voce|voces|vc|vcs|seu|sua|seus|suas|te|tu|contigo)\b",
+        # Portuguese drops the pronoun: "Montei", "Perdemos". The verb ending
+        # carries the first person, so -ei and -amos/-emos/-imos count too.
+        "me": r"\b(eu|meu|minha|meus|minhas|me|mim|comigo|nós|nos|nosso|nossa|a gente"
+              r"|\w{2,}ei|\w{3,}(?:amos|emos|imos))\b",
+    },
+}
+
+PT_MARKERS = {
+    "não", "que", "de", "eu", "você", "um", "uma", "é", "com", "para", "pra",
+    "meu", "minha", "mais", "isso", "ninguém", "na", "no", "em", "por", "os",
+    "as", "se", "mas", "já", "só", "gente", "reais", "mil", "sem", "foi",
+}
+EN_MARKERS = {
+    "the", "you", "i", "to", "and", "of", "is", "my", "your", "it", "that",
+    "this", "was", "for", "on", "with", "don't", "can't", "nobody", "just",
+}
+
+
+def detect_lang(text):
+    """Cheap per-hook guess. Accented letters or R$ settle it outright."""
+    if re.search(r"[ãõçáéíóúâêôà]|R\$", text, re.IGNORECASE):
+        return "pt"
+    low = [w.lower().strip("'’") for w in words(text)]
+    pt = sum(w in PT_MARKERS for w in low)
+    en = sum(w in EN_MARKERS for w in low)
+    return "pt" if pt > en else "en"
+
 
 def clamp(n):
     return max(0.0, min(100.0, n))
@@ -115,6 +226,8 @@ def clamp(n):
 
 def words(text):
     # "$18,000" is one word when it is spoken, so it is one word here too.
+    # Same for "R$ 18.000" in Portuguese, which groups thousands with dots.
+    text = re.sub(r"(?<=\d)\.(?=\d{3}\b)", "", text)
     return WORD_RE.findall(re.sub(r"(?<=\d),(?=\d)", "", text))
 
 
@@ -135,12 +248,12 @@ def check_length(text):
     return clamp(score), f"{n} words, {chars} chars, ~{secs:.1f}s spoken (want 5-12 words)"
 
 
-def check_specificity(text):
+def check_specificity(text, lx):
     """One concrete thing beats three abstract ones."""
     nums = [n.strip() for n in NUMBER_RE.findall(text) if n.strip()]
     propers = set(PROPER_RE.findall(text))
     low = [w.lower().strip("'’") for w in words(text)]
-    spoken = [w for w in low if w in SPOKEN_NUMBERS or w in MONEY_WORDS]
+    spoken = [w for w in low if w in lx["numbers"] or w in lx["money"]]
     hits = len(nums) + len(propers) + len(spoken)
     score = 15.0 if hits == 0 else clamp(45 + hits * 30)
     found = ", ".join(nums[:2] + sorted(propers)[:2] + spoken[:2])
@@ -148,10 +261,10 @@ def check_specificity(text):
                    " - no number, no name, nothing checkable"))
 
 
-def check_stakes(text):
+def check_stakes(text, lx):
     """Tension, cost, negation. Something the viewer might lose."""
     w = [x.lower().strip("'’") for x in words(text)]
-    hits = [x for x in w if x in STAKES]
+    hits = [x for x in w if x in lx["stakes"]]
     markers = sorted(set(hits))
     if re.search(r"\$\s?\d", text):
         markers.append("a price")
@@ -162,7 +275,7 @@ def check_stakes(text):
     return clamp(score), detail
 
 
-def check_frontload(text):
+def check_frontload(text, lx):
     """The interesting word cannot be in position nine."""
     w = words(text)
     if not w:
@@ -171,13 +284,14 @@ def check_frontload(text):
     opener = " ".join(low[:2])
     penalty = 0
     hit_opener = None
-    for weak in WEAK_OPENERS:
-        if opener.startswith(weak) or low[0] == weak:
+    for weak in lx["openers"]:
+        # Whole words only: "hi" must not catch "hidden", nor "as a" "as ações".
+        if (opener + " ").startswith(weak + " ") or low[0] == weak:
             penalty, hit_opener = 30, weak
             break
     payload = None
     for i, token in enumerate(low):
-        if (token in STAKES or token in SPOKEN_NUMBERS or token in MONEY_WORDS
+        if (token in lx["stakes"] or token in lx["numbers"] or token in lx["money"]
                 or NUMBER_RE.match(w[i]) or (i and PROPER_RE.match(w[i]))):
             payload = i
             break
@@ -197,15 +311,15 @@ def check_frontload(text):
     return clamp(base - penalty), detail
 
 
-def check_address(text):
+def check_address(text, lx):
     """Aimed at one viewer, or floating in the air."""
     low = text.lower()
     w = [x.lower().strip("'’") for x in words(text)]
-    if re.search(r"\b(you|your|you're|youre|yourself)\b", low):
+    if re.search(lx["you"], low):
         return 100.0, "speaks to the viewer"
-    if w and w[0] in IMPERATIVES:
+    if w and w[0] in lx["imperatives"]:
         return 90.0, f"imperative opener (\"{w[0]}\")"
-    if re.search(r"\b(i|my|me|we|our)\b", low):
+    if re.search(lx["me"], low):
         return 70.0, "first person, no viewer named"
     return 35.0, "third person, nobody in the room"
 
@@ -213,15 +327,16 @@ def check_address(text):
 CHECKS = ["LENGTH", "SPECIFICITY", "STAKES", "FRONTLOAD", "ADDRESS"]
 
 
-def run(text):
+def run(text, lang="auto"):
+    lx = LEXICONS[detect_lang(text) if lang == "auto" else lang]
     results = {
         "LENGTH": check_length(text),
-        "SPECIFICITY": check_specificity(text),
-        "STAKES": check_stakes(text),
-        "FRONTLOAD": check_frontload(text),
-        "ADDRESS": check_address(text),
+        "SPECIFICITY": check_specificity(text, lx),
+        "STAKES": check_stakes(text, lx),
+        "FRONTLOAD": check_frontload(text, lx),
+        "ADDRESS": check_address(text, lx),
     }
-    flags = [msg for pattern, msg in DEALBREAKERS if pattern.search(text)]
+    flags = [msg for pattern, msg in lx["dealbreakers"] if pattern.search(text)]
     scores = [results[c][0] for c in CHECKS]
     # The weakest property caps the hook, same logic as detect.py: one bad
     # property is enough for the thumb to keep moving.
@@ -273,6 +388,8 @@ def main():
     ap.add_argument("input", nargs="?", default="-", help="file with one hook per line, or -")
     ap.add_argument("--hook", help="score a single hook given on the command line")
     ap.add_argument("--json", action="store_true")
+    ap.add_argument("--lang", choices=["auto", "en", "pt"], default="auto",
+                    help="hook language (default: detect per hook)")
     args = ap.parse_args()
 
     if args.hook:
@@ -286,9 +403,10 @@ def main():
 
     payload = []
     for line in lines:
-        results, overall, verdict, flags = run(line)
+        results, overall, verdict, flags = run(line, args.lang)
         payload.append({
             "hook": line,
+            "lang": detect_lang(line) if args.lang == "auto" else args.lang,
             "checks": {k: {"score": round(v[0], 1), "detail": v[1]} for k, v in results.items()},
             "weakest": min(CHECKS, key=lambda c: results[c][0]),
             "flags": flags,
@@ -301,7 +419,7 @@ def main():
         return
 
     if len(payload) == 1:
-        results, overall, verdict, flags = run(lines[0])
+        results, overall, verdict, flags = run(lines[0], args.lang)
         render_one(lines[0], results, overall, verdict, flags)
     else:
         render_table(sorted(payload, key=lambda r: -r["score"]))
