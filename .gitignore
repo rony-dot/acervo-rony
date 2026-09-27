@@ -3,3 +3,4 @@ transcricoes/raw/*.json3
 transcricoes/raw/*.vtt
 
 .DS_Store
+__pycache__/
