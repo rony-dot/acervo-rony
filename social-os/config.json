@@ -1,0 +1,103 @@
+{
+  "_doc": "Fonte única de verdade do Social OS. Rotinas e scripts leem daqui. Mudou ID no Notion? Atualize aqui e em mais nenhum lugar.",
+  "timezone": "America/Sao_Paulo",
+  "marca": "Rony Meisler (pessoal)",
+  "email_relatorio": "rony@rebels.cc",
+
+  "notion": {
+    "central_conteudo_page": "7b9243fe51568214b0f801c4543918f7",
+    "fila_aprovacao": "collection://147c0b5c-1fca-46f9-8f51-bda17f5e1591",
+    "leads": "collection://3c294a4c-fae2-4b3c-9410-b8c9270b14c6",
+    "producao": "collection://442243fe-5156-82a4-a13a-87fb74e53e04",
+    "publicados": "collection://181243fe-5156-8383-8405-878ec9a9635e",
+    "pautas": "collection://bbc243fe-5156-8255-b429-871b88908bc2",
+    "padroes": "collection://fd3243fe-5156-8231-aefb-87cd1b3e3551",
+    "formatos_trending": "collection://685243fe-5156-8280-a71f-87e61e988d47",
+    "roteiros_bigvu_semana": "collection://358243fe-5156-826e-954a-8715a0fa79a6",
+    "banco_roteiros_bigvu": "collection://b08243fe-5156-838f-b605-8785ec16ef7a",
+    "referencias_videos": "collection://a6d243fe-5156-83ee-8e15-87615b519cc8",
+    "prompt_mestre_page": "871243fe515683298af881fcbd703ca5",
+    "acervo_exclusao_page": "36a243fe515682f8a87b815d3651dc6a",
+    "gabarito_series_page": "8c9243fe5156834995c601e87d20e26f"
+  },
+
+  "aprovadores": {
+    "1a4d872b-594c-81b7-bd04-0002d9a65d9b": {"nome": "Rony Meisler", "pode_aprovar": ["Baixo", "Alto"]},
+    "5ce0407b-de46-4936-a472-149eb6c189cb": {"nome": "Michel Cohen", "pode_aprovar": ["Baixo"]}
+  },
+
+  "risco": {
+    "_doc": "Risco efetivo = o MAIOR entre o declarado na linha e o calculado aqui. A IA não consegue rebaixar risco.",
+    "origens_baixo_risco": ["Corte de podcast", "Repost/adaptação"],
+    "termos_forcam_alto": [
+      "stone", "r$", "preço", "desconto", "oferta", "lançamento", "cupom",
+      "eleição", "governo", "presidente", "partido", "lula", "bolsonaro",
+      "israel", "gaza", "hamas", "guerra", "morte", "morreu", "tragédia",
+      "processo", "justiça", "investir em", "ação da", "ações da", "cripto"
+    ]
+  },
+
+  "voz": {
+    "_doc": "Checagens mecânicas da voz (Prompt Mestre A3). O gate bloqueia; o redator evita.",
+    "proibido": ["—", "–"],
+    "proibido_motivo": "Prompt Mestre A3: sem travessão. Nunca."
+  },
+
+  "plataformas": {
+    "Instagram Reels":     {"metricool": "instagram", "utm_source": "instagram", "sigla": "ig",  "precisa_midia": true,  "limite_texto": 2200},
+    "Instagram Carrossel": {"metricool": "instagram", "utm_source": "instagram", "sigla": "igc", "precisa_midia": true,  "limite_texto": 2200},
+    "Instagram Stories":   {"metricool": "instagram", "utm_source": "instagram", "sigla": "igs", "precisa_midia": true,  "limite_texto": 0},
+    "LinkedIn":            {"metricool": "linkedin",  "utm_source": "linkedin",  "sigla": "li",  "precisa_midia": false, "limite_texto": 3000},
+    "TikTok":              {"metricool": "tiktok",    "utm_source": "tiktok",    "sigla": "tt",  "precisa_midia": true,  "limite_texto": 2200},
+    "YouTube Shorts":      {"metricool": "youtube",   "utm_source": "youtube",   "sigla": "yt",  "precisa_midia": true,  "limite_texto": 5000},
+    "X":                   {"metricool": "twitter",   "utm_source": "x",         "sigla": "x",   "precisa_midia": false, "limite_texto": 280},
+    "Threads":             {"metricool": "threads",   "utm_source": "threads",   "sigla": "th",  "precisa_midia": false, "limite_texto": 500}
+  },
+
+  "horarios": {
+    "_doc": "Janelas padrão (horário de Brasília) até o Metricool ter 30 dias de dado próprio. A rotina de publicação prefere o 'best time' do Metricool quando disponível. Ajuste com o dado real.",
+    "max_por_dia": {"Instagram Reels": 2, "Instagram Carrossel": 1, "Instagram Stories": 5, "LinkedIn": 1, "TikTok": 2, "YouTube Shorts": 1, "X": 3, "Threads": 2},
+    "janelas": {
+      "Instagram Reels":     ["07:30", "12:15", "19:30"],
+      "Instagram Carrossel": ["08:30", "18:30"],
+      "Instagram Stories":   ["09:00", "13:00", "17:00", "20:00", "21:30"],
+      "LinkedIn":            ["08:00", "12:00"],
+      "TikTok":              ["12:30", "20:30"],
+      "YouTube Shorts":      ["18:00"],
+      "X":                   ["08:15", "12:45", "18:45"],
+      "Threads":             ["09:15", "19:15"]
+    },
+    "antecedencia_minima_min": 90
+  },
+
+  "utm": {
+    "_doc": "utm_campaign carrega a chave de atribuição porque o beehiiv guarda campaign (não guarda content). GA4 lê sessionCampaignName.",
+    "medium": "social",
+    "_confirmar": "URLs de destino abaixo são PROVISÓRIAS. Rony/Michel: trocar pelas landing pages reais de cada CTA antes da primeira publicação.",
+    "destinos": {
+      "comenta VENDAS":          "https://manualdedonos.com",
+      "comenta QUERO":           "https://manualdedonos.com/ia",
+      "palavra-chave do e-mail": "https://ronymeisler.com",
+      "link na bio":             "https://manualdedonos.com"
+    }
+  },
+
+  "comunidade": {
+    "palavras_gatilho_manychat": ["vendas", "quero"],
+    "planilha_manychat_leads": "PREENCHER_FILE_ID_DA_PLANILHA",
+    "_doc_planilha": "Cada fluxo de palavra-chave do ManyChat grava 1 linha via ação nativa Google Sheets: data, plataforma, @handle, palavra, chave_utm. Ver README > ManyChat."
+  },
+
+  "beehiiv": {
+    "_doc": "Chaves em variáveis de ambiente, nunca aqui.",
+    "env_api_key": "BEEHIIV_API_KEY",
+    "env_publicacoes": {"MDD": "BEEHIIV_PUB_MDD", "Email do Rony": "BEEHIIV_PUB_RONY"}
+  },
+
+  "metricool": {
+    "base_url": "https://app.metricool.com/api",
+    "env_token": "METRICOOL_USER_TOKEN",
+    "env_user_id": "METRICOOL_USER_ID",
+    "env_blog_id": "METRICOOL_BLOG_ID"
+  }
+}
