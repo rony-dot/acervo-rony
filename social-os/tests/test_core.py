@@ -59,6 +59,12 @@ class Gate(unittest.TestCase):
         self.assertEqual(risco_calculado(l, CFG)[0], "Alto")
         self.assertFalse(checar_gate(l, CFG).ok)
 
+    def test_termo_casa_palavra_inteira(self):
+        self.assertEqual(risco_calculado(linha(Legenda="Larga o celular. Fui."), CFG)[0], "Baixo")
+        self.assertEqual(risco_calculado(linha(Legenda="O Lula falou. Fui."), CFG)[0], "Alto")
+        self.assertEqual(risco_calculado(linha(Legenda="Custa R$ 30. Fui."), CFG)[0], "Alto")
+        self.assertEqual(risco_calculado(linha(Legenda="Bora investir em marca. Fui."), CFG)[0], "Alto")
+
     def test_risco_vazio_conta_como_alto(self):
         self.assertEqual(risco_efetivo(linha(Risco=None), CFG), "Alto")
 

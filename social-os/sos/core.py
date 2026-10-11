@@ -53,7 +53,9 @@ def risco_calculado(linha: dict, cfg: dict) -> tuple[str, list[str]]:
         motivos.append(f"origem '{origem or 'vazia'}' exige aprovação do Rony")
 
     texto = " ".join(str(linha.get(k) or "") for k in ("Post", "Hook", "Legenda")).lower()
-    achados = [t for t in cfg["risco"]["termos_forcam_alto"] if t in texto]
+    # Palavra inteira: "lula" não pode casar com "celular".
+    achados = [t for t in cfg["risco"]["termos_forcam_alto"]
+               if re.search(rf"(?<!\w){re.escape(t)}(?!\w)", texto)]
     if achados:
         motivos.append("termos sensíveis: " + ", ".join(achados))
 
