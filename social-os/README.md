@@ -61,7 +61,7 @@ E nas rotinas: a IA **nunca** escreve `Status = Aprovado` nem `Aprovado por`. Is
 | 2 | **Conectar as 6 redes no Metricool** | Rony/Michel | IG @rony, LinkedIn, TikTok, YouTube, X, Threads na mesma marca (blogId). |
 | 3 | **Credenciais beehiiv** | Rony | `BEEHIIV_API_KEY`, `BEEHIIV_PUB_MDD`, `BEEHIIV_PUB_RONY` (as mesmas do `placar_negocio.py` do Mac). |
 | 4 | **Windsor.ai › conectar Metricool** | Rony | Dá views e seguidores das redes além do IG para o relatório. Hoje o Windsor só tem GA4 "Site Rony" e IG @manualdedonos. |
-| 5 | **ManyChat › planilha de leads** | Michel | Em cada fluxo de palavra-chave (VENDAS, QUERO, palavra do e-mail): ação *Google Sheets › Insert row* numa planilha "Social OS · Leads ManyChat" com colunas `data, plataforma, handle, palavra, chave_utm`. O link enviado na DM deve ser o `Link UTM` do post. Colar o ID da planilha em `config.json > comunidade.planilha_manychat_leads`. |
+| 5 | **ManyChat › planilha de leads** | Michel | Em cada fluxo de palavra-chave (VENDAS, QUERO, palavra do e-mail): ação *Google Sheets › Insert row* na planilha [Social OS · Leads ManyChat](https://docs.google.com/spreadsheets/d/1VbHuY3qOi5_KXqhUljyt_T6K9h_outB-i1tWtobFQow/edit) (já criada, pasta Conteúdos Social) com colunas `data, plataforma, handle, palavra, chave_utm, post_link`. O link enviado na DM deve ser o `Link UTM` do post. |
 | 6 | **URLs de destino dos CTAs** | Rony | Confirmar/trocar as landing pages em `config.json > utm.destinos` (estão provisórias). |
 | 7 | **Comentários do @rony** | Rony | Conectar o Instagram @rony no Composio (ou Windsor › instagram com a conta @rony) para a rotina 03 ler e responder comentários. Sem isso, ela só processa ManyChat e Gmail. |
 

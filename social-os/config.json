@@ -84,8 +84,8 @@
 
   "comunidade": {
     "palavras_gatilho_manychat": ["vendas", "quero"],
-    "planilha_manychat_leads": "PREENCHER_FILE_ID_DA_PLANILHA",
-    "_doc_planilha": "Cada fluxo de palavra-chave do ManyChat grava 1 linha via ação nativa Google Sheets: data, plataforma, @handle, palavra, chave_utm. Ver README > ManyChat."
+    "planilha_manychat_leads": "1VbHuY3qOi5_KXqhUljyt_T6K9h_outB-i1tWtobFQow",
+    "_doc_planilha": "Cada fluxo de palavra-chave do ManyChat grava 1 linha via ação nativa Google Sheets: data, plataforma, handle, palavra, chave_utm, post_link. Ver README > ManyChat."
   },
 
   "beehiiv": {
