@@ -56,6 +56,7 @@ E nas rotinas: a IA **nunca** escreve `Status = Aprovado` nem `Aprovado por`. Is
 
 | # | Item | Quem | Como |
 |---|---|---|---|
+| 0 | **Ligar as rotinas** | Rony | Em claude.ai › Routines, abrir cada rotina "Social OS · 0X" (criadas **pausadas**), adicionar o repositório `rony-dot/acervo-rony` e os conectores Notion, Gmail, Google Drive, Sandcastles, Windsor.ai e Composio, e ativar. Sem isso elas rodam sem acesso ao Notion. |
 | 1 | **Credenciais Metricool** | Rony | Metricool › Configurações › API: copiar *userToken*, *userId* e o *blogId* da marca. Adicionar no ambiente do Claude (menu do ambiente › Edit › secrets/variáveis) como `METRICOOL_USER_TOKEN`, `METRICOOL_USER_ID`, `METRICOOL_BLOG_ID`. Nunca colar no chat. Teste: `python3 -m sos teste-metricool`. |
 | 2 | **Conectar as 6 redes no Metricool** | Rony/Michel | IG @rony, LinkedIn, TikTok, YouTube, X, Threads na mesma marca (blogId). |
 | 3 | **Credenciais beehiiv** | Rony | `BEEHIIV_API_KEY`, `BEEHIIV_PUB_MDD`, `BEEHIIV_PUB_RONY` (as mesmas do `placar_negocio.py` do Mac). |
