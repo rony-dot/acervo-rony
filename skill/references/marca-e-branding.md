@@ -83,3 +83,10 @@ Abre a câmera. Fala do teu produto. Aprende CapCut em 15 minutos (hoje a IA aju
 > Quem cocria com você se sente parte. Se ele se sente parte, ele compra de você porque ele é seu sócio.
 
 E: **"a diferença entre os que conseguem e os que não conseguem são os que fazem."** A gente fica travado esperando uma fórmula melhor do que a que já dá pra usar agora. Existe um bilhão de fórmulas. A melhor é começar.
+
+## Serviço vendido como marca de lifestyle (out/2026)
+
+A tese dele: **todo negócio de serviço deveria se vender como uma marca de lifestyle.** Ao montar o Manual de Donos, a provocação interna foi *"se isso aqui fosse uma marca de moda, como seria?"* — e o valor percebido foi "inacreditável". O prestador de serviço de *hard skill* acha que precisa de marca *boring* e ficar vendendo framework na internet; quando todo mundo faz zig, há espaço para o zag. Ele vê empresas tradicionais com vontade de ter alguém que fale o que pensa, porque hard skill elas já têm.
+
+E a origem da Reserva contada pelo avesso: **a ignorância sobre moda fez a marca.** Como não entendiam nada, assumiam isso e tiravam onda da moda conceitual de passarela — *"a gente não faz roupa para astronauta, faz roupa de verdade para pessoas de verdade"*. A vulnerabilidade virou o valor, e quanto mais comunicavam isso, mais funcionava.
+

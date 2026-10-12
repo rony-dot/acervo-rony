@@ -2,7 +2,7 @@
 
 Transcrições das entrevistas do Rony Meisler em podcasts, e o skill de Claude Code construído a partir delas.
 
-**Estado atual:** 11 entrevistas · ~13,5 horas · ~154 mil palavras.
+**Estado atual:** 12 entrevistas · ~14,9 horas · ~169 mil palavras.
 
 ---
 
@@ -52,10 +52,11 @@ O script avisa. Nesse caso é preciso Whisper (`yt-dlp -x --audio-format mp3` e 
 | 09 | Entusiasta | #084 — com Bernardo Britto | 81 min | jun/2026 |
 | 10 | Marcas Rebeldes | #01 — Piloto, com João Branco | 65 min | jun/2025 |
 | 11 | Excepcionais | Marcas bilionárias sem perder valores morais | 91 min | ago/2026 |
+| 12 | Papo Íntimo (Sandra Chayo) | Cabeça de dono — com Rony Meisler | 84 min | out/2026 |
 
 As URLs originais ficam em `transcricoes/raw/urls.txt`.
 
-**Créditos.** As entrevistas pertencem aos canais que as produziram — Café com Ferri, Futurum Talks, ROI Hunters, TalksbyLeo, Startups/MVP, Made in Brasil, Os Sócios, Powercast, Entusiasta, Marcas Rebeldes e Excepcionais. Este acervo reúne transcrições geradas a partir das legendas automáticas dos vídeos públicos, para estudo e consulta. Assista aos episódios completos nos canais originais — os links estão em `urls.txt`.
+**Créditos.** As entrevistas pertencem aos canais que as produziram — Café com Ferri, Futurum Talks, ROI Hunters, TalksbyLeo, Startups/MVP, Made in Brasil, Os Sócios, Powercast, Entusiasta, Marcas Rebeldes, Excepcionais e Papo Íntimo. Este acervo reúne transcrições geradas a partir das legendas automáticas dos vídeos públicos, para estudo e consulta. Assista aos episódios completos nos canais originais — os links estão em `urls.txt`.
 
 ---
 

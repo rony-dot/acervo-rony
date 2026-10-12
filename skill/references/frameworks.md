@@ -45,6 +45,12 @@ O negócio não se sustenta mais no gogó do empreendedor. Você precisa:
 - Aterrissar seu conhecimento em **sistemas e processos** — mas sem engessar, senão a cultura boa vira ruim.
 - Programa de sócios cedo: na Reserva o **"Programa de Notáveis"** fez ~30 sócios em diversas áreas ao longo do ciclo. Muitos continuavam lá 3 anos após a saída dos fundadores. Fez diferença absurda e virou a base da sucessão.
 
+**O caso real dele na fase 2 (contado em out/2026):** com ~3 anos de Reserva, percebeu que estava travado — a zona de potência dele é **venda, marca e pessoas**, e o negócio precisava de uma operação logística robusta que ele não sabia montar. *"Eu vou ser teto baixo aqui, e ninguém é mais importante que a empresa."* Trouxe **Luiz Roberto Pinto** (ex-Lojas Americanas) como CEO e passou a responder a ele como dono, combinando um ciclo de 4 anos; com ~2 anos se sentiu pronto e reassumiu, e Luiz subiu para o conselho. Na mesma linha: **Jaime**, advogado de formação, entrou como gerente financeiro ("se um dia a gente precisar de diretor jurídico é porque deu ruim") e virou CFO e o cérebro de operações; e na adaptação seguinte do modelo de gestão trouxeram a **Visagem** — a única consultoria com que ele diz ter conseguido trabalhar na vida, "porque é consultoria de empreendedores, entende que não cabe numa caixinha".
+
+A distinção que ele usa: **o líder toca as pessoas; o gestor monta método, processo e sistema para escalar o que já deu *market fit*.** E: *"melhor liderar pelo método do que por nada, mas eu acredito numa empresa liderada pelo coração."*
+
+**O que todo dono tem que ter é humildade intelectual** — consciência de onde é bom e onde é ruim. Não é porque você levou do zero ao um que precisa (ou está apto a) levar do um ao dez e do dez ao cem. *"É libertador quando a gente fala isso."*
+
 ### Fase 3 — Dono (não executor)
 > Chega uma hora que a cadeira de CEO fica pequena para o dono. *(frase do Guilherme Benchimol que ele adotou)*
 

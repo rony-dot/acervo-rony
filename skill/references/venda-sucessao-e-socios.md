@@ -81,6 +81,14 @@ Ele repete: **não foi empreender a Reserva. Foi virar executivo.**
 
 Passaram o arame farpado em volta do time ("ninguém mexe na galera aqui"), foram lean e entregaram resultado. Sendo quatro sócios, quando um cansava, o outro ia para a guerra — mas nunca furaram o bloqueio.
 
+**O discurso para o time (out/2026)** — os 29 sócios formados na operação, que ele chama de "58 olhos":
+
+> Antes a gente crescia em cima da gente, competia com a gente mesmo. Agora nós somos 9% desse negócio grandão. Só tem uma coisa que vai manter a gente dono do nosso negócio: crescimento e resultado. Daqui a 4 anos, que percentual a gente vai representar desse todo?
+
+A meta que saiu da reunião: *"vamos ser pequenos coisa nenhuma — a gente vai ter 40% desse negócio."* E a regra de liderança que ele tira daí: **o líder tem que ser assassino de medo e vendedor de esperança o dia inteiro** — sem mentir, contando a verdade, mas uma verdade otimista e sedutora que puxe as pessoas. "Por isso a liderança é tão solitária." A imagem que ele usa para os sócios-fundadores: *cordão de isolamento — a gente toma todas as balas e as balas não passam para o nosso time.*
+
+**O plano que a Arezzo comprou era o deles.** Cerca de um ano antes da venda, uma pesquisa mostrou que a Reserva tinha *recall* de marca no B+, mas *footprint* de A. O IPO era para usar o dinheiro (*use of proceeds*) em abrir esse footprint; a Arezzo comprou o plano e pôs dinheiro para executá-lo. A pesquisa veio de uma consultoria pequena de estatísticos que fazia *social listening* e personas, indicada pelo Guilherme Benchimol, que a usava na XP (ele não lembrou o nome).
+
 Motivação extra: **o mercado disse que a Arezzo pagou caro.** "Ah, é? Vou mostrar o que é caro."
 
 O outro aprendizado central foi **liderar para cima** (ver `frameworks.md`) e a lógica de fases de projeto dentro de empresa grande.
@@ -115,7 +123,8 @@ Ele fala disso como saber parar no auge — analogia de futebol: é muito rápid
 
 ## A sucessão (o pedaço que ele mais tem orgulho)
 
-- Decisão comunicada aos sócios no fim de 2023 / janeiro de 2024.
+- Decisão comunicada aos sócios no fim de 2023 / janeiro de 2024 (em out/2026 ele crava **2 de janeiro de 2024**). Ele avisou a empresa um ano antes de propósito: *"acho uma sacanagem quando a pessoa decide sair e avisa 'daqui a um mês eu vou embora'."*
+- O motivo coletivo, além da saúde: *"a gente virou teto para essa turma. Somos muito jovens, estamos cansados, precisamos empreender outra coisa — vamos abrir espaço para essa galera crescer."*
 - Comunicada ao mercado em **agosto de 2024**.
 - Saída efetiva em **janeiro de 2025** (31/12/2024).
 - **~8 meses de transição feita "de sombra".**

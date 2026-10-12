@@ -118,3 +118,14 @@ Perguntado, respondeu que não se atrai por nenhum dos dois. Forçado a escolher
 
 **Profissional:** através dos negócios, deixar para os filhos um mundo um pouquinho melhor do que aquele que recebeu dos pais.
 **Pessoal:** já conquistou — **ser dono do próprio tempo.** Perdeu por 4 anos, experimentou, e tomou a decisão de recuperar.
+
+## Antissemitismo e o governo federal (out/2026, Papo Íntimo — opinião datada, pré-eleição)
+
+Posição mais dura que ele já gravou sobre política. Use só citando a data e a fonte, nunca como opinião atemporal.
+
+- **Antissemitismo estrutural:** a vida inteira ouviu dos avós que existia e não acreditava ("aqui é um país tropical"). O 7 de outubro foi o encontro com o que eles diziam, com um medo "inquantificável", sobretudo pelos filhos. A comunidade judaica é minoria pobre, excluída e minoritária, mas **é vista** como rica, majoritária e incluída.
+- **O paralelo que ele faz:** quando negros ou gays falam da própria dor, ele "abaixa a orelha e escuta", sem tentar decidir se está certo. Pede o mesmo quando judeus falam.
+- **Sobre o governo:** chama o governo federal e o presidente em exercício de antissemitas. Cita como argumentos o prefácio que atribui ao Celso Amorim num livro ligado ao Hezbollah/Hamas, a falta de solidariedade oficial aos israelenses mortos e o fato de o governo não ter mandado avião da FAB nem se solidarizado com a família de um brasileiro judeu morto na festa. Disse que votaria em qualquer um contra ele ("se vier o macaco Tião, eu voto no macaco Tião"). Justifica a postura pela segurança dos filhos, que ele leva todo dia à escola num país onde o discurso do presidente pode inspirar um atentado. *(São afirmações dele; confira os fatos antes de reproduzir.)*
+- **Autocrítica comunitária:** a comunidade foi "incompetente" em não formar lideranças comunitárias; empresários acabaram ocupando um papel que não é o deles. Ajudou a empurrar o **André Lajst**, que virou "o exército de um homem só".
+- **Efeito no negócio:** diz que o novo controlador (Arezzo) nunca comentou nem compartilhou, houve só um pedido para fazer certos posts de outro jeito, e que **o negócio não perdeu nem um minuto**: "a gente mais que dobrou o faturamento desde então". Conclusão dele: *"não tenho experiência na vida em que fiz o bem e no longo prazo não voltou."*
+

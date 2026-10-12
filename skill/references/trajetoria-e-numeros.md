@@ -4,14 +4,15 @@
 
 | Quando | O quê |
 |---|---|
-| ~1998 | Aos 18 anos, monta um site de permutas corporativas. Investidor promete dinheiro, vem a bolha da internet, o cara tira a grana, o negócio quebra. **Lição fundadora: nunca mais depender do dinheiro de ninguém.** |
+| ~1998 | Aos 18 anos, monta um site de permutas corporativas (o nome era **Next Money**, com uma moeda digital própria para mídia, hotelaria e aviação). Investidor promete dinheiro, vem a bolha da internet, o cara tira a grana, o negócio quebra. **Lição fundadora: nunca mais depender do dinheiro de ninguém.** |
 | — | Engenharia de produção na PUC-Rio. "Errei de profissão — minha vocação é humanas." |
 | ~2003-04 | ~1 ano na Accenture, desenhando processos para implantação de sistemas. Único emprego antes de empreender. |
 | 2004 | Na academia Estação do Corpo (Rio), ele e Fernando veem cinco caras usando a mesma bermuda, sem se cumprimentarem. "Demanda reprimida ou demência coletiva." |
 | 2004-05 | Primeira bermuda. Acham a fábrica pelo CNPJ na etiqueta de composição de outra bermuda (indústria em São Gonçalo). Voltam com a arte feita **no Word, fonte Arial**, porque não tinham Corel nem Photoshop. Lote mínimo de 300 peças. **R$ 3.000 dele + R$ 3.000 do Fernando.** Viram sacoleiros, mala do carro, escritório na casa dos pais. |
 | 2006 | Fundação formal da Reserva. Vendendo para lojistas multimarca. |
 | ~2006-08 | Após ~2 anos e ~80-90 multimarcas, abrem a primeira loja: **30-33 m² na Maria Quitéria, Ipanema**, mobiliada com peças vintage compradas no Lavradio (geladeira vermelha, luminárias feitas de roda de caminhão). "Para mim é a loja mais linda que a gente fez na vida." |
-| 2008-2012 | Consolidam estoque, desenvolvem o próprio WMS. |
+| ~2007 | Com ~3 anos de empresa, ele sai da cadeira de CEO e traz **Luiz Roberto Pinto** (ex-superintendente de compras das Lojas Americanas) para montar a operação logística (*push and pull*); responde a ele como dono. Combinam ciclo de 4 anos; com ~2 anos Rony reassume e Luiz sobe para o conselho como sócio. *(Papo Íntimo, out/2026)* |
+| 2008-2012 | Consolidam estoque, desenvolvem o próprio WMS (proprietário; quem monta é o Zé Alberto). |
 | 2009 | Desfile no São Paulo Fashion Week invadido pelo "impostor" do Pânico (Zuckerman) — 100% não combinado. Viralizou. |
 | 2012 | Lançam o e-commerce, com estoque único. **No dia seguinte a loja física sobe 25%.** |
 | ~2018 | Pesquisa revela: brand awareness A/B+, mas capilaridade só A. Mercado endereçável 10x maior (A = 1 mi de pessoas; B+ = 10 mi). Plano: capitalizar para abrir lojas. |
@@ -28,6 +29,7 @@
 | mai/2025 | Lançamento público da **Rebels Ventures** — landing page em vibe code, esperava 60 leads, veio 1.500. |
 | abr/2026 | Lançamento do **Manual de Donos**. ~6.000 alunos em ~40 dias. |
 | ago/2026 | 8 investidas, R$ 78 mi investidos, portfólio a ~R$ 100-120 mi. Aula do Manual vira semanal. Nova tese: **mídia**. Preparando abertura para até 3 family offices. |
+| out/2026 | Papo Íntimo (Sandra Chayo): newsletter citada com **1,8 mi** de assinantes, Manual de Donos com **~9.000 membros** e dois investimentos em membros da comunidade saindo. |
 | 4/dez/2026 | Fim do no-compete de moda. |
 
 ## Números (com ressalvas)
@@ -60,6 +62,13 @@
 - Instagram dele: ~250 mil → **~1,2 milhão** em ~6 meses
 
 **Números que variam entre entrevistas (use com cuidado):**
+- **Newsletter:** ~2,8 mi (ago/2026) vs. **1,8 mi** (Papo Íntimo, out/2026 — ele compara com "todas as newsletters da Forbes somam 2 mi", então disse mesmo menos de 2 mi). Como o número caiu na entrevista mais recente, é provável lapso de uma das duas; **confirme com ele antes de citar**. Detalhes novos de out/2026: envio toda segunda às 18h18, ~4 min de retenção média numa leitura de ~6 min.
+- **Peso ganho na Arezzo:** 20 kg (ago/2026) vs. **25 kg** (out/2026).
+- **Lucro líquido da unidade:** 10-12% → 16-18% vs. **10-11% → 14-15%** (out/2026).
+- **Business plan da venda:** R$ 800 mi de faturamento em 4 anos; saíram com ~R$ 2 bi. Anos de **100-120% de crescimento**. Representatividade no grupo: ele parte de **9%** e mira 40% (em outras: 7-9% → ~35%).
+- **Tempo de casa no 1º nível da sucessão:** mínimo de 10 anos vs. **12 anos** (out/2026).
+- **Danice:** ~R$ 400 mil vs. **~R$ 500 mil de MRR** com ~1 ano (out/2026).
+- **Faturamento na venda:** ~R$ 400 mi, ou "entre R$ 400 e 500 mi".
 - Nº de lojas na saída: cita **250**, **300**, **quase 400** — provavelmente lojas próprias vs. total com franquias
 - Nº de investidas da Rebels: **8, 9 ou 10**
 - Clientes ativos: **4 a 5 milhões**
@@ -83,6 +92,8 @@
 
 - **Avô materno/paterno (falecido em 2014):** polonês, judeu. Os pais foram mortos na frente dele aos 8 anos; virou morador de rua e chegou a catar comida no lixo — ponto em que ele parava de contar a história. Foi **partisan** (milícia armada judaica), carregou uma bala na perna a vida toda, teve os pés congelados na guerra (calçava 41 e usava 48). Alistado à força pelos russos aos 15 anos para invadir a Alemanha. Veio de navio ao Brasil, conheceu a avó no navio, chegou indigente sem falar a língua e virou mascate. **Enriqueceu no Saara (Rio) com 5-6 lojas e quebrou** — porque era excelente vendedor e péssimo administrador: começou comprando a 1 e vendendo a 1,50; depois passou a comprar a 100 e vender a 150. **Quebrou no caixa.** Os avós de Rony e os de Anne vieram no mesmo navio e foram melhores amigos a vida toda.
 - **Pai — Luiz Meisler:** o grande mentor. Provavelmente o executivo de tecnologia mais longevo e bem-sucedido do país; VP da Oracle para a América Latina, ~28-30 anos de casa, responde diretamente a Larry Ellison. 73-74 anos, pedala 20 km/dia. Extremamente *low profile* — "9 em 10 pessoas não sabem quem ele é". Foi do "playboy a filho de pai quebrado" quando o avô quebrou, e diz que foi a melhor coisa que lhe aconteceu. Foi o **primeiro convidado do MBA de Donos**, e citou a mãe do Rony ~20 vezes na conversa.
+- **Avó materna — Sarita (sobrenome saiu truncado na legenda: "Fisber"):** morreu em 2021-22, já muito idosa. Ele a chama de "a maior líder comunitária que esse país já teve" e diz que foi nela que entendeu o propósito de falar publicamente depois do 7 de outubro.
+- **Família paterna:** mora inteira em Israel.
 - **Mãe:** Diana. **Irmão:** André.
 - **Como ele explica não ter se "emocionado" com o dinheiro:** nasceu em família de classe média — "nunca me faltou nada, mas também nunca me sobrou nada". Quando ele casou, o pai ainda estava começando a fazer dinheiro ("meu irmão deu mais sorte, pegou 10 anos de casa com o pai já com grana"). A sala da casa da infância não tinha móveis; o pai dizia que era para poderem jogar futebol ali — "meio *A Vida é Bela*". Os pais eram muito verbais sobre isso: *"não se emociona não, você não é melhor do que ninguém."* Hoje a preocupação dele é como educar os filhos, já que a dificuldade que ele teve era um fato e para eles seria uma circunstância fabricada. Frase do pai que ele repete: **"doar tem que doer."**
 - **A frugalidade judaica como ele a define:** o povo é frugal com *coisas* — mas não é frugal onde não se deve ser, que é festa de família, viagem e quantidade de comida na mesa.
@@ -94,7 +105,7 @@
 
 **Passado:** Reserva, Oficina Reserva, Reserva Mini, Reserva Go, Reserva INK, U.Hook (com Luciano Huck, encerrada), Baw (aquisição). Grupo comprador: Arezzo&Co → Azzas 2154.
 
-**Presente:** Rebels Ventures (com Fernando, Jaime, Zé Alberto e Michel), Manual de Donos, e-mail do Rony, podcast **Marcas Rebeldes** (com João Branco, ex-CMO do McDonald's), advisory na **Stone**. Investidas: The Simple Gym, Good Day, Norte Ventures, Danis/Danice, Blank, PIX (ex-comunidade Micro-SaaS). Conselheiro do **Grupo Iguatemi** e de outras listadas e não listadas.
+**Presente:** Rebels Ventures (com Fernando, Jaime, Zé Alberto e Michel), Manual de Donos, e-mail do Rony, podcast **Marcas Rebeldes** (com João Branco, ex-CMO do McDonald's), advisory na **Stone**. Investidas: The Simple Gym, Good Day, Norte Ventures, Danis/Danice, Blank, PIX (ex-comunidade Micro-SaaS). Investimentos em mídia e tecnologia: canal **Foco** / *Caras do Pix*, **Pixel** (IA no WhatsApp). Conselheiro do **Grupo Iguatemi** e de outras listadas e não listadas.
 
 **Livro dele:** *Rebeldes Têm Asas*.
 

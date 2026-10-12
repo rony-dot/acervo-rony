@@ -107,3 +107,12 @@ Números da operação no último ano dele (2024): quase **20 milhões de peças
 **A crítica ao varejo brasileiro:** o comércio varejista é o segundo maior gerador de emprego e renda do país (depois do funcionalismo público), mas política pública trata o varejo como se o incentivo à indústria repassasse automaticamente — o que nunca acontece. Ainda assim: "não tem bicho mais resiliente e trabalhador do que o varejista."
 
 **O futuro da multimarca:** vai perder para o marketplace **se for uma multimarca funcional** — que só compra e vende. Se entregar uma experiência absurda (café, espaço de reunião, mala customizada na casa do cliente), cria um layer de marca associativo à experiência, que gera escolha. "Você bota um pin de gratidão na mente do cara."
+
+## Mínimo publicidade viável e venda de serviço (out/2026)
+
+**Produto — o "MVP" agora é publicidade.** Não precisa mais de estúdio nem de produção antes de saber se vende. Sobe a foto do produto numa ferramenta de IA de criativos (ou usa a própria geração da Meta/Andromeda), roda vários criativos com R$ 10-50 cada, acha o vencedor, afunda o dinheiro nele até ele morrer e recomeça. **Só depois que descobriu que vende** você faz a foto bem feita e monta o negócio em volta. "Muito pouca gente ainda está usando isso."
+
+**Serviço — é relacional, logo é comunidade.** A melhor forma de vender serviço é não vender serviço: vender educação e **entregar antes de cobrar**. *"Calma, valente"* com quem tenta vender serviço goela abaixo. Quando você ensina de graça, a pessoa é grata e ela mesma diz do que precisa. No começo, não se preocupe com máquina de vendas (SDR, inbound/outbound): faça conteúdo gratuito, feche um grupo de WhatsApp, chame para jantar.
+
+> Quantos jantares você está fazendo por semana? Essa é a pergunta — não que produto você vende nem qual é o seu faturamento.
+

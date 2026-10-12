@@ -4,7 +4,7 @@
 
 Leu **"From Strength to Strength"**, do Arthur Brooks (professor da aula de felicidade de Harvard). A pesquisa: até os 40 anos a zona de potência profissional está na **operação**; a partir dos 40, está na **educação e na mentoria**. *Você escala mais valor ensinando o que aprendeu do que fazendo com as próprias mãos.*
 
-Aquilo bateu no momento em que ele sabia que o ciclo estava fechando. Decidiu **mudar de lado do balcão**. Duas coisas desde o dia zero, complementares: **um negócio de investimento** e **um negócio de educação em negócios** — porque educação gera pipeline e relacionamento para o capital (modelo que ele reconhece não ter inventado: XP e outros já faziam).
+Aquilo bateu no momento em que ele sabia que o ciclo estava fechando. Decidiu **mudar de lado do balcão**. Duas coisas desde o dia zero, complementares — e a lógica é de esteira de produção: *"se a escola empatar e não der dinheiro, legal para caramba: qualificou os meus futuros sócios"*: **um negócio de investimento** e **um negócio de educação em negócios** — porque educação gera pipeline e relacionamento para o capital (modelo que ele reconhece não ter inventado: XP e outros já faziam).
 
 ## Rebels Ventures
 
@@ -89,6 +89,8 @@ Ele fez uma landing page em vibe code (Framer) e deu a notícia com exclusividad
 - **Norte Ventures** — holding de marcas de bem de consumo funcional (a Good Day é uma delas).
 - **Danis / Danice** — energético 100% natural, do Greg. Começou com água e virou energético. De zero a ~R$ 6 mi/ano e ~R$ 400 mil de MRR em menos de um ano.
 - **Blank** — escola de social media + agência de marca pessoal para empresários (~80-90 agenciados). R$ 15-20 mi (2025) → ~R$ 45 mi.
+- **Canal Foco / Caras do Pix** (out/2026) — mídia. Programa de investimento no formato "30 contra 1", diferente do Shark Tank. No 1º ano: **500-600 mi de visualizações auditadas** em conteúdo longo; somando cortes, "muito mais de 1 bilhão". Complementar ao resto porque **escala marca pessoal**.
+- **Pixel** (out/2026) — IA por assinatura que vive no WhatsApp do dono, faz perguntas e se integra às APIs da empresa. Com 3-4 h/dia de fluxo, em 3-4 dias a empresa tem um "cérebro digital".
 - **PIX** (ex-comunidade Micro-SaaS, do Bruno Camoto com Mateus e Caio) — educação em vibe coding; 16 mil alunos no giro; ~R$ 1 mi de MRR. Produtos: AI Tutor e AI Hub.
 
 ## Manual de Donos
@@ -119,6 +121,10 @@ Referência de modelo: **newsletters pagas** nos EUA, mercado explodindo. (Troco
 - ~108 alavancas por ano (2 por semana). "Se você perdeu a de terça, pega a da semana que vem."
 
 **Por que não é infoproduto:** ~95% de quem compra infoproduto não usa. **Eles querem impacto**, não venda — do mesmo jeito que o 5P1P na Reserva.
+
+**Como ele desenhou o formato (out/2026):** estudaram o método de estudo de caso de Harvard e quem o aplica on-line, e chegaram a três camadas — o caso contado como **entretenimento** ("a pessoa tem a percepção de estar vendo um documentário na Netflix", o que retém atenção) → o **playbook** de como aquela pessoa resolveu → o **passo a passo** para quem vive o mesmo problema. Princípio herdado da moda: *"fazer um negócio democrático no preço e ruim no produto não tem graça. Não é barato, é justo."* A aula ao vivo semanal com um empreendedor convidado não é entrevista ("entrevista com você a pessoa acha 500 na internet") — é o **manual** dele para uma dor de dono específica.
+
+**Números de out/2026:** **~9.000 membros**; dois investimentos da Rebels em membros da comunidade prestes a sair; Blank e Pixel começando a vender serviços para a comunidade.
 
 **A visão (atualizada em ago/2026):** ele já corrige a própria definição — *"na verdade não é uma escola de negócios; começou como uma escola de negócios. É um mundo de conteúdo."* O destino é um **ecossistema / hub comunitário / marketplace de serviços on-off para PME**: educação, serviço, tecnologia e acompanhamento. Educação é só a porta de entrada, porque é o que se entende mais rápido. Trouxeram **Gabriel Bak** para tocar o negócio. **Meta: 1 milhão de cabeças de donos em 5 anos.**
 

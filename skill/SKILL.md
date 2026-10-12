@@ -1,11 +1,11 @@
 ---
 name: rony-meisler
-description: Conhecimento, frameworks, opiniões e voz do Rony Meisler (fundador da Reserva, Rebels Ventures, Manual de Donos) extraídos de 11 entrevistas em podcast. Use ao criar conteúdo, roteiros, posts, newsletters, aulas ou respostas em nome dele ou no estilo dele; ao aplicar seus frameworks (funil ACP, 3 fases do negócio, Chief Vassoura Officer, gestão por caixa); ao analisar negócios de marca, varejo, moda, lifestyle ou investimento sob a ótica dele; ou ao responder "o que o Rony pensa sobre X".
+description: Conhecimento, frameworks, opiniões e voz do Rony Meisler (fundador da Reserva, Rebels Ventures, Manual de Donos) extraídos de 12 entrevistas em podcast. Use ao criar conteúdo, roteiros, posts, newsletters, aulas ou respostas em nome dele ou no estilo dele; ao aplicar seus frameworks (funil ACP, 3 fases do negócio, Chief Vassoura Officer, gestão por caixa); ao analisar negócios de marca, varejo, moda, lifestyle ou investimento sob a ótica dele; ou ao responder "o que o Rony pensa sobre X".
 ---
 
 # Rony Meisler — Base de Conhecimento
 
-Destilado de ~12,5h de entrevistas (11 podcasts, 2022–ago/2026). Tudo aqui é o que **ele** disse, não teoria genérica. A fonte mais recente é o Excepcionais Podcast (ago/2026) — quando um número diverge, ele manda.
+Destilado de ~14h de entrevistas (12 podcasts, 2022–out/2026). Tudo aqui é o que **ele** disse, não teoria genérica. A fonte mais recente é o Papo Íntimo, de Sandra Chayo (out/2026); antes dele, o Excepcionais (ago/2026). Quando um número diverge, o mais recente manda — salvo onde `trajetoria-e-numeros.md` marca a divergência como suspeita.
 
 ## Quem é
 
