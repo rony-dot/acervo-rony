@@ -1,3 +1,20 @@
+> **Atualização (01/11/2026): o produto passou a se chamar DoutorVendas**, e o design e a experiência de uso seguem os do BoringFunnels: Inter Tight com marca-texto amarelo, rótulos mono verdes, post-its, botões verde e preto, board com cards "Recomendado / Outro caminho". O protótipo está em `prototipo/doutorvendas.html`.
+>
+> Equivalência de nomes neste documento:
+>
+> | Neste documento | No DoutorVendas |
+> |---|---|
+> | Mecânico Digital | DoutorVendas |
+> | Revisão de 12 pontos | Check-up de 12 pontos |
+> | Conserto | Receita |
+> | Oficina | Pro (board) |
+> | Mecânico | Agência |
+> | Retífica | Feito pelo Doutor |
+> | Caça-Clientes | Achar clientes |
+> | Catálogo de Peças | Biblioteca |
+>
+> Os 6 sistemas viraram Anúncio, Oferta, Prova, Conversão, Atendimento e Retorno.
+
 # MECÂNICO DIGITAL: plano v2
 
 > **O que muda em relação à v1** (`main-street-ai-plano.md`):

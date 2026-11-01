@@ -1,0 +1,991 @@
+<title>DoutorVendas</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800&family=Inter:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Caveat:wght@600;700&display=swap">
+<style>
+/* Layout: mesma gramática visual do boringfunnels — papel branco, títulos Inter Tight 800 com marca-texto amarelo, rótulos mono verdes, painéis "field", post-its girados, botões verde e preto. Tema único claro, como o original. */
+:root{
+  --ink:#20251e; --ink-2:#586151; --muted:#6a7362; --paper:#fff; --field:#f3f5ec; --line:#e0e4d9;
+  --go:#00a651; --go-ink:#0b0d0a; --go-text:#00873c; --hl:#ffe500; --night:#14180f;
+  --note-y:#fde68a; --note-p:#fbcfe8; --note-m:#bbf7d0; --note-b:#bfdbfe; --red:#b42318; --red-wash:#fdecea;
+  --display:"Inter Tight","Helvetica Neue",Arial,sans-serif;
+  --sans:Inter,ui-sans-serif,-apple-system,"Segoe UI",system-ui,sans-serif;
+  --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --hand:"Caveat","Bradley Hand",cursive;
+  --page:1200px; --col:640px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--page);margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-family:var(--display);font-weight:800;letter-spacing:-.035em;line-height:1.02;margin:0;text-wrap:balance;color:var(--ink)}
+h1{font-size:clamp(2.4rem,5.6vw,4rem)}
+h2{font-size:clamp(1.9rem,3.6vw,2.6rem)}
+h3{font-size:1.25rem;letter-spacing:-.02em;line-height:1.15}
+h4{font-size:1.05rem;letter-spacing:-.01em;line-height:1.2}
+p{margin:0}
+.mark{background:var(--hl);padding:0 .08em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--go-text)}
+.cap{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.lede{color:var(--ink-2);font-size:1.08rem;max-width:var(--col)}
+.small{font-size:.85rem;color:var(--muted)}
+.num{font-variant-numeric:tabular-nums}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--go);outline-offset:2px}
+
+/* barra do protótipo */
+.proto{background:var(--night);color:#e9eee3;font-family:var(--mono);font-size:.72rem;letter-spacing:.04em}
+.proto .wrap{display:flex;gap:6px 14px;flex-wrap:wrap;align-items:center;padding-block:8px}
+.proto b{color:var(--hl);font-weight:500}
+.proto a{text-decoration:none;padding:2px 8px;border-radius:999px;border:1px solid #3a4234}
+.proto a[aria-current="page"]{background:var(--hl);color:var(--go-ink);border-color:var(--hl)}
+
+/* topo */
+header.top{border-bottom:1px solid var(--line);background:var(--paper)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;font-family:var(--display);font-weight:800;font-size:1.2rem;letter-spacing:-.03em}
+.logo svg{width:24px;height:24px;flex:none}
+.logo .sub{font-family:var(--sans);font-weight:500;color:var(--muted);letter-spacing:0;font-size:1rem}
+.pill{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.88rem;font-weight:500;background:var(--paper);text-decoration:none;cursor:pointer}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:10px;padding:12px 18px;font-weight:600;font-size:.95rem;cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn-go{background:var(--go);color:var(--go-ink)}
+.btn-go:hover{filter:brightness(.96)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-line{background:var(--paper);border:1px solid var(--line);color:var(--ink)}
+.btn-sm{padding:8px 14px;font-size:.88rem;border-radius:9px}
+.btn:disabled{opacity:.55;cursor:default}
+
+main{padding-block:0 0}
+[hidden]{display:none!important}
+.band{padding-block:56px}
+.band.tight{padding-block:36px}
+.stack{display:grid;gap:18px}
+
+/* checklist */
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.checks li{display:grid;grid-template-columns:22px 1fr;gap:10px;padding:12px 0;border-top:1px solid var(--line);color:var(--ink-2)}
+.checks li:last-child{border-bottom:1px solid var(--line)}
+.checks li::before{content:"";width:18px;height:18px;margin-top:3px;background:no-repeat center/18px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M4 10.5l4 4 8-9' fill='none' stroke='%2300873c' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+
+/* post-its */
+.note{font-family:var(--sans);font-weight:600;font-size:.86rem;line-height:1.25;padding:8px 12px;box-shadow:0 2px 0 rgba(0,0,0,.06),0 6px 14px rgba(0,0,0,.08);transform:rotate(var(--r,-2deg));display:inline-block;color:var(--go-ink)}
+.n-y{background:var(--note-y)} .n-p{background:var(--note-p)} .n-m{background:var(--note-m)} .n-b{background:var(--note-b)}
+
+/* ===== INÍCIO ===== */
+.hero{padding-block:44px 28px;display:grid;gap:18px;max-width:760px}
+.signup{display:grid;gap:12px;max-width:560px}
+.urlrow{display:grid;grid-template-columns:1fr auto;gap:10px}
+.field{width:100%;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--paper);font-size:.98rem}
+.field:focus{outline:none;border-color:var(--go);box-shadow:0 0 0 3px rgba(0,166,81,.15)}
+.selrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.selrow select{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--paper)}
+.or{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;color:var(--muted);font-size:.8rem}
+.or::before,.or::after{content:"";height:1px;background:var(--line)}
+.google{display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line);border-radius:10px;padding:10px;background:var(--paper);font-size:.9rem;font-weight:500;cursor:pointer;width:100%}
+.progress{list-style:none;margin:0;padding:12px 14px;display:grid;gap:4px;font-family:var(--mono);font-size:.8rem;background:var(--field);border-radius:10px}
+.progress li{color:var(--muted)}
+.progress li.done{color:var(--ink)}
+.progress li.done::before{content:"✓ ";color:var(--go-text)}
+.progress li.now::before{content:"→ ";color:var(--ink)}
+
+.strip{background:var(--go);border-radius:22px;padding:22px}
+.strip-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px;position:relative}
+.shot{background:var(--paper);border-radius:12px;padding:8px;position:relative;display:grid;gap:8px;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.shot .scr{aspect-ratio:3/4;border-radius:8px;background:var(--field);overflow:hidden;display:grid;align-content:start;gap:6px;padding:10px}
+.shot .cap{color:var(--ink-2)}
+.shot .note{position:absolute;right:-10px;bottom:38px;max-width:150px}
+.arrow{position:absolute;top:42%;font-size:1.5rem;color:var(--go-ink);font-weight:700}
+.strip-cap{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin-top:12px}
+.mock-h{font-family:var(--display);font-weight:800;font-size:.95rem;line-height:1.05;letter-spacing:-.02em;color:var(--ink)}
+.mock-l{height:7px;border-radius:4px;background:#d9ddd0}
+.mock-btn{height:22px;border-radius:6px;background:#f59e0b}
+.mock-wa{height:22px;border-radius:999px;background:var(--go)}
+.mock-dark{background:#2b2f27;color:#fff;border-radius:6px;padding:8px;font-family:var(--display);font-weight:800;font-size:.85rem;line-height:1.05}
+
+.pains{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.pain{background:#eeecea;border-radius:16px;padding:16px;display:grid;gap:12px;align-content:start}
+.pain .art{background:var(--paper);border-radius:10px;height:150px;position:relative;overflow:hidden;padding:12px}
+.pain h3{font-size:1.25rem}
+.hand{font-family:var(--hand);color:var(--red);font-size:1.25rem;font-weight:700}
+
+.split{display:grid;grid-template-columns:5fr 7fr;gap:40px;align-items:start}
+.split > *{min-width:0}
+.panel{background:var(--field);border-radius:20px;padding:20px}
+.study-head{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
+.thumbs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.thumb{background:var(--paper);border-radius:8px;padding:6px;display:grid;gap:6px}
+.thumb .scr{aspect-ratio:3/4;border-radius:6px;background:var(--field);padding:6px;display:grid;gap:4px;align-content:start}
+.thumb b{font-size:.75rem}
+.thumb.unseen .scr{display:grid;place-items:center;font-size:.72rem;color:var(--muted);font-weight:600}
+.move{background:var(--paper);border-radius:12px;padding:14px;display:grid;gap:8px;margin-top:12px}
+.move b{font-family:var(--display);font-size:1.1rem;letter-spacing:-.02em;line-height:1.2}
+.days{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-top:6px}
+.days span{font-family:var(--mono);font-size:.68rem;color:var(--muted);text-align:center}
+.days i{display:block;height:14px;border-radius:3px;background:var(--note-y);margin:0 auto 4px;width:70%}
+
+.lib{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.card-l{display:grid;gap:6px;align-content:start;text-align:left;background:none;border:0;padding:0;cursor:pointer}
+.card-l .scr{aspect-ratio:4/3;border-radius:8px;background:var(--paper);border:1px solid var(--line);padding:8px;display:grid;gap:5px;align-content:start;position:relative}
+.card-l b{font-family:var(--display);font-weight:800;letter-spacing:-.02em;font-size:1rem}
+.card-l p{font-size:.86rem;color:var(--ink-2)}
+.card-l .meta{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--go-text)}
+.card-l .lock{font-size:.78rem;color:var(--muted)}
+.card-l .grade{position:absolute;top:6px;right:6px;background:var(--go);color:var(--go-ink);font-family:var(--mono);font-size:.66rem;padding:2px 6px;border-radius:999px}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.filters button{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:6px 12px;font-size:.85rem;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+.steps4{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.steps4 .s{display:flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:.85rem;font-weight:600;background:var(--paper)}
+.steps4 .s i{font-style:normal;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:var(--field);font-size:.72rem;font-family:var(--mono)}
+.steps4 .s.on{background:var(--go);border-color:var(--go)}
+.steps4 .s.on i{background:var(--paper)}
+
+table.vs{width:100%;border-collapse:collapse;font-size:.92rem}
+table.vs th{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:10px 12px 10px 0;border-bottom:2px solid var(--ink);font-weight:500}
+table.vs td{padding:16px 12px 16px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-2)}
+table.vs td:first-child{font-family:var(--display);font-weight:800;letter-spacing:-.03em;font-size:1.2rem;color:var(--ink)}
+table.vs td.yes{color:var(--ink);font-weight:600}
+table.vs td.yes::before{content:"✓ ";color:var(--go-text)}
+.tablewrap{overflow-x:auto}
+
+details.faq{border-top:1px solid var(--line);max-width:860px}
+details.faq:last-of-type{border-bottom:1px solid var(--line)}
+details.faq summary{list-style:none;display:flex;justify-content:space-between;gap:10px;padding:14px 0;font-weight:600;cursor:pointer}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";color:var(--go-text);font-size:1.2rem;line-height:1}
+details.faq[open] summary::after{content:"–"}
+details.faq p{padding:0 0 16px;color:var(--ink-2);max-width:var(--col)}
+
+footer.foot{background:var(--night);color:#cfd6c6;padding-block:40px;font-size:.88rem}
+footer.foot .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer.foot b{color:#fff;font-family:var(--display);font-weight:800;letter-spacing:-.03em;font-size:1.1rem}
+
+/* ===== LAUDO ===== */
+.app{border:1px solid var(--line);border-radius:16px;background:var(--paper);box-shadow:0 10px 30px rgba(20,24,15,.06);overflow:hidden}
+.app-bar{display:flex;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line);align-items:center}
+.app-bar i{width:9px;height:9px;border-radius:50%;background:#d6dacd;display:block}
+.app-bar span{margin-left:8px;font-size:.8rem;color:var(--muted)}
+.app-body{padding:18px;display:grid;gap:16px}
+.summary{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center}
+.summary > *{min-width:0}
+.score{font-family:var(--display);font-weight:800;font-size:3.4rem;letter-spacing:-.05em;line-height:.9}
+.score small{font-size:1rem;color:var(--muted);letter-spacing:0;font-family:var(--sans);font-weight:500}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{display:inline-flex;gap:6px;align-items:center;background:var(--field);border-radius:6px;padding:3px 8px;font-size:.8rem;font-weight:600}
+.chip.g{background:#dcf5e6;color:var(--go-text)}
+.chip.r{background:var(--red-wash);color:var(--red)}
+.chip.y{background:#fff3c4;color:#7a5a00}
+.sys{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.sys > div{border:1px solid var(--line);border-radius:10px;padding:10px;display:grid;gap:4px}
+.sys b{font-size:.85rem}
+.sys .bar{height:6px;border-radius:3px;background:var(--field);overflow:hidden}
+.sys .bar span{display:block;height:100%}
+.sys em{font-style:normal;font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.lands{display:grid;grid-template-columns:240px 1fr;gap:22px;align-items:start}
+.lands > *{min-width:0}
+.phone{border:8px solid #1c1f1a;border-radius:28px;background:var(--paper);aspect-ratio:9/18;max-width:240px;width:100%;overflow:hidden;display:grid;grid-template-rows:auto 1fr;}
+.phone .nav{height:26px;background:#f1f2ee;border-bottom:1px solid var(--line)}
+.phone .pg{padding:10px;display:grid;gap:7px;align-content:start}
+.leaks{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:lk}
+.leaks li{border-top:1px solid var(--line);padding:14px 0;display:grid;grid-template-columns:28px 1fr auto;gap:12px;counter-increment:lk}
+.leaks li > *{min-width:0}
+.leaks li::before{content:counter(lk);width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:var(--mono);font-size:.75rem}
+.leaks h4{margin-bottom:4px}
+.leaks .ev{font-size:.88rem;color:var(--ink-2)}
+.leaks .rx{font-size:.88rem;margin-top:6px}
+.leaks .rx b{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--go-text);margin-right:6px}
+.leaks .cost{font-family:var(--mono);font-size:.82rem;white-space:nowrap;text-align:right}
+.money{display:grid;grid-template-columns:1fr 1fr;gap:20px;background:var(--field);border-radius:14px;padding:16px}
+.money > *{min-width:0}
+.big{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,4.5vw,3rem);letter-spacing:-.04em;line-height:1;color:var(--red)}
+.rows{display:grid;gap:4px;font-size:.88rem}
+.rows div{display:flex;justify-content:space-between;gap:10px}
+.rows div span:last-child{white-space:nowrap}
+.sl{display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:center;font-size:.86rem}
+.sl output{font-family:var(--mono);font-size:.82rem}
+.sl input{grid-column:1/-1;width:100%;accent-color:var(--go)}
+.sliders{display:grid;gap:10px}
+.next{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.next > div{border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:10px;align-content:start}
+
+/* ===== BOARD ===== */
+.boardtop{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;padding-block:14px;border-bottom:1px solid var(--line)}
+.boardbg{background:#f4f4ef;padding-block:22px 56px}
+.fcards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.fcard{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:8px;align-content:start}
+.fcard[aria-current="true"]{border:2px solid var(--go);box-shadow:0 6px 18px rgba(0,166,81,.12)}
+.tagp{justify-self:start;font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:3px 9px;border:1px solid var(--line);color:var(--ink-2)}
+.tagp.rec{background:var(--go);border-color:var(--go);color:var(--go-ink)}
+.fcard .q{color:var(--ink-2);font-size:.9rem}
+.fcard .fl{color:var(--muted);font-size:.82rem}
+.fcard .cp{font-size:.86rem}
+.fcard .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;align-items:center}
+.board3{display:grid;grid-template-columns:200px 1fr 250px;gap:18px;margin-top:22px;align-items:start}
+.board3 > *{min-width:0}
+.levers{display:grid;gap:10px}
+.lever{background:var(--note-y);padding:10px 12px;font-size:.85rem;display:grid;gap:3px}
+.lever b{font-size:.86rem}
+.center{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px;display:grid;gap:14px}
+.flow{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;align-items:stretch}
+.flow .st{flex:none;width:118px;background:var(--note-y);padding:8px;font-size:.8rem;display:grid;gap:6px;align-content:start;font-weight:600}
+.flow .st.first{background:var(--paper);border:1px solid var(--line)}
+.flow .st.last{background:var(--note-p)}
+.flow .fr{font-size:.7rem;font-weight:500;background:rgba(255,255,255,.7);padding:2px 6px;border-radius:4px;justify-self:start}
+.flow .ar{flex:none;align-self:center;color:var(--muted)}
+.side{display:grid;gap:10px}
+.status{border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:10px;font-size:.85rem;display:grid;grid-template-columns:10px 1fr;gap:8px}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--go);margin-top:6px}
+.status.busy i{background:#9aa293}
+.pics{background:var(--note-b);border-radius:6px;padding:12px;display:grid;gap:8px;font-size:.86rem}
+.coming{border:1px dashed var(--line);border-radius:10px;padding:10px;font-size:.84rem;color:var(--muted);background:var(--paper)}
+.decide{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px;display:grid;gap:12px;margin-top:18px}
+.opts{display:grid;gap:8px}
+.opt{display:grid;grid-template-columns:20px 1fr;gap:10px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer}
+.opt:has(input:checked){border-color:var(--go);background:#f4fbf6}
+.opt input{accent-color:var(--go);margin-top:4px}
+.opt .why{font-size:.84rem;color:var(--muted)}
+.refine{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.looks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.look{border:1px solid var(--line);border-radius:12px;padding:0;background:var(--paper);overflow:hidden;text-align:left;cursor:pointer}
+.look[aria-pressed="true"]{border:2px solid var(--go)}
+.look .sw{height:64px;display:grid;grid-template-columns:2fr 1fr 1fr}
+.look .tx{padding:10px;font-size:.82rem;color:var(--ink-2)}
+.look .tx b{display:block;color:var(--ink);font-size:.9rem}
+
+/* ===== CLIENTES ===== */
+.cl-hero{display:grid;grid-template-columns:1fr 1.1fr;gap:36px;align-items:center;padding-block:40px}
+.cl-hero > *{min-width:0}
+.pipes{display:flex;gap:6px;flex-wrap:wrap}
+.pipes span{display:inline-flex;gap:6px;align-items:center;border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:.78rem;font-weight:600}
+.pipes span.done::before{content:"✓";color:#fff;background:var(--go);border-radius:50%;width:14px;height:14px;display:grid;place-items:center;font-size:.6rem}
+.pipes span.cur{background:var(--ink);color:#fff;border-color:var(--ink)}
+.yourturn{background:var(--hl);border-radius:8px;padding:8px 10px;font-size:.84rem}
+.yourturn b{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;margin-right:6px}
+.suggest{border:1.5px solid var(--ink);border-radius:10px;padding:10px;font-size:.86rem;display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.kan{display:grid;grid-template-columns:repeat(4,minmax(150px,1fr));gap:8px;overflow-x:auto}
+.kan .col{display:grid;gap:6px;align-content:start}
+.kan .col .cap{border-bottom:1px solid var(--line);padding-bottom:4px}
+.pc{border:1px solid var(--line);border-radius:8px;padding:8px;font-size:.78rem;display:grid;gap:4px}
+.pc b{font-size:.82rem}
+.pc .ch{display:flex;gap:4px;flex-wrap:wrap}
+.pc .ch span{background:var(--field);border-radius:4px;padding:1px 5px;font-size:.7rem}
+.pc .ch span.g{background:#dcf5e6;color:var(--go-text)}
+.pc .lk{background:var(--red-wash);color:var(--red);border-radius:4px;padding:2px 5px;font-size:.72rem}
+.night{background:var(--night);color:#fff;padding-block:40px}
+.night h3{color:#fff;font-size:1.5rem}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px}
+.stats div{border:1px solid #3a4234;border-radius:12px;padding:14px;display:grid;gap:4px}
+.stats b{font-family:var(--display);font-weight:800;font-size:2.2rem;letter-spacing:-.04em;line-height:1}
+.stats b.y{color:var(--hl)}
+.stats span{font-size:.85rem;color:#cfd6c6}
+.six{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+.six > div{display:grid;gap:8px;align-content:start}
+.six .n{width:22px;height:22px;border-radius:50%;background:var(--go);color:var(--go-ink);display:inline-grid;place-items:center;font-size:.72rem;font-family:var(--mono);margin-right:6px}
+.six h3{display:flex;align-items:center}
+.six p{color:var(--ink-2);font-size:.92rem}
+
+/* ===== PLANOS ===== */
+.pricing{background:var(--night);color:#fff;padding-block:56px}
+.pricing h2{color:#fff;text-align:center}
+.toggle{display:flex;justify-content:center;gap:4px;margin:18px auto 0;background:#262c20;border-radius:999px;padding:4px;width:max-content;max-width:100%}
+.toggle button{border:0;background:transparent;color:#cfd6c6;padding:6px 14px;border-radius:999px;cursor:pointer;font-size:.88rem}
+.toggle button[aria-pressed="true"]{background:#fff;color:var(--ink)}
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px;align-items:start}
+.plan{background:var(--paper);color:var(--ink);border-radius:18px;padding:20px;display:grid;gap:12px}
+.plan.main{outline:3px solid var(--go)}
+.plan .price{font-family:var(--display);font-weight:800;font-size:2rem;letter-spacing:-.04em;line-height:1}
+.plan .checks li{font-size:.9rem;padding:9px 0}
+.plan .sub{font-size:.85rem;color:var(--muted)}
+.extra{text-align:center;color:#cfd6c6;font-size:.9rem;margin-top:18px;max-width:640px;margin-inline:auto}
+.extra a{color:var(--note-m)}
+
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(18px + env(safe-area-inset-bottom,0px));background:var(--ink);color:#fff;padding:10px 16px;border-radius:10px;font-size:.9rem;z-index:30;max-width:calc(100% - 32px)}
+
+@media (max-width:960px){
+  .board3{grid-template-columns:1fr}
+  .levers{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .fcards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .lib{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .split,.cl-hero{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .strip-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  .arrow{display:none}
+  .pains,.six,.plans,.looks{grid-template-columns:1fr}
+  .sys{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .lands,.money,.next{grid-template-columns:1fr}
+  .phone{max-width:200px}
+  .summary{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .thumbs{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:520px){
+  .fcards,.lib{grid-template-columns:1fr}
+  .levers{grid-template-columns:1fr}
+  .urlrow{grid-template-columns:1fr}
+  .leaks li{grid-template-columns:28px 1fr}
+  .leaks .cost{grid-column:2;text-align:left}
+  .shot .note{right:-4px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="proto"><div class="wrap">
+  <b>PROTÓTIPO</b><span>negócios e números são exemplos fictícios ·</span>
+  <a href="#inicio">Início</a><a href="#laudo">Check-up</a><a href="#board">Board</a><a href="#biblioteca">Biblioteca</a><a href="#clientes">Clientes</a><a href="#planos">Pro</a>
+</div></div>
+
+<header class="top"><div class="wrap">
+  <a class="logo" href="#inicio" aria-label="doutorvendas, início">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#00a651"/><path d="M10 5.5h4v4.5h4.5v4H14v4.5h-4V14H5.5v-4H10z" fill="#0b0d0a"/></svg>
+    <span>doutorvendas</span>
+  </a>
+  <a class="pill" href="#planos">Entrar</a>
+</div></header>
+
+<main>
+
+<!-- ================= INÍCIO ================= -->
+<section class="view" id="v-inicio">
+  <div class="wrap">
+    <div class="hero">
+      <span class="eyebrow">Check-up grátis · um funil novo desmontado toda semana</span>
+      <h1>Descubra onde seu funil <span class="mark">perde venda</span> e quanto isso custa.</h1>
+      <p class="lede">Cole o link do seu site. O DoutorVendas faz um check-up de 12 pontos, do anúncio ao pós-venda, e devolve um laudo com até 8 problemas, os piores primeiro, cada um com a receita e o valor em reais. Serve para loja, marca, serviço, clínica ou curso.</p>
+      <form class="signup" id="form-revisao" novalidate>
+        <div class="urlrow">
+          <label class="sr" for="f-site" hidden>Site ou loja</label>
+          <input class="field" id="f-site" value="casadosonocampinas.com.br" autocomplete="off" aria-label="Site ou loja">
+          <button class="btn btn-go" type="submit" id="b-revisar">Fazer meu check-up</button>
+        </div>
+        <div class="selrow">
+          <label class="small" for="f-motor">Meu negócio é</label>
+          <select id="f-motor">
+            <option value="loja">Loja física</option><option value="marca">Marca de produto</option><option value="servico">Serviço local</option><option value="clinica">Clínica ou consultório</option><option value="curso">Curso ou consultoria</option>
+          </select>
+        </div>
+        <ul class="progress" id="prog" hidden>
+          <li>Fotografando a página no celular e no computador</li>
+          <li>Lendo os anúncios ativos e para onde eles levam</li>
+          <li>Conferindo nota, avaliações e prova</li>
+          <li>Contando os toques até o WhatsApp e o pagamento</li>
+          <li>Procurando captura de contato e pós-venda</li>
+          <li>Calculando o valor em reais</li>
+        </ul>
+        <div class="or">ou</div>
+        <button class="google" type="button" data-toast="No produto real, entra com a conta Google."><svg width="16" height="16" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Continuar com Google</button>
+        <p class="small" id="hint">Grátis · a nota aparece na hora, o laudo completo vai por e-mail · funciona com Claude, ChatGPT e outros agentes.<br>No protótipo, o laudo mostra o exemplo do tipo escolhido; o site digitado ainda não é lido.</p>
+      </form>
+    </div>
+
+    <div class="strip" aria-label="Funil da semana">
+      <div class="strip-row">
+        <div class="shot"><div class="scr"><div class="mock-dark">Durma 30 noites. Não gostou, a gente busca.</div><div class="mock-l" style="width:80%"></div><div class="mock-l" style="width:60%"></div><div class="mock-wa" style="width:70%"></div></div><span class="cap">1 anúncio · 214 dias no ar</span><span class="note n-b" style="--r:-3deg">A promessa é o risco zero</span></div>
+        <span class="arrow" style="left:calc(25% - 22px)">→</span>
+        <div class="shot"><div class="scr"><div class="mock-h">Como você dorme?</div><div class="mock-l"></div><div class="mock-l" style="width:70%"></div><div class="mock-l" style="width:85%"></div><div class="mock-btn"></div></div><span class="cap">2 quiz</span><span class="note n-p" style="--r:2deg">Só 4 perguntas</span></div>
+        <span class="arrow" style="left:calc(50% - 18px)">→</span>
+        <div class="shot"><div class="scr"><div class="mock-h">Seu modelo é o Firme Médio.</div><div class="mock-l"></div><div class="mock-l" style="width:60%"></div><div class="mock-wa"></div></div><span class="cap">3 WhatsApp</span><span class="note n-m" style="--r:-2deg">Respondeu em 2 min</span></div>
+        <span class="arrow" style="left:calc(75% - 14px)">→</span>
+        <div class="shot"><div class="scr"><div class="mock-h" style="font-size:.8rem">Oi, Ana! Como foram as primeiras noites?</div><div class="mock-l" style="width:50%"></div><div class="mock-l" style="width:75%"></div></div><span class="cap">4 sete dias depois</span><span class="note n-y" style="--r:3deg">A oferta só vem no dia 21</span></div>
+      </div>
+    </div>
+    <p class="strip-cap">Esta semana: marca de colchões (exemplo) · primeiro anúncio 01/04/2026 · percorrido 20–27/10/2026</p>
+  </div>
+
+  <div class="wrap band">
+    <div class="pains">
+      <div class="pain"><div class="art"><span class="cap">Anúncios · últimos 14 dias</span><div style="display:flex;gap:5px;align-items:end;height:70px;margin-top:10px">
+        <i style="flex:1;height:35%;background:#d9ddd0"></i><i style="flex:1;height:50%;background:#d9ddd0"></i><i style="flex:1;height:45%;background:#d9ddd0"></i><i style="flex:1;height:70%;background:#d9ddd0"></i><i style="flex:1;height:65%;background:#d9ddd0"></i><i style="flex:1;height:85%;background:#d9ddd0"></i><i style="flex:1;height:90%;background:#d9ddd0"></i></div>
+        <span class="hand" style="position:absolute;left:14px;top:46px">3 vendas</span></div><h3>Você paga o Google e o Meta todo mês e não sabe onde o cliente desiste.</h3></div>
+      <div class="pain"><div class="art"><div class="mock-wa" style="width:60%"></div><p class="small" style="margin-top:10px">Mensagem enviada 10:12</p><p class="small">Resposta 10:59</p><span class="hand" style="position:absolute;right:14px;bottom:14px">47 min?</span></div><h3>O cliente chama no WhatsApp e ninguém responde a tempo.</h3></div>
+      <div class="pain"><div class="art"><p class="small">Pedido entregue em 22/10</p><p class="small">E-mail da nota fiscal</p><p class="small" style="opacity:.4">…</p><span class="hand" style="position:absolute;right:14px;bottom:14px">e depois?</span></div><h3>Ninguém fala com quem já comprou. A segunda compra não acontece.</h3></div>
+    </div>
+  </div>
+
+  <div class="wrap band" style="padding-top:0">
+    <h2 style="margin-bottom:22px">Dentro da sua <span class="mark">conta grátis</span></h2>
+    <div class="split">
+      <div class="stack">
+        <h2 style="font-size:1.8rem">O funil da semana, percorrido inteiro</h2>
+        <ul class="checks">
+          <li>Cada etapa que vimos, do anúncio à mensagem de 7 dias depois, em ordem: as páginas, o WhatsApp e o pós-venda.</li>
+          <li>A jogada de cada etapa, em palavras simples, para você ver por que ela está ali.</li>
+          <li>Leve para o seu agente: o funil inteiro vira um texto pronto para o Claude ou o ChatGPT montar o seu.</li>
+        </ul>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button class="btn btn-line btn-sm" type="button" data-toast="Prompt de exemplo copiado.">Levar pro meu agente</button><span class="note n-y" style="--r:-2deg">Grátis: leve este funil para o seu agente →</span></div>
+      </div>
+      <div class="panel">
+        <div class="study-head"><b style="font-family:var(--display);letter-spacing:-.02em">Marca de colchões · 30 noites</b><span class="cap">7 etapas · 6 vistas</span></div>
+        <div class="thumbs" style="margin-top:10px">
+          <div class="thumb"><div class="scr"><div class="mock-dark" style="font-size:.6rem">Durma 30 noites</div><div class="mock-l"></div></div><b>1 Anúncio</b></div>
+          <div class="thumb"><div class="scr"><div class="mock-h" style="font-size:.6rem">Como você dorme?</div><div class="mock-l"></div><div class="mock-btn" style="height:12px"></div></div><b>2 Quiz</b></div>
+          <div class="thumb"><div class="scr"><div class="mock-wa" style="height:12px"></div><div class="mock-l"></div></div><b>3 WhatsApp</b></div>
+          <div class="thumb unseen"><div class="scr">Ainda não visto</div><b>7 Troca</b></div>
+        </div>
+        <div class="move"><span class="cap">3 · o WhatsApp</span><span class="eyebrow">A jogada</span><b>Responder em 2 minutos com o nome do modelo que o quiz indicou. Quem chega já sente que foi atendido, não que vai começar do zero.</b></div>
+        <div class="move"><span class="cap">5 mensagens em 21 dias</span><div class="days"><span><i></i>0</span><span><i></i>1</span><span><i style="opacity:0"></i>3</span><span><i></i>7</span><span><i style="opacity:0"></i>10</span><span><i></i>14</span><span><i style="opacity:0"></i>18</span><span><i></i>21</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap band" style="padding-top:0">
+    <div class="split" style="grid-template-columns:7fr 5fr">
+      <div class="panel"><div class="lib" id="lib-home"></div></div>
+      <div class="stack">
+        <h2>A biblioteca, por tipo de negócio</h2>
+        <ul class="checks">
+          <li>Páginas reais desmontadas por seção: o que o cliente precisa acreditar em cada uma e a jogada que leva até lá.</li>
+          <li>Por tipo: loja física, marca de produto, serviço local, clínica e curso. E funis inteiros, seguidos dos anúncios.</li>
+          <li>Grátis: a primeira etapa e a jogada de cada funil. Toda página, toda etapa, com o Pro.</li>
+        </ul>
+        <p class="cap">Páginas · seções · funis inteiros · um funil novo toda semana</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap band" style="padding-top:0">
+    <div class="split">
+      <div class="stack">
+        <h2>Novo toda semana</h2>
+        <ul class="checks">
+          <li>Achamos anunciantes brasileiros pelos anúncios que eles mantêm no ar há mais de 60 dias, e fotografamos as páginas no celular e no computador.</li>
+          <li>Cada página passa pelo check-up de 12 pontos. Só entram as que tiram 11 ou 12.</li>
+          <li>Toda semana, um funil é percorrido do anúncio até a mensagem pós-venda e aberto inteiro na sua conta.</li>
+        </ul>
+      </div>
+      <div class="stack">
+        <div class="steps4"><span class="s"><i>1</i>Anúncio no ar há 60+ dias</span><span class="small">→</span><span class="s"><i>2</i>Páginas fotografadas</span><span class="small">→</span><span class="s"><i>3</i>Check-up de 12 pontos</span><span class="small">→</span><span class="s on"><i>4</i>Entram só 11 ou 12</span></div>
+        <div class="panel" style="display:grid;gap:12px"><div class="study-head"><h3>Entrou esta semana</h3><span class="cap">acabou de entrar</span></div><div id="added"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap band" style="padding-top:0">
+    <span class="eyebrow">Com o DoutorVendas Pro · gravado do board em um teste</span>
+    <h2 style="margin:10px 0 12px">Depois, seu agente <span class="mark">monta o seu</span>.</h2>
+    <p class="lede">Um board abre com quatro portas: montar um funil, melhorar uma página, fazer o check-up do site, reescrever o texto. Ele recomenda uma e diz por quê. Para um funil, coloca três ou quatro opções no board, cada uma baseada em funis reais. Você decide o funil, a promessa e o visual. Ele escreve as páginas, as mensagens de WhatsApp e a régua pós-venda, testa no celular e no computador, e põe no ar.</p>
+    <div class="pains" style="margin-top:22px">
+      <a class="pain" href="#board" style="text-decoration:none;background:var(--field)"><div class="art" style="height:120px"><div class="tagp rec">Recomendado</div><div class="mock-l" style="margin-top:10px;width:80%"></div><div class="mock-l" style="margin-top:6px;width:60%"></div></div><span class="note n-y" style="--r:-2deg;justify-self:start">Você escolhe a promessa, e ele diz por quê</span></a>
+      <a class="pain" href="#board" style="text-decoration:none;background:var(--field)"><div class="art" style="height:120px;display:grid;grid-template-columns:2fr 1fr 1fr;padding:0"><i style="background:#2f4a5c"></i><i style="background:#e9e4d8"></i><i style="background:#d98c3a"></i></div><span class="note n-p" style="--r:2deg;justify-self:start">Você escolhe o visual a partir de páginas reais</span></a>
+      <a class="pain" href="#board" style="text-decoration:none;background:var(--field)"><div class="art" style="height:120px"><div class="mock-dark">Deite em 3 colchões antes de escolher o seu.</div><div class="mock-wa" style="margin-top:8px;width:60%"></div></div><span class="note n-m" style="--r:-1.5deg;justify-self:start">Ele monta as páginas, no celular e no computador</span></a>
+    </div>
+  </div>
+
+  <div class="wrap band" style="padding-top:0">
+    <h2 style="margin-bottom:16px">Em vez de…</h2>
+    <div class="tablewrap"><table class="vs">
+      <thead><tr><th>Em vez de</th><th>O que falta</th><th>Aqui</th></tr></thead>
+      <tbody>
+        <tr><td>Uma agência</td><td>Constrói no tempo e no preço dela. Landing de R$ 4 a 15 mil, assessoria de R$ 3 a 5 mil por mês.</td><td class="yes">Seu agente constrói com você, da mesma biblioteca, quando você quiser.</td></tr>
+        <tr><td>Seu agente sozinho</td><td>Escreve uma página bonita do que ele acha que vende.</td><td class="yes">Constrói a partir de funis reais que estavam no ar quando foram fotografados.</td></tr>
+        <tr><td>Um curso de marketing</td><td>Ensina a teoria e deixa o trabalho com você.</td><td class="yes">O check-up mostra o problema do seu negócio, com a receita pronta.</td></tr>
+        <tr><td>Um modelo pronto</td><td>Um layout sem argumento dentro.</td><td class="yes">O argumento vem de um funil real do seu tipo de negócio.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="wrap band" style="padding-top:0">
+    <h2 style="margin-bottom:12px">Perguntas sobre a conta grátis</h2>
+    <details class="faq"><summary>O que vem na conta grátis?</summary><p>Um check-up por mês com laudo completo, o funil da semana inteiro e a primeira etapa e a jogada de cada funil da biblioteca.</p></details>
+    <details class="faq"><summary>Preciso saber programar?</summary><p>Não. O board roda no navegador. Quem já usa Claude Code, Codex ou Cursor também pode ligar o DoutorVendas no próprio agente.</p></details>
+    <details class="faq"><summary>Custa alguma coisa?</summary><p>Não. Sem cartão. O Pro abre a biblioteca inteira e o board que monta o seu funil.</p></details>
+    <details class="faq"><summary>Vocês copiam a página dos outros?</summary><p>Não. Usamos as jogadas, nunca os textos, marcas, fotos ou depoimentos de ninguém.</p></details>
+  </div>
+</section>
+
+<!-- ================= LAUDO ================= -->
+<section class="view" id="v-laudo" hidden>
+  <div class="wrap band tight">
+    <div class="stack" style="max-width:860px">
+      <div class="selrow"><span class="eyebrow">Check-up · exemplo de</span><select id="l-motor" aria-label="Tipo de negócio do exemplo"><option value="loja">Loja física</option><option value="marca">Marca de produto</option><option value="servico">Serviço local</option><option value="clinica">Clínica ou consultório</option><option value="curso">Curso ou consultoria</option></select></div>
+      <h1 id="l-nome"></h1>
+      <p class="lede" id="l-desc"></p>
+      <p class="small" id="l-site" hidden></p>
+    </div>
+  </div>
+  <div class="wrap" style="padding-bottom:56px">
+    <div class="app">
+      <div class="app-bar"><i></i><i></i><i></i><span id="l-bar"></span></div>
+      <div class="app-body">
+        <div class="summary">
+          <div class="score num" id="l-nota"></div>
+          <div class="stack" style="gap:8px"><div class="chips" id="l-meta"></div><p class="small">Nota de 0 a 12. Na biblioteca só entram 11 ou 12. Check-up feito em 01/11/2026.</p></div>
+          <span class="note n-y" style="--r:2deg">8 problemas, os piores primeiro</span>
+        </div>
+        <div class="sys" id="l-sys"></div>
+
+        <div class="money">
+          <div class="stack" style="gap:8px;align-content:start">
+            <span class="eyebrow">Venda que se perde por mês · estimativa</span>
+            <div class="big num" id="vz-total"></div>
+            <p class="small num" id="vz-faixa"></p>
+            <div class="rows num"><div><span id="vz-a-l"></span><span id="vz-a"></span></div><div><span id="vz-b-l"></span><span id="vz-b"></span></div></div>
+          </div>
+          <div class="sliders">
+            <div class="sl"><label for="s-gasto">Gasto em anúncios por mês</label><output id="o-gasto"></output><input type="range" id="s-gasto" min="1000" max="30000" step="500" value="6000"></div>
+            <div class="sl"><label for="s-cpc">Custo por clique</label><output id="o-cpc"></output><input type="range" id="s-cpc" min="0.5" max="6" step="0.1" value="1.6"></div>
+            <div class="sl"><label for="s-ticket">Ticket médio</label><output id="o-ticket"></output><input type="range" id="s-ticket" min="50" max="6000" step="10" value="2200"></div>
+            <div class="sl"><label for="s-fecha" id="s-fecha-l"></label><output id="o-fecha"></output><input type="range" id="s-fecha" min="1" max="6" step="1" value="2"></div>
+          </div>
+        </div>
+
+        <div class="lands">
+          <div class="stack" style="gap:8px;justify-items:center">
+            <span class="cap">Onde o anúncio cai, no celular</span>
+            <div class="phone" aria-hidden="true"><div class="nav"></div><div class="pg" id="l-phone"></div></div>
+            <span class="cap" style="color:var(--red)">Hoje</span>
+          </div>
+          <ol class="leaks" id="lista-vaz"></ol>
+        </div>
+
+        <div class="next">
+          <div><span class="eyebrow">Corrigir eu mesmo</span><h3>Abrir no board</h3><p class="small">Seu agente abre o projeto com este laudo e monta a página, o WhatsApp e a régua pós-venda com você.</p><a class="btn btn-go" href="#board">Abrir no board · Pro</a></div>
+          <div><span class="eyebrow">Quero que façam por mim</span><h3>Feito pelo Doutor</h3><p class="small">O funil inteiro refeito por nós. Poucas vagas por trimestre.</p><a class="btn btn-ink" href="#planos">Entrar na fila</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BOARD ================= -->
+<section class="view" id="v-board" hidden>
+  <div class="wrap boardtop">
+    <span class="logo" style="font-size:1.1rem">doutorvendas <span class="sub">/ construir</span></span>
+    <span class="small">Projeto: <b style="color:var(--ink)" id="o-proj"></b> · Biblioteca ▾</span>
+  </div>
+  <div class="boardbg"><div class="wrap">
+    <div class="fcards" id="motores"></div>
+    <div class="board3">
+      <div class="stack" style="gap:8px"><span class="cap">Alavancas</span><div class="levers" id="levers"></div></div>
+      <div class="stack" style="gap:18px">
+        <div class="center">
+          <span class="tagp rec">Recomendado</span>
+          <h2 id="c-title" style="font-size:1.7rem"></h2>
+          <p class="small" id="c-quote"></p>
+          <div class="flow" id="postits"></div>
+        </div>
+        <div class="decide">
+          <div class="study-head"><h3>Sua promessa</h3><span class="cap">1 de 5 decisões</span></div>
+          <p class="small">Três escritas para o seu negócio, uma recomendada, cada uma com o porquê.</p>
+          <div class="opts" id="headlines"></div>
+          <div class="refine"><span class="small">Não é bem isso?</span><button class="pill" type="button" data-r="forte">Mais forte</button><button class="pill" type="button" data-r="simples">Palavras mais simples</button><button class="pill" type="button" data-r="dinheiro">Começa pelo dinheiro</button></div>
+          <p class="small">Depois: a coisa grátis · o primeiro passo pago · a prova desta semana · a volta (régua de recompra).</p>
+        </div>
+        <div class="decide">
+          <div class="study-head"><h3>Escolha o visual de que você gosta</h3><span class="cap">até 3 páginas reais</span></div>
+          <div class="looks" id="looks">
+            <button class="look" type="button" aria-pressed="true"><div class="sw"><i style="background:#2f4a5c"></i><i style="background:#e9e4d8"></i><i style="background:#d98c3a"></i></div><div class="tx"><b>Seu site, melhorado</b>Suas cores, letra maior, foto real no topo</div></button>
+            <button class="look" type="button" aria-pressed="false"><div class="sw"><i style="background:#f4efe6"></i><i style="background:#1f1f1f"></i><i style="background:#9bb7a8"></i></div><div class="tx"><b>Vitrine de marca</b>Fundo claro, foto grande, preço discreto</div></button>
+            <button class="look" type="button" aria-pressed="false"><div class="sw"><i style="background:#ffd23f"></i><i style="background:#13294b"></i><i style="background:#ffffff"></i></div><div class="tx"><b>Balcão direto</b>Preço e Pix na primeira tela, WhatsApp grande</div></button>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-go" type="button" id="b-aprovar">Aprovar o plano</button><button class="btn btn-line" type="button" data-toast="Prompt de exemplo copiado.">Levar pro meu agente</button></div>
+        </div>
+      </div>
+      <div class="side">
+        <div class="status" id="agent"><i></i><span>Seu agente está ouvindo: um clique aqui chega nele na hora.</span></div>
+        <div class="pics"><b>Imagens</b><span>Fotos de verdade das suas páginas, em vez de rascunhos. 100 por mês no Pro.</span><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-go btn-sm" type="button" data-toast="Imagens ligadas.">Usar imagens</button><button class="btn btn-sm" style="background:transparent;color:var(--go-text)" type="button">Agora não</button></div></div>
+        <span class="cap">A seguir</span>
+        <div class="coming">Seu plano: o problema, a promessa, a coisa grátis, o primeiro passo pago</div>
+        <div class="coming">O visual</div>
+        <div class="coming">As páginas, o WhatsApp e a régua pós-venda</div>
+        <div class="coming">Checagem: 4 tamanhos de tela, um segundo revisor, toda afirmação com fonte, clique no WhatsApp testado</div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ================= BIBLIOTECA ================= -->
+<section class="view" id="v-biblioteca" hidden>
+  <div class="wrap band tight stack">
+    <span class="eyebrow">Biblioteca · só entram páginas com 11 ou 12</span>
+    <h1>O que está <span class="mark">vendendo</span> no Brasil agora</h1>
+    <p class="lede">Funis, páginas e seções de quem mantém o anúncio no ar há mais de 60 dias. Em cada um, a jogada que faz vender. Usamos as jogadas, nunca os textos, fotos ou marcas.</p>
+    <div class="filters" id="filtros">
+      <button type="button" aria-pressed="true" data-f="todos">Todos</button><button type="button" aria-pressed="false" data-f="marca">Marca de produto</button><button type="button" aria-pressed="false" data-f="loja">Loja física</button><button type="button" aria-pressed="false" data-f="servico">Serviço local</button><button type="button" aria-pressed="false" data-f="clinica">Clínica</button><button type="button" aria-pressed="false" data-f="curso">Curso</button>
+    </div>
+    <div class="lib" id="cat" style="margin-top:8px"></div>
+    <p class="small">Na conta grátis: a primeira etapa e a jogada de cada funil. No Pro: tudo, e seu agente consulta direto.</p>
+  </div>
+</section>
+
+<!-- ================= CLIENTES ================= -->
+<section class="view" id="v-clientes" hidden>
+  <div class="wrap cl-hero">
+    <div class="stack">
+      <span class="eyebrow">Achar clientes · incluído no DoutorVendas Agência</span>
+      <h1>Ache negócios locais com problemas no funil <span class="mark">que você sabe resolver</span>.</h1>
+      <p class="lede">Diga ao seu agente "ache clientes". Ele traz os negócios de qualquer cidade que têm porte para pagar e estão perdendo venda que você pode recuperar. Você chega com o conserto pronto e a oferta feita.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><a class="btn btn-go" href="#planos">Assinar Agência · R$ 297/mês</a></div>
+      <ul class="checks" style="max-width:420px"><li>Só fatos públicos, com a fonte de cada um</li><li>Ninguém é contatado sozinho: você envia da sua caixa</li></ul>
+    </div>
+    <div class="app">
+      <div class="app-bar"><i></i><i></i><i></i></div>
+      <div class="app-body" style="gap:10px">
+        <h3>Óticas · Campinas, SP</h3>
+        <div class="pipes"><span class="done">Achadas 9</span><span class="done">Problemas achados 5</span><span class="cur">Proposta 1</span><span>Enviadas 1</span><span>Responderam 1</span><span>Fechadas 1</span></div>
+        <div class="yourturn"><b>SUA VEZ</b>A proposta da Ótica Guanabara está pronta. Abra, confira e envie do seu e-mail.</div>
+        <div class="suggest"><span><b>Seu agente sugere:</b> achar os problemas das próximas 5. Leva uns minutos e ninguém é contatado.</span><button class="btn btn-go btn-sm" type="button" id="b-propostas">Ver problemas em 5</button></div>
+        <div class="kan" id="kanban"></div>
+        <p class="small">Óticas em Campinas a partir de uma frase. Exemplo fictício.</p>
+      </div>
+    </div>
+  </div>
+  <div class="night"><div class="wrap">
+    <h3>Uma frase: "ache óticas em Campinas que valham uma proposta."</h3>
+    <div class="stats"><div><b>100</b><span>negócios olhados</span></div><div><b>5</b><span>melhores, com os problemas achados</span></div><div><b>1</b><span>proposta pronta para enviar</span></div><div><b class="y">Minutos</b><span>do começo ao fim</span></div></div>
+  </div></div>
+  <div class="wrap band">
+    <div class="six">
+      <div><h3><span class="n">1</span>Ache os bons</h3><p>Diga um tipo de negócio e uma cidade. Seu agente olha até 100 negócios e traz os que valem seu tempo: com nota, avaliações novas, anúncio no ar e porte pelo CNPJ.</p></div>
+      <div><h3><span class="n">2</span>Veja o que está quebrado</h3><p>Um clique e seu agente faz o check-up de 12 pontos de cada um, no celular, e lista os problemas, o pior primeiro, com o quanto cada um custa.</p></div>
+      <div><h3><span class="n">3</span>Leve o conserto pronto</h3><p>Um clique monta uma página na marca deles, marcada como prévia, uma proposta de uma página e o primeiro e-mail, em uns 15 minutos.</p></div>
+      <div><h3><span class="n">4</span>Chegue no dono</h3><p>O sócio-administrador pelo CNPJ e o e-mail de trabalho conferido. Nunca e-mail pessoal ou celular, e nada de WhatsApp frio.</p></div>
+      <div><h3><span class="n">5</span>Venda uma oferta pronta</h3><p>"Sua página no ar em 7 dias e cada conversa contada. 30 dias por nossa conta." Quando ele diz sim, você já sabe o que construir.</p></div>
+      <div><h3><span class="n">6</span>Toque um negócio de serviços</h3><p>Da primeira busca ao cliente fechado e ao trabalho entregue. O board guarda cada um em ordem e diz o próximo passo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PLANOS ================= -->
+<section class="view" id="v-planos" hidden>
+  <div class="wrap band tight stack" style="max-width:860px">
+    <span class="eyebrow">DoutorVendas Pro · para donos e para quem atende donos</span>
+    <h1>Seu agente monta funis que <span class="mark">vendem</span>.</h1>
+    <p class="lede">A biblioteca inteira dentro do seu agente, o board que vai do check-up ao funil no ar, e o achador de clientes para quem presta serviço.</p>
+  </div>
+  <div class="pricing"><div class="wrap">
+    <h2>Escolha seu plano</h2>
+    <div class="toggle" role="group" aria-label="Período"><button type="button" aria-pressed="true" data-p="ano">Anual</button><button type="button" aria-pressed="false" data-p="mes">Mensal</button></div>
+    <div class="plans">
+      <div class="plan"><h3>Grátis</h3><div class="price">R$ 0</div><span class="sub">sem cartão</span><ul class="checks"><li>1 check-up por mês, com laudo</li><li>O funil da semana inteiro</li><li>Primeira etapa de cada funil</li><li>Levar pro meu agente</li></ul><a class="btn btn-line" href="#inicio">Fazer meu check-up</a></div>
+      <div class="plan main"><h3>Pro</h3><div class="price" id="pp">R$ 797 por ano</div><span class="sub" id="ps">economize 32% · menos de R$ 16 por semana</span><ul class="checks"><li>Biblioteca inteira, dentro do seu agente</li><li>Board completo: do check-up ao funil no ar</li><li>WhatsApp e régua pós-venda</li><li>100 imagens por mês</li><li>3 páginas no seu domínio</li><li>Check-up automático todo mês</li></ul><button class="btn btn-go" type="button" data-toast="No produto real, abre o pagamento (Pix ou cartão).">Assinar o Pro</button></div>
+      <div class="plan"><h3>Agência</h3><div class="price">R$ 297 por mês</div><span class="sub">para quem atende donos</span><ul class="checks"><li>Tudo do Pro, para vários clientes</li><li>Achar clientes: 30 buscas e 60 donos por mês</li><li>Proposta com o conserto pronto</li><li>Medição de WhatsApp e ligações</li><li>Relatório mensal de uma página</li><li>300 imagens por mês</li></ul><button class="btn btn-ink" type="button" data-toast="No produto real, abre o pagamento.">Assinar Agência</button></div>
+    </div>
+    <p class="extra">Quer que façamos por você? <a href="#laudo">Feito pelo Doutor</a>: o funil inteiro refeito por nós, de R$ 15 a 30 mil, poucas vagas por trimestre. Buscas e imagens renovam no dia 1º de cada mês.</p>
+  </div></div>
+</section>
+
+</main>
+
+<footer class="foot"><div class="wrap"><b>doutorvendas</b><span>Protótipo · exemplos fictícios · Termos · Privacidade · Remoção</span></div></footer>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+(function(){
+  var views=["inicio","laudo","board","biblioteca","clientes","planos"];
+  function show(){
+    var h=(location.hash||"#inicio").slice(1); if(views.indexOf(h)<0) h="inicio";
+    views.forEach(function(v){document.getElementById("v-"+v).hidden=(v!==h);});
+    document.querySelectorAll(".proto a").forEach(function(a){
+      if(a.getAttribute("href")==="#"+h) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current");
+    });
+    window.scrollTo(0,0);
+  }
+  window.addEventListener("hashchange",show); show();
+
+  var toastEl=document.getElementById("toast"), tt;
+  function toast(msg){toastEl.textContent=msg;toastEl.hidden=false;clearTimeout(tt);tt=setTimeout(function(){toastEl.hidden=true;},2600);}
+  document.addEventListener("click",function(e){var t=e.target.closest("[data-toast]"); if(t) toast(t.getAttribute("data-toast"));});
+
+  var R="r",Y="y",G="g";
+  var EX={
+    loja:{nome:"Casa do Sono Campinas",curto:"Casa do Sono",tipo:"Loja física",
+      site:"casadosonocampinas.com.br",ig:"@casadosono.cps",
+      desc:"Loja física de colchões com e-commerce. Anuncia no Google e no Instagram. Nota 4,7 com 812 avaliações no Google.",
+      nota:"6,5",meta:[["Tipo de motor","Loja física"],["Anúncios ativos","6 Google · 11 Meta"],["Resposta no WhatsApp","47 min"],["Toques até comprar","7"]],
+      luz:[[R,"0,5"],[Y,"1,5"],[G,"2"],[Y,"1"],[R,"0,5"],[R,"0"]],
+      num:{gasto:6000,cpc:1.6,ticket:2200,fecha:2,ca:.012,cr:.028,rr:.18,rf:.2},
+      fechaL:"De cada 10 conversas, quantas compram",aL:"Conversas que se perdem no caminho",bL:"Segunda compra que não acontece",
+      vaz:[
+        [R,"Retorno","Ninguém fala com o cliente depois da compra","Comprei pelo site em 22/10. Até hoje: só o e-mail da nota fiscal.","Mensagem no 7º dia sem oferta (\"como foram as primeiras noites?\") e a oferta do travesseiro no 21º.","b",1],
+        [R,"Transmissão","WhatsApp levou 47 minutos para responder","Mensagem enviada terça, 10:12, pelo botão do anúncio. Resposta às 10:59.","Resposta automática em 1 minuto com o horário da loja e uma pergunta, e alerta para o vendedor da vez.","a",.32],
+        [R,"Ignição","O anúncio promete desconto e a página abre na home","Anúncio: \"Colchão casal com 30% off\". A página não fala em 30% na primeira tela.","Página própria da campanha que repete \"30% off no casal\" no título, com os 3 modelos da oferta.","a",.24],
+        [Y,"Câmbio","7 toques até conseguir pagar","Cadastro obrigatório antes do frete, CEP pedido duas vezes.","Frete calculado na página do produto e compra sem cadastro, com Pix em destaque.","a",.16],
+        [Y,"Retorno","Quem não compra não deixa contato","Nenhum formulário, nenhuma isca. O visitante sai e não volta.","\"Descubra seu colchão em 4 perguntas\" com o resultado enviado no WhatsApp.","a",.1],
+        [Y,"Motor","A loja física não aparece na página","Endereço só no rodapé. Nenhuma foto da loja.","\"Venha deitar antes de comprar\" com mapa e foto da loja na primeira tela.","a",.08],
+        [Y,"Câmbio","Botão de WhatsApp some ao rolar no celular","No iPhone 13, o botão fica só no topo da página.","Botão fixo no rodapé da tela em todas as páginas.","a",.06],
+        [Y,"Transmissão","Página de obrigado não diz o que acontece agora","Depois do pedido: \"Obrigado!\" e mais nada.","Confirmar o pedido, dar a data de entrega e mandar um guia \"primeiras noites\".","a",.04]],
+      motores:[["\"Vem deitar na loja\"","anúncio → página com oferta resgatável → WhatsApp agenda horário → loja → 7 dias depois","≈ R$ 210 por venda · leva o cliente para onde você converte melhor"],
+        ["Quiz \"Como você dorme?\"","anúncio → quiz de 4 perguntas → modelo indicado → WhatsApp com o modelo → Pix","≈ R$ 260 por venda · bom para quem compra online"],
+        ["30 noites sem risco","anúncio → página da garantia → checkout curto → régua de 30 noites","≈ R$ 290 por venda · precisa de logística de devolução"],
+        ["Primeira compra pequena","anúncio → travesseiro por R$ 89 no Pix → régua → colchão em 60 dias","≈ R$ 120 por 1ª venda · mais lento para o ticket alto"]],
+      postits:[["O anúncio","\"Teste 3 colchões deitado, com café\"","pede nada"],["A página","Promessa + nota 4,7 + mapa","pede nada"],["O WhatsApp","\"Que dia fica bom pra você vir?\"","pede um horário"],["A loja","Vendedor recebe o nome e o quiz","cobra"],["7 dias","\"Como foram as primeiras noites?\"","ainda não escrito"]],
+      hl:{base:[["Deite em 3 colchões antes de escolher o seu. Com café.","Recomendada. Leva para a loja, onde vocês vendem 3x mais que no site."],["O colchão certo para como você dorme, em 4 perguntas.","Boa para quem compra pelo celular à noite."],["30% no colchão casal até domingo. Venha testar.","Usa a oferta do anúncio atual, mas envelhece com a promoção."]],
+        forte:[["Você passa 1/3 da vida nele. Teste deitado antes de pagar.","Mais forte: o custo de errar vem antes da oferta."],["Escolheu errado? Em 30 noites a gente troca.","Mais forte: a garantia vira a promessa."]],
+        simples:[["Venha deitar antes de comprar.","Mais simples: 4 palavras, uma ação."],["Teste o colchão na loja. É de graça.","Mais simples, com o preço do teste."]],
+        dinheiro:[["Colchão casal a partir de R$ 1.890 no Pix. Teste antes.","Começa pelo dinheiro: preço e forma de pagamento na frente."],["30% no casal até domingo. Deite antes de pagar.","Começa pelo desconto do anúncio."]]}},
+
+    marca:{nome:"Café Serra Alta",curto:"Café Serra Alta",tipo:"Marca de produto",
+      site:"cafeserraalta.com.br",ig:"@cafeserraalta",
+      desc:"Marca de café especial que vende pelo site e pelo Instagram. Anuncia quase só no Meta. Nota 4,9 com 640 avaliações na loja.",
+      nota:"7",meta:[["Tipo de motor","Marca de produto"],["Anúncios ativos","2 Google · 24 Meta"],["Resposta no WhatsApp","18 min"],["Toques até comprar","6"]],
+      luz:[[Y,"1"],[Y,"1,5"],[Y,"1"],[Y,"1,5"],[Y,"1,5"],[R,"0,5"]],
+      num:{gasto:8000,cpc:.9,ticket:120,fecha:5,ca:.02,cr:.035,rr:.35,rf:1},
+      fechaL:"De cada 10 carrinhos, quantos viram compra",aL:"Visitas que não chegam ao carrinho",bL:"Recompra que não acontece",
+      vaz:[
+        [R,"Retorno","Ninguém lembra o cliente de comprar de novo","Comprei 250 g em 05/10. O café acaba em umas 3 semanas e até hoje não chegou nenhuma mensagem.","Lembrete no dia 18 com 1 clique para repetir o pedido e oferta de assinatura com 10% off.","b",1],
+        [R,"Ignição","O anúncio do kit presente cai na página de todos os cafés","Anúncio: \"Kit presente com 3 cafés\". A página abre com 14 produtos e nenhum kit à vista.","Página própria do kit, com o kit na primeira tela e o preço já com frete.","a",.3],
+        [Y,"Suspensão","As avaliações estão no fim da página do produto","4,9 com 640 avaliações, mas elas só aparecem depois de 4 rolagens.","Estrelas e número de avaliações logo abaixo do título, com 2 comentários curtos.","a",.2],
+        [Y,"Câmbio","O frete só aparece no último passo","R$ 24 de frete surpresa na tela de pagamento.","Barra no topo: \"frete grátis acima de R$ 149, faltam R$ 29\".","a",.17],
+        [Y,"Motor","Não fica claro qual café escolher","14 cafés com nomes de fazenda e nenhuma ajuda para decidir.","Quiz \"qual café é a sua cara\" em 3 perguntas, com o kit indicado no fim.","a",.13],
+        [Y,"Retorno","Quem abandona o carrinho não recebe nada","Deixei 2 cafés no carrinho no dia 12. Nenhum e-mail, nenhuma mensagem.","Mensagem em 1 hora e em 24 horas, a segunda com frete grátis.","a",.1],
+        [Y,"Transmissão","WhatsApp levou 18 minutos para responder","Pergunta sobre moagem enviada sábado, 11:03. Resposta às 11:21.","Respostas prontas para as 5 perguntas mais comuns, em menos de 1 minuto.","a",.06],
+        [Y,"Transmissão","Página de obrigado não entrega nada","Depois do pagamento: \"Pedido recebido\" e mais nada.","Guia de preparo do café comprado e a data prevista de entrega.","a",.04]],
+      motores:[["Quiz \"Qual café é a sua cara?\"","anúncio → quiz de 3 perguntas → kit indicado → Pix → lembrete de recompra no dia 18","≈ R$ 38 por venda · resolve a dúvida de quem chega"],
+        ["Kit de primeira compra","anúncio → 3 cafés por R$ 79 → guia de preparo → assinatura oferecida no dia 18","≈ R$ 31 por 1ª venda · ganha na recompra"],
+        ["Assinatura com 1º mês pela metade","anúncio → página da assinatura → checkout → régua mensal","≈ R$ 55 por assinante · receita previsível"],
+        ["Página de história","anúncio → texto \"por que seu café de mercado é velho\" → kit → checkout","≈ R$ 46 por venda · bom para público frio"]],
+      postits:[["O anúncio","\"Descubra seu café em 3 perguntas\"","pede nada"],["O quiz","Doce ou encorpado? Coado ou espresso?","pede 3 cliques"],["O kit","3 cafés pro seu gosto, R$ 79","cobra"],["O obrigado","Guia de preparo + data de entrega","pede nada"],["Dia 18","\"Seu café está acabando? Repita com 1 clique\"","ainda não escrito"]],
+      hl:{base:[["Descubra o café que é a sua cara em 3 perguntas.","Recomendada. Resolve a maior dúvida de quem chega: qual escolher."],["Café especial torrado esta semana, na sua porta em 2 dias.","Boa para quem já sabe o que quer."],["3 cafés pra provar por R$ 79. Frete grátis.","Começa pelo kit de entrada."]],
+        forte:[["O café do mercado foi torrado há meses. O nosso, há 5 dias.","Mais forte: o problema vem antes do produto."],["Prove 3 cafés. Se nenhum for o seu, devolvemos o dinheiro.","Mais forte: a garantia vira a promessa."]],
+        simples:[["Café fresco, do jeito que você gosta.","Mais simples: uma ideia só."],["Qual café combina com você? Descubra em 1 minuto.","Mais simples, com o tempo do quiz."]],
+        dinheiro:[["3 cafés especiais por R$ 79, com frete grátis.","Começa pelo dinheiro: preço e frete na frente."],["Menos de R$ 2 por xícara de café especial.","Começa pelo preço por dia."]]}},
+
+    servico:{nome:"Clima Certo Ar-Condicionado",curto:"Clima Certo",tipo:"Serviço local",
+      site:"climacerto.com.br",ig:"@climacerto.cps",
+      desc:"Instalação e manutenção de ar-condicionado em Campinas, para casas e empresas. Anuncia no Google. Nota 4,8 com 356 avaliações.",
+      nota:"6",meta:[["Tipo de motor","Serviço local"],["Anúncios ativos","9 Google · 3 Meta"],["Resposta no WhatsApp","1h05"],["Toques até pedir orçamento","5"]],
+      luz:[[R,"0,5"],[Y,"1"],[G,"2"],[Y,"1"],[R,"0,5"],[Y,"1"]],
+      num:{gasto:5000,cpc:4.5,ticket:1800,fecha:3,ca:.03,cr:.055,rr:.25,rf:.3},
+      fechaL:"De cada 10 orçamentos, quantos fecham",aL:"Pedidos de orçamento que se perdem",bL:"Manutenção que ninguém oferece",
+      vaz:[
+        [R,"Transmissão","WhatsApp levou 1 hora e 5 minutos para responder","Pedi orçamento de instalação numa segunda, 9:40. A resposta chegou às 10:45, quando eu já tinha fechado com outro.","Resposta automática em 1 minuto pedindo foto do local e a potência do aparelho, e alerta para o técnico de plantão.","a",.34],
+        [R,"Ignição","O anúncio de \"instalação no mesmo dia\" cai na home","A home fala de 9 serviços. \"Mesmo dia\" não aparece em lugar nenhum.","Página própria da campanha com \"instalação hoje\" no título e os bairros atendidos.","a",.24],
+        [R,"Retorno","Ninguém oferece a manutenção depois da instalação","Aparelho instalado há 7 meses. Nenhuma mensagem sobre limpeza.","Lembrete aos 6 meses e plano anual de manutenção (contrato de PMOC para empresas).","b",1],
+        [Y,"Motor","Não existe um primeiro passo com preço","Tudo é \"sob consulta\". Quem quer só uma limpeza não sabe quanto custa.","\"Higienização completa por R$ 149 no Pix\" como porta de entrada.","a",.15],
+        [Y,"Motor","Não dá para ter ideia do preço da instalação","Nenhuma faixa de preço na página.","Orçamento na hora: 3 perguntas e uma faixa de preço antes do WhatsApp.","a",.11],
+        [Y,"Câmbio","O telefone só aparece no rodapé","No celular, é preciso rolar 4 telas para achar como ligar.","Botões fixos de ligar e de WhatsApp no rodapé da tela.","a",.08],
+        [Y,"Retorno","Quem pede orçamento e não fecha some","Orçamento enviado em 14/10. Nenhum retorno depois disso.","Mensagem em 2 dias perguntando se ficou alguma dúvida, e outra antes do verão.","a",.05],
+        [Y,"Câmbio","O formulário pede 9 campos","Nome, CPF, endereço completo e mais 6 campos antes de pedir orçamento.","Só nome, WhatsApp e bairro. O resto o técnico pergunta.","a",.03]],
+      motores:[["Check grátis do aparelho","anúncio → página do check → WhatsApp agenda a visita → orçamento na hora → manutenção a cada 6 meses","≈ R$ 160 por serviço fechado · entra pela porta do problema"],
+        ["Higienização por R$ 149","anúncio → página com preço → Pix → visita → oferta de instalação ou contrato","≈ R$ 95 por 1ª venda · paga o anúncio"],
+        ["Orçamento na hora","anúncio → 3 perguntas → faixa de preço → WhatsApp → visita","≈ R$ 180 por serviço fechado · mata a ansiedade com preço"],
+        ["Quiz \"consertar ou trocar?\"","anúncio → idade do aparelho, defeito e conta de luz → recomendação → visita","≈ R$ 210 por troca fechada · bom para ticket alto"]],
+      postits:[["O anúncio","\"Seu ar está gastando luz à toa? Check grátis\"","pede nada"],["A página","Promessa + nota 4,8 + bairros","pede nada"],["O WhatsApp","\"Qual dia e período ficam bons?\"","pede um horário"],["A visita","Técnico faz o check e o orçamento na hora","cobra"],["6 meses","\"Hora da limpeza do seu ar\"","ainda não escrito"]],
+      hl:{base:[["Seu ar-condicionado está gastando luz à toa? Check grátis.","Recomendada. A isca é um diagnóstico, e quem aceita já tem o problema em casa."],["Instalação de ar-condicionado hoje, em Campinas.","Boa para a busca de urgência."],["Higienização completa por R$ 149.","Começa pelo primeiro passo com preço."]],
+        forte:[["Ar-condicionado sujo faz mal e gasta até 30% mais luz.","Mais forte: o custo do problema vem primeiro."],["Instalado hoje ou você não paga a visita.","Mais forte: a garantia vira a promessa."]],
+        simples:[["Seu ar gelando de novo. Hoje.","Mais simples: o resultado em uma linha."],["Limpeza e conserto de ar-condicionado em Campinas.","Mais simples: o que faz e onde."]],
+        dinheiro:[["Higienização completa por R$ 149 no Pix.","Começa pelo dinheiro: preço e pagamento na frente."],["Instalação a partir de R$ 450. Orçamento em 2 minutos.","Começa pela faixa de preço."]]}},
+
+    clinica:{nome:"Sorriso Pleno Odontologia",curto:"Sorriso Pleno",tipo:"Clínica ou consultório",
+      site:"sorrisopleno.com.br",ig:"@sorrisopleno",
+      desc:"Clínica de implantes e ortodontia. Anuncia no Google e no Instagram. Nota 4,9 com 1.040 avaliações. O laudo segue as regras do CFO: nada de antes e depois nem promessa de resultado.",
+      nota:"7",meta:[["Tipo de motor","Clínica"],["Anúncios ativos","5 Google · 14 Meta"],["Resposta no WhatsApp","32 min"],["Toques até agendar","6"]],
+      luz:[[Y,"1"],[Y,"1,5"],[G,"2"],[R,"0,5"],[Y,"1"],[Y,"1"]],
+      num:{gasto:7000,cpc:3.2,ticket:4500,fecha:2,ca:.025,cr:.05,rr:.3,rf:.08},
+      fechaL:"De cada 10 avaliações, quantas viram tratamento",aL:"Pedidos de avaliação que se perdem",bL:"Paciente que não volta para o retorno",
+      vaz:[
+        [R,"Câmbio","Agendar a avaliação exige 6 toques e um telefonema","O botão \"agendar\" abre um formulário, que manda ligar no fixo.","Agenda com os horários livres na primeira tela, com confirmação pelo WhatsApp.","a",.34],
+        [R,"Transmissão","WhatsApp levou 32 minutos para responder","Pergunta sobre implante enviada quarta, 19:20. Resposta às 19:52.","Resposta em 1 minuto com os próximos horários de avaliação e o endereço.","a",.24],
+        [R,"Retorno","Paciente de limpeza não é chamado para o retorno de 6 meses","Limpeza feita em abril. Nenhum contato desde então.","Régua de retorno aos 6 meses, com o horário sugerido na própria mensagem.","b",1],
+        [Y,"Ignição","O anúncio de implante cai numa página com todos os serviços","Anúncio: \"Implante dentário em Campinas\". A página lista 12 tratamentos.","Página só de implante: como funciona, quanto tempo leva, quem faz.","a",.15],
+        [Y,"Motor","O preço do implante é um mistério","Nenhuma faixa de valor nem forma de pagamento.","Faixa de valor, parcelamento e avaliação inicial sem custo, dentro das regras do CFO.","a",.12],
+        [Y,"Câmbio","O formulário pede CPF antes de agendar","CPF e data de nascimento obrigatórios só para pedir horário.","Pedir só nome e WhatsApp. O resto, na recepção.","a",.08],
+        [Y,"Retorno","Quem pede orçamento e não agenda não recebe retorno","Pedi valores de alinhador em 03/10. Nenhuma mensagem depois.","Mensagem em 2 dias com as dúvidas mais comuns e um horário livre.","a",.05],
+        [Y,"Transmissão","Não existe lembrete da consulta","Avaliação marcada para 28/10. Nenhuma mensagem no dia anterior.","Lembrete na véspera com opção de confirmar ou remarcar.","a",.02]],
+      motores:[["Avaliação com hora marcada","anúncio → página do tratamento → agenda na 1ª tela → lembrete na véspera → retorno em 6 meses","≈ R$ 340 por tratamento fechado · tira o atrito do telefone"],
+        ["Quiz \"qual tratamento é pra você?\"","anúncio → 4 perguntas → tratamento indicado → avaliação","≈ R$ 390 por tratamento · bom para alinhador e estética"],
+        ["Vídeo do dentista","anúncio → vídeo de 3 min explicando o implante → agenda","≈ R$ 360 por tratamento · constrói confiança em decisão cara"],
+        ["Régua de retorno","pacientes antigos → mensagem de 6 meses → limpeza → avaliação de outros tratamentos","≈ R$ 60 por paciente de volta · o mais barato de todos"]],
+      postits:[["O anúncio","\"Implante em Campinas: avaliação com hora marcada\"","pede nada"],["A página","Como funciona + quem faz + nota 4,9","pede nada"],["A agenda","Horários livres na primeira tela","pede um horário"],["A véspera","\"Te esperamos amanhã às 15h\"","pede confirmação"],["6 meses","\"Hora do seu retorno\"","ainda não escrito"]],
+      hl:{base:[["Implante dentário em Campinas. Avaliação com hora marcada.","Recomendada. Diz o que é, onde é e o próximo passo, sem prometer resultado."],["Entenda o implante em 3 minutos, com quem faz.","Boa para quem ainda está com medo."],["Avaliação inicial sem custo. Escolha o horário.","Começa pelo primeiro passo."]],
+        forte:[["Voltar a mastigar sem pensar nisso começa com uma avaliação.","Mais forte: fala do que muda na vida, sem prometer resultado."],["Tire todas as dúvidas sobre implante antes de decidir.","Mais forte: ataca o medo."]],
+        simples:[["Implante dentário. Marque sua avaliação.","Mais simples: o que é e o que fazer."],["Escolha o horário da sua avaliação.","Mais simples: só a ação."]],
+        dinheiro:[["Implante com parcelamento em até 18x. Avaliação sem custo.","Começa pelo dinheiro, dentro das regras do CFO."],["Avaliação inicial sem custo e orçamento no mesmo dia.","Começa pelo que é grátis."]]}},
+
+    curso:{nome:"Escola Vende Mais",curto:"Vende Mais",tipo:"Curso ou consultoria",
+      site:"escolavendemais.com.br",ig:"@escolavendemais",
+      desc:"Curso online de vendas para lojistas, com turma ao vivo e consultoria para redes de lojas. Vende pelo Instagram e por anúncios no Meta. 85 mil seguidores.",
+      nota:"5,5",meta:[["Tipo de motor","Curso ou consultoria"],["Anúncios ativos","0 Google · 19 Meta"],["Resposta no WhatsApp","2h20"],["Tempo até a 1ª oferta","1 minuto"]],
+      luz:[[R,"0,5"],[Y,"1"],[Y,"1"],[Y,"1,5"],[R,"0,5"],[Y,"1"]],
+      num:{gasto:10000,cpc:1.2,ticket:1497,fecha:1,ca:.02,cr:.035,rr:.12,rf:3},
+      fechaL:"De cada 10 conversas de venda, quantas compram",aL:"Interessados que esfriam no caminho",bL:"Aluno que não recebe o próximo passo",
+      vaz:[
+        [R,"Retorno","Quem pega a aula grátis recebe a oferta em 1 minuto e depois nada","Cadastro às 20:14. Às 20:15, e-mail \"compre agora com 50%\". Depois, silêncio.","Sequência de 7 dias que ensina primeiro, com a oferta no P.S. a partir do 4º dia.","a",.3],
+        [R,"Ignição","O anúncio promete aula grátis e a página pede dados para falar com consultor","Anúncio: \"Aula grátis: venda mais na sua loja\". A página pede nome, cargo, faturamento e telefone.","Página só com a aula, o dia de começar e um campo de e-mail.","a",.25],
+        [R,"Transmissão","WhatsApp de vendas levou 2 horas e 20 minutos","Mensagem sobre a consultoria enviada segunda, 14:05. Resposta às 16:25.","Resposta em 1 minuto com um vídeo curto do professor e o link para marcar a conversa.","a",.18],
+        [Y,"Retorno","Aluno que termina o curso não recebe o próximo passo","Concluí o último módulo em setembro. Nenhuma oferta da turma avançada ou da consultoria.","Convite para a consultoria ou a turma avançada para quem concluiu, com o caso de um aluno.","b",1],
+        [Y,"Suspensão","Os depoimentos não têm nome nem número","\"Mudou minha vida!\" sem nome, loja ou resultado.","3 casos com nome, loja, cidade e o que mudou nas vendas.","a",.12],
+        [Y,"Motor","A promessa é vaga","\"Transforme suas vendas\" na primeira tela.","Uma promessa que dá para medir, como \"mais 1 venda por vendedor por dia em 30 dias\", desde que vocês consigam provar.","a",.08],
+        [Y,"Câmbio","O checkout não tem Pix","Só cartão em 12x ou boleto.","Pix com desconto em destaque e cartão parcelado.","a",.04],
+        [Y,"Transmissão","A página depois do cadastro só diz obrigado","Depois do cadastro: \"Obrigado, em breve você recebe novidades\".","Confirmar o dia da aula, dizer para quem é e entregar um checklist para usar já.","a",.03]],
+      motores:[["Desafio de 5 dias","anúncio → inscrição com dia de começar → 5 aulas curtas → oferta no P.S. do dia 4 → turma","≈ R$ 210 por aluno · a espera vende"],
+        ["Aula ao vivo","anúncio → inscrição → lembretes → aula de 60 min → oferta no fim → WhatsApp","≈ R$ 240 por aluno · converte bem em ticket médio"],
+        ["Diagnóstico grátis da loja","anúncio → 5 perguntas → nota da loja → conversa com consultor","≈ R$ 900 por contrato de consultoria · para redes de lojas"],
+        ["Guia grátis + sequência","anúncio → guia em PDF → 7 e-mails → oferta","≈ R$ 280 por aluno · o mais barato de montar"]],
+      postits:[["O anúncio","\"5 dias para seus vendedores venderem mais\"","pede nada"],["A inscrição","Dia de começar + para quem é","pede o e-mail"],["As aulas","1 aula curta por dia no WhatsApp","pede nada"],["Dia 4","A turma aparece no P.S.","cobra"],["Depois do curso","Convite para a consultoria","ainda não escrito"]],
+      hl:{base:[["5 dias para seus vendedores venderem mais. Começa segunda.","Recomendada. A coisa grátis tem dia para começar, e a espera vende."],["A aula que eu dava para os vendedores da minha loja.","Boa se o professor tiver história própria."],["Diagnóstico grátis: descubra onde sua loja perde venda.","Começa pela consultoria."]],
+        forte:[["Seu vendedor tem vergonha de vender. Em 5 dias, isso muda.","Mais forte: nomeia o problema real."],["Se em 5 dias nada mudar, você não paga a turma.","Mais forte: a garantia vira a promessa."]],
+        simples:[["Venda mais na sua loja. 5 dias, grátis.","Mais simples: resultado, prazo, preço."],["Aulas curtas de vendas para lojistas.","Mais simples: o que é e para quem."]],
+        dinheiro:[["Mais 1 venda por vendedor por dia já paga a turma.","Começa pelo dinheiro: a conta do retorno."],["Turma de vendas por R$ 1.497 ou 12x. Comece pelo desafio grátis.","Começa pelo preço."]]}}
+  };
+
+
+  var SISN={"Ignição":"Anúncio","Motor":"Oferta","Suspensão":"Prova","Câmbio":"Conversão","Transmissão":"Atendimento","Retorno":"Retorno"};
+  var SIS=["Anúncio","Oferta","Prova","Conversão","Atendimento","Retorno"];
+  var cur="loja";
+  var brl=function(n){return "R$ "+Math.round(n).toLocaleString("pt-BR");};
+  var esc=function(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");};
+  var col={r:"var(--red)",y:"#e0a800",g:"var(--go)"};
+
+  function setTipo(k,fill){
+    if(!EX[k]) return; cur=k; var e=EX[k];
+    document.getElementById("f-motor").value=k;
+    document.getElementById("l-motor").value=k;
+    if(fill) document.getElementById("f-site").value=e.site;
+    document.getElementById("l-nome").textContent=e.nome;
+    document.getElementById("l-desc").textContent=e.desc;
+    document.getElementById("l-bar").textContent=e.site+" · check-up de 12 pontos";
+    document.getElementById("l-nota").innerHTML=esc(e.nota)+'<small> / 12</small>';
+    document.getElementById("l-meta").innerHTML=e.meta.map(function(m){return '<span class="chip">'+esc(m[0]==="Tipo de motor"?"Tipo de negócio":m[0])+': '+esc(m[1])+'</span>';}).join("");
+    document.getElementById("l-sys").innerHTML=e.luz.map(function(l,i){
+      var v=parseFloat(String(l[1]).replace(",","."));
+      return '<div><b>'+SIS[i]+'</b><div class="bar"><span style="width:'+(v/2*100)+'%;background:'+col[l[0]]+'"></span></div><em>'+l[1]+' de 2</em></div>';}).join("");
+    document.getElementById("l-phone").innerHTML='<div class="mock-h" style="font-size:.85rem">'+esc(e.curto)+'</div><div class="mock-l"></div><div class="mock-l" style="width:70%"></div><div style="height:70px;background:var(--field);border-radius:6px"></div><div class="mock-l" style="width:85%"></div><div class="mock-l" style="width:60%"></div><span class="note n-p" id="l-phone-note" style="--r:-3deg;font-size:.72rem"></span>';
+    document.getElementById("s-fecha-l").textContent=e.fechaL;
+    document.getElementById("vz-a-l").textContent=e.aL;
+    document.getElementById("vz-b-l").textContent=e.bL;
+    var n=e.num;
+    document.getElementById("s-gasto").value=n.gasto; document.getElementById("s-cpc").value=n.cpc;
+    var st=document.getElementById("s-ticket"); st.step=n.ticket<500?10:100; st.value=n.ticket;
+    document.getElementById("s-fecha").value=n.fecha;
+    document.getElementById("o-proj").textContent=e.curto+" (exemplo)";
+    document.getElementById("motores").innerHTML=e.motores.map(function(m,i){
+      return '<div class="fcard"'+(i===0?' aria-current="true"':'')+' data-m="'+i+'"><span class="tagp'+(i===0?" rec":"")+'">'+(i===0?"Recomendado":"Outro caminho")+'</span><h3>'+esc(m[0])+'</h3><p class="fl">'+esc(m[1])+'</p><p class="cp">'+esc(m[2])+'</p><div class="acts">'+(i===0?'<span class="small">Aberto abaixo</span>':'<button class="btn btn-line btn-sm" type="button" data-see="'+i+'">Ver abaixo</button>')+'<button class="btn '+(i===0?"btn-go":"btn-ink")+' btn-sm" type="button" data-pick="'+i+'">Escolher este</button></div></div>';}).join("");
+    setCenter(0);
+    var lv=[["A coisa grátis",e.postits[0][1]],["Quando pedir o contato",e.postits[2][2]==="pede nada"?"Depois do primeiro passo":"Na etapa: "+e.postits[2][0].toLowerCase()],["A promessa",e.hl.base[0][0]]];
+    document.getElementById("levers").innerHTML=lv.map(function(l,i){return '<div class="lever" style="transform:rotate('+[-1.2,1,-.6][i]+'deg)"><b>'+esc(l[0])+'</b><span>'+esc(l[1])+'</span></div>';}).join("");
+    renderHl("base"); calc();
+  }
+  function setCenter(i){
+    var e=EX[cur], m=e.motores[i];
+    document.getElementById("c-title").textContent=m[0];
+    document.getElementById("c-quote").textContent=m[1];
+    var parts=['<div class="st first"><b>O anúncio</b><span class="small">a promessa</span></div><span class="ar">→</span>'];
+    e.postits.forEach(function(p,j){
+      parts.push('<div class="st'+(j===e.postits.length-1?" last":"")+'"><span>'+esc(p[0])+': '+esc(p[1])+'</span><span class="fr">'+esc(p[2])+'</span></div>'+(j<e.postits.length-1?'<span class="ar">→</span>':''));
+    });
+    document.getElementById("postits").innerHTML=parts.join("");
+  }
+  document.getElementById("motores").addEventListener("click",function(ev){
+    var b=ev.target.closest("[data-pick],[data-see]"); if(!b) return;
+    var i=+(b.dataset.pick||b.dataset.see);
+    if(b.dataset.pick!==undefined){
+      document.querySelectorAll("#motores .fcard").forEach(function(c){c.removeAttribute("aria-current");});
+      b.closest(".fcard").setAttribute("aria-current","true"); toast("Escolhido. Seu agente já recebeu.");
+    }
+    setCenter(i);
+  });
+
+  function calc(){
+    var e=EX[cur], n=e.num;
+    var g=+document.getElementById("s-gasto").value, c=+document.getElementById("s-cpc").value,
+        t=+document.getElementById("s-ticket").value, f=+document.getElementById("s-fecha").value/10;
+    document.getElementById("o-gasto").textContent=brl(g);
+    document.getElementById("o-cpc").textContent="R$ "+c.toFixed(2).replace(".",",");
+    document.getElementById("o-ticket").textContent=brl(t);
+    document.getElementById("o-fecha").textContent=Math.round(f*10)+" de 10";
+    var visitas=g/c, a=visitas*(n.cr-n.ca)*f*t, b=visitas*n.ca*f*n.rr*t*n.rf, tot=a+b;
+    document.getElementById("vz-total").textContent=brl(tot);
+    var worst=e.vaz.slice().sort(function(x,y){return (y[5]==="b"?b:a*y[6])-(x[5]==="b"?b:a*x[6]);})[0];
+    var pn=document.getElementById("l-phone-note"); if(pn) pn.textContent=worst[2];
+    document.getElementById("vz-faixa").textContent="faixa provável: "+brl(tot*.6)+" a "+brl(tot*1.3)+" por mês";
+    document.getElementById("vz-a").textContent=brl(a);
+    document.getElementById("vz-b").textContent=brl(b);
+    document.getElementById("lista-vaz").innerHTML=e.vaz.map(function(v){return {v:v,val:v[5]==="b"?b:a*v[6]};}).sort(function(x,y){return y.val-x.val;}).map(function(o){
+      var v=o.v, val=o.val;
+      return '<li><div><span class="chip '+(v[0]==="r"?"r":"y")+'">'+esc(SISN[v[1]]||v[1])+'</span><h4 style="margin-top:6px">'+esc(v[2])+'</h4><p class="ev">'+esc(v[3])+'</p><p class="rx"><b>Receita</b>'+esc(v[4])+'</p></div><div class="cost" style="color:'+(v[0]==="r"?"var(--red)":"#8a6a00")+'">'+brl(val)+'/mês</div></li>';}).join("");
+  }
+  ["gasto","cpc","ticket","fecha"].forEach(function(id){document.getElementById("s-"+id).addEventListener("input",calc);});
+  document.getElementById("f-motor").addEventListener("change",function(){setTipo(this.value,true);});
+  document.getElementById("l-motor").addEventListener("change",function(){setTipo(this.value,true);});
+
+  function renderHl(k){
+    var e=EX[cur], list=e.hl[k].slice();
+    if(k!=="base") list.push([e.hl.base[0][0],"A recomendada, mantida para comparar."]);
+    document.getElementById("headlines").innerHTML=list.map(function(h,i){
+      var id="hl-"+k+"-"+i;
+      return '<label class="opt" for="'+id+'"><input type="radio" name="hl" id="'+id+'"'+(i===0?" checked":"")+'><span><b>'+esc(h[0])+'</b>'+(i===0&&k==="base"?' <span class="tagp rec" style="margin-left:4px">Recomendada</span>':'')+'<br><span class="why">Por quê: '+esc(h[1])+'</span></span></label>';}).join("");
+  }
+  document.querySelectorAll(".refine [data-r]").forEach(function(b){b.addEventListener("click",function(){renderHl(b.dataset.r); toast("Seu agente reescreveu as opções.");});});
+  document.querySelectorAll("#looks .look").forEach(function(l){
+    l.addEventListener("click",function(){
+      var on=document.querySelectorAll('#looks .look[aria-pressed="true"]').length, now=l.getAttribute("aria-pressed")==="true";
+      if(!now&&on>=3){toast("Até 3 páginas.");return;}
+      l.setAttribute("aria-pressed",now?"false":"true");
+    });
+  });
+  document.getElementById("b-aprovar").addEventListener("click",function(){
+    var a=document.getElementById("agent"); a.classList.add("busy");
+    a.querySelector("span").textContent="Seu agente está trabalhando. O que você clicar aqui fica guardado para ele.";
+    toast("Aprovado. Seu agente tem o plano e vai para o visual.");
+  });
+
+  document.getElementById("form-revisao").addEventListener("submit",function(ev){
+    ev.preventDefault();
+    setTipo(document.getElementById("f-motor").value,false);
+    var ls=document.getElementById("l-site"); ls.hidden=false;
+    ls.textContent="Site informado: "+document.getElementById("f-site").value+". No protótipo, o laudo mostra o exemplo de "+EX[cur].tipo.toLowerCase()+"; na versão real, ele lê o seu site.";
+    var b=document.getElementById("b-revisar"), p=document.getElementById("prog"), li=p.querySelectorAll("li"), i=0;
+    b.disabled=true; p.hidden=false; li.forEach(function(x){x.className="";});
+    (function step(){
+      if(i>0) li[i-1].className="done";
+      if(i<li.length){li[i].className="now"; i++; setTimeout(step,420);}
+      else setTimeout(function(){b.disabled=false; location.hash="#laudo";},300);
+    })();
+  });
+
+  /* biblioteca */
+  var pecas=[
+    {f:"marca",k:"Produto",tipo:"Funil",nome:"Kit de primeira compra",jog:"O primeiro pedido vem montado e mais barato, com a recompra já marcada.",ads:"12 anúncios no ar",n:12},
+    {f:"loja",k:"Loja física",tipo:"Página",nome:"Venha provar antes",jog:"O endereço é o herói: mapa, foto da fachada e \"a 12 minutos de você\".",ads:"6 anúncios para esta página",n:11},
+    {f:"servico",k:"Serviço local",tipo:"Funil",nome:"Check grátis do ar-condicionado",jog:"A isca é um diagnóstico, não um desconto. Quem aceita já tem o problema.",ads:"23 anúncios no ar",n:12},
+    {f:"curso",k:"Curso",tipo:"Funil",nome:"Desafio de 5 dias",jog:"A coisa grátis tem dia para começar. A espera vende.",ads:"9 anúncios no ar",n:12},
+    {f:"marca",k:"Produto",tipo:"Página",nome:"Preço por dia no título",jog:"\"R$ 3,20 por dia\" no título, com o primeiro pedido embaixo como recibo.",ads:"18 anúncios para esta página",n:11},
+    {f:"clinica",k:"Clínica",tipo:"Funil",nome:"Avaliação com hora marcada",jog:"O agendamento é a primeira tela. O resto existe só para quem ainda tem dúvida.",ads:"7 anúncios no ar",n:11},
+    {f:"loja",k:"Loja física",tipo:"Seção",nome:"Separar pra mim no WhatsApp",jog:"O botão diz \"separar pra mim\", não \"comprar\". A visita vira compromisso.",ads:"4 anúncios para esta página",n:12},
+    {f:"servico",k:"Serviço local",tipo:"Página",nome:"Orçamento na hora",jog:"Três perguntas e uma faixa de preço. Acaba com a ansiedade antes do WhatsApp.",ads:"11 anúncios para esta página",n:11}
+  ];
+  function libCard(p,i,locked){
+    return '<button class="card-l" type="button" data-t="'+(i)+'"><div class="scr"><span class="grade">'+p.n+'/12</span><div class="mock-h" style="font-size:.8rem;max-width:80%">'+esc(p.nome)+'</div><div class="mock-l" style="width:70%"></div><div class="mock-l" style="width:50%"></div>'+(p.f==="marca"?'<div class="mock-btn" style="width:45%"></div>':'<div class="mock-wa" style="width:45%;height:16px"></div>')+'</div><span class="meta">'+esc(p.k)+' · '+esc(p.tipo)+'</span><b>'+esc(p.nome)+'</b><p>'+esc(p.jog)+'</p><span class="meta" style="color:var(--muted)">'+esc(p.ads)+'</span>'+(locked?'<span class="lock">Etapas seguintes: Pro</span>':'')+'</button>';
+  }
+  document.getElementById("lib-home").innerHTML=pecas.slice(0,8).map(function(p,i){return libCard(p,i,false);}).join("");
+  function renderCat(f){
+    document.getElementById("cat").innerHTML=pecas.filter(function(p){return f==="todos"||p.f===f;}).map(function(p,i){return libCard(p,i,i>2);}).join("");
+  }
+  renderCat("todos");
+  document.querySelectorAll("#filtros button").forEach(function(b){b.addEventListener("click",function(){
+    document.querySelectorAll("#filtros button").forEach(function(x){x.setAttribute("aria-pressed","false");});
+    b.setAttribute("aria-pressed","true"); renderCat(b.dataset.f);});});
+  document.addEventListener("click",function(e){if(e.target.closest(".card-l")) toast("No produto real, abre o funil com cada etapa e a jogada.");});
+  document.getElementById("added").innerHTML=[pecas[2],pecas[3],pecas[6]].map(function(p){
+    return '<div style="display:grid;grid-template-columns:72px 1fr;gap:12px;align-items:start;border-top:1px solid var(--line);padding-top:10px"><div style="aspect-ratio:4/3;background:var(--paper);border-radius:6px;padding:5px;display:grid;gap:4px;align-content:start"><div class="mock-l"></div><div class="mock-l" style="width:60%"></div></div><div><span class="meta" style="font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--go-text)">'+esc(p.tipo)+' · '+esc(p.k)+'</span><br><b style="font-family:var(--display);letter-spacing:-.02em">'+esc(p.nome)+'</b><p class="small">'+esc(p.jog)+'</p><span class="cap" style="color:var(--go-text)">'+esc(p.ads)+' · capturado em 29/10/2026</span></div></div>';}).join("");
+
+  /* clientes */
+  var kc=[
+    ["Achadas",[["Ótica Visão Norte",["4,8 · 412","9 avaliações/mês"],"","Ainda não olhada"],["Óticas Cambuí",["4,6 · 238","3 anúncios Google"],"",""]]],
+    ["Problemas achados",[["Olhar Center",["4,7 · 690","14 anúncios Google"],"WhatsApp respondeu em 1h12",""],["Ótica Barão",["4,9 · 301"],"Anúncio cai na home",""]]],
+    ["Proposta pronta",[["Ótica Guanabara",["4,7 · 520","11 anúncios Google"],"","Página, proposta e e-mail prontos"]]],
+    ["Enviada · respondeu · fechou",[["Ótica Sousas",["fechada"],"","Você marca estes à mão quando envia, recebe resposta ou fecha."]]]
+  ];
+  document.getElementById("kanban").innerHTML=kc.map(function(c){
+    return '<div class="col"><span class="cap">'+c[0]+'</span>'+c[1].map(function(p){
+      return '<div class="pc"><b>'+esc(p[0])+'</b><div class="ch">'+p[1].map(function(x,j){return '<span'+(j===1?' class="g"':'')+'>'+esc(x)+'</span>';}).join("")+'</div>'+(p[2]?'<span class="lk">'+esc(p[2])+'</span>':'')+(p[3]?'<span class="small">'+esc(p[3])+'</span>':'')+'</div>';}).join("")+'</div>';}).join("");
+  document.getElementById("b-propostas").addEventListener("click",function(){toast("Achando os problemas das próximas 5. Ninguém é contatado.");});
+
+  /* planos */
+  document.querySelectorAll(".toggle button").forEach(function(b){b.addEventListener("click",function(){
+    document.querySelectorAll(".toggle button").forEach(function(x){x.setAttribute("aria-pressed","false");});
+    b.setAttribute("aria-pressed","true");
+    var ano=b.dataset.p==="ano";
+    document.getElementById("pp").textContent=ano?"R$ 797 por ano":"R$ 97 por mês";
+    document.getElementById("ps").textContent=ano?"economize 32% · menos de R$ 16 por semana":"ou R$ 797 por ano";
+  });});
+
+  setTipo("loja",false);
+})();
+</script>
