@@ -265,7 +265,7 @@ main{padding-block:28px 64px}
       <div class="row"><label class="label" for="f-wa">WhatsApp do link do anúncio</label><input id="f-wa" value="wa.me/5519900000000" autocomplete="off"></div>
       <div class="row"><label class="label" for="f-motor">Que tipo de negócio?</label>
         <select id="f-motor" style="background:transparent;border:0;border-bottom:1.5px dashed var(--line);padding:6px 2px">
-          <option>Loja física</option><option>Marca de produto (online)</option><option>Serviço local</option><option>Clínica ou consultório</option><option>Curso ou consultoria</option>
+          <option value="loja">Loja física</option><option value="marca">Marca de produto (online)</option><option value="servico">Serviço local</option><option value="clinica">Clínica ou consultório</option><option value="curso">Curso ou consultoria</option>
         </select></div>
       <button class="btn sig" type="submit" id="b-revisar">Revisar meu funil</button>
       <div class="progress" id="prog" hidden><ul>
@@ -276,7 +276,7 @@ main{padding-block:28px 64px}
         <li>Procurando captura de contato e pós-venda</li>
         <li>Calculando o vazamento em reais</li>
       </ul></div>
-      <p class="note">Exemplo já preenchido. A nota aparece sem cadastro; o laudo completo vai por e-mail.</p>
+      <p class="note">Exemplo já preenchido: troque o tipo de negócio e o exemplo muda junto. No protótipo, o laudo é um exemplo do tipo escolhido; o site digitado ainda não é lido.</p>
     </form>
   </div>
 
@@ -314,34 +314,24 @@ main{padding-block:28px 64px}
 <!-- ========== LAUDO ========== -->
 <section class="view" id="v-laudo" hidden>
   <div style="display:grid;gap:8px">
-    <span class="label">Laudo de revisão · exemplo</span>
-    <h1>Casa do Sono Campinas</h1>
-    <p class="lede">Loja física de colchões com e-commerce. Anuncia no Google e no Instagram. Nota 4,7 com 812 avaliações no Google.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><span class="label">Laudo de revisão · exemplo de</span><select id="l-motor" aria-label="Tipo de negócio do exemplo" style="background:transparent;border:1px solid var(--line);border-radius:2px;padding:2px 6px;font-family:var(--mono);font-size:.8rem"><option value="loja">Loja física</option><option value="marca">Marca de produto</option><option value="servico">Serviço local</option><option value="clinica">Clínica ou consultório</option><option value="curso">Curso ou consultoria</option></select></div>
+    <h1 id="l-nome"></h1>
+    <p class="lede" id="l-desc"></p>
+    <p class="note" id="l-site" hidden></p>
   </div>
 
   <article class="laudo">
     <div class="laudo-head">
       <div style="display:grid;gap:6px">
         <span class="label">Nota da revisão</span>
-        <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><span class="big" style="color:var(--ink)">6,5</span><span class="mono">/ 12 pontos</span></div>
+        <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><span class="big" style="color:var(--ink)" id="l-nota"></span><span class="mono">/ 12 pontos</span></div>
         <p class="note">Selo Mecânico a partir de 11. Revisado em 01/11/2026 às 14:07.</p>
       </div>
       <div class="stamp">8 vazamentos<small>piores primeiro</small></div>
     </div>
-    <div class="meta">
-      <div><div class="label">Tipo de motor</div><div class="v">Loja física</div></div>
-      <div><div class="label">Anúncios ativos</div><div class="v">6 Google · 11 Meta</div></div>
-      <div><div class="label">Resposta no WhatsApp</div><div class="v">47 min</div></div>
-      <div><div class="label">Toques até comprar</div><div class="v">7</div></div>
-    </div>
-    <div class="painel" aria-label="Painel dos 6 sistemas">
-      <div class="luz"><i class="r"></i><b>Ignição</b><span>0,5 / 2</span></div>
-      <div class="luz"><i class="y"></i><b>Motor</b><span>1,5 / 2</span></div>
-      <div class="luz"><i class="g"></i><b>Suspensão</b><span>2 / 2</span></div>
-      <div class="luz"><i class="y"></i><b>Câmbio</b><span>1 / 2</span></div>
-      <div class="luz"><i class="r"></i><b>Transmissão</b><span>0,5 / 2</span></div>
-      <div class="luz"><i class="r"></i><b>Retorno</b><span>0 / 2</span></div>
-    </div>
+    <div class="meta" id="l-meta"></div>
+    <div class="painel" id="l-painel" aria-label="Painel dos 6 sistemas">
+          </div>
 
     <div class="dinheiro">
       <div style="display:grid;gap:8px;align-content:start">
@@ -349,8 +339,8 @@ main{padding-block:28px 64px}
         <div class="big" id="vz-total">R$ 0</div>
         <p class="mono note" id="vz-faixa"></p>
         <div class="mono" style="display:grid;gap:4px;font-size:.88rem">
-          <div style="display:flex;justify-content:space-between;gap:10px"><span>Conversas que se perdem no caminho</span><span id="vz-a"></span></div>
-          <div style="display:flex;justify-content:space-between;gap:10px"><span>Segunda compra que não acontece</span><span id="vz-b"></span></div>
+          <div style="display:flex;justify-content:space-between;gap:10px"><span id="vz-a-l"></span><span id="vz-a"></span></div>
+          <div style="display:flex;justify-content:space-between;gap:10px"><span id="vz-b-l"></span><span id="vz-b"></span></div>
         </div>
         <p class="note">Faixa calculada com as premissas ao lado. Mexa nos números para chegar nos seus.</p>
       </div>
@@ -358,7 +348,7 @@ main{padding-block:28px 64px}
         <div class="sl"><label for="s-gasto">Gasto em anúncios por mês</label><output id="o-gasto" class="mono"></output><input type="range" id="s-gasto" min="1000" max="30000" step="500" value="6000"></div>
         <div class="sl"><label for="s-cpc">Custo por clique</label><output id="o-cpc" class="mono"></output><input type="range" id="s-cpc" min="0.5" max="6" step="0.1" value="1.6"></div>
         <div class="sl"><label for="s-ticket">Ticket médio</label><output id="o-ticket" class="mono"></output><input type="range" id="s-ticket" min="200" max="6000" step="100" value="2200"></div>
-        <div class="sl"><label for="s-fecha">De cada 10 conversas, quantas compram</label><output id="o-fecha" class="mono"></output><input type="range" id="s-fecha" min="1" max="6" step="1" value="2"></div>
+        <div class="sl"><label for="s-fecha" id="s-fecha-l"></label><output id="o-fecha" class="mono"></output><input type="range" id="s-fecha" min="1" max="6" step="1" value="2"></div>
       </div>
     </div>
 
@@ -384,7 +374,7 @@ main{padding-block:28px 64px}
 <!-- ========== OFICINA ========== -->
 <section class="view" id="v-oficina" hidden>
   <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:end">
-    <div style="display:grid;gap:6px"><span class="label">Oficina · projeto Casa do Sono (exemplo)</span><h1>Montar o funil novo</h1></div>
+    <div style="display:grid;gap:6px"><span class="label" id="o-proj"></span><h1>Montar o funil novo</h1></div>
     <div class="agent" id="agent"><i></i><span>Seu agente está ouvindo. Clique em qualquer coisa e ele recebe na hora.</span></div>
   </div>
   <div class="board">
@@ -401,23 +391,12 @@ main{padding-block:28px 64px}
       <div style="display:grid;gap:10px">
         <h2>Qual motor vai no seu carro?</h2>
         <p class="note">Montados a partir de 9 funis do catálogo com nota 11 ou mais. O custo por venda usa os números do seu laudo.</p>
-        <div class="cards" id="motores">
-          <button class="card" type="button" aria-pressed="true" data-m="0"><span class="ribbon">Recomendado</span><h3>"Vem deitar na loja"</h3><span class="flow">anúncio → página com oferta resgatável → WhatsApp agenda horário → loja → 7 dias depois</span><span class="cpv">≈ R$ 210 por venda · leva o cliente para onde você converte melhor</span></button>
-          <button class="card" type="button" aria-pressed="false" data-m="1"><span class="ribbon alt">Outro caminho</span><h3>Quiz "Como você dorme?"</h3><span class="flow">anúncio → quiz de 4 perguntas → modelo indicado → WhatsApp com o modelo → Pix</span><span class="cpv">≈ R$ 260 por venda · bom para quem compra online</span></button>
-          <button class="card" type="button" aria-pressed="false" data-m="2"><span class="ribbon alt">Outro caminho</span><h3>30 noites sem risco</h3><span class="flow">anúncio → página da garantia → checkout curto → régua de 30 noites</span><span class="cpv">≈ R$ 290 por venda · precisa de logística de devolução</span></button>
-          <button class="card" type="button" aria-pressed="false" data-m="3"><span class="ribbon alt">Outro caminho</span><h3>Primeira compra pequena</h3><span class="flow">anúncio → travesseiro por R$ 89 no Pix → régua → colchão em 60 dias</span><span class="cpv">≈ R$ 120 por 1ª venda · mais lento para o ticket alto</span></button>
-        </div>
+        <div class="cards" id="motores"></div>
       </div>
 
       <div style="display:grid;gap:10px">
         <span class="label">O motor escolhido, peça por peça</span>
-        <div class="postits">
-          <div class="postit"><b>O anúncio</b><span>"Teste 3 colchões deitado, com café"</span><small>pede nada</small></div>
-          <div class="postit"><b>A página</b><span>Promessa + nota 4,7 + mapa</span><small>pede nada</small></div>
-          <div class="postit"><b>O WhatsApp</b><span>"Que dia fica bom pra você vir?"</span><small>pede um horário</small></div>
-          <div class="postit"><b>A loja</b><span>Vendedor recebe o nome e o quiz</span><small>cobra</small></div>
-          <div class="postit"><b>7 dias</b><span>"Como foram as primeiras noites?"</span><small>ainda não escrito</small></div>
-        </div>
+        <div class="postits" id="postits"></div>
       </div>
 
       <div class="decisao">
@@ -524,6 +503,9 @@ main{padding-block:28px 64px}
   document.getElementById("form-revisao").addEventListener("submit",function(e){
     e.preventDefault();
     var b=document.getElementById("b-revisar"), p=document.getElementById("prog"), li=p.querySelectorAll("li"), i=0;
+    setTipo(document.getElementById("f-motor").value,false);
+    var ls=document.getElementById("l-site"); ls.hidden=false;
+    ls.textContent="Site informado: "+document.getElementById("f-site").value+". No protótipo, o laudo mostra o exemplo de "+EX[cur].tipo.toLowerCase()+"; na versão real, ele lê o seu site.";
     b.disabled=true; p.hidden=false; li.forEach(function(x){x.className="";});
     (function step(){
       if(i>0) li[i-1].className="done";
@@ -532,69 +514,216 @@ main{padding-block:28px 64px}
     })();
   });
 
-  /* laudo: vazamentos e conta */
-  var vaz=[
-    {s:"r",sis:"Retorno",t:"Ninguém fala com o cliente depois da compra",ev:"Comprei pelo site em 22/10. Até hoje: só o e-mail da nota fiscal.",fx:"Mensagem no 7º dia sem oferta (\"como foram as primeiras noites?\") e a oferta do travesseiro no 21º.",k:"b",w:1},
-    {s:"r",sis:"Transmissão",t:"WhatsApp levou 47 minutos para responder",ev:"Mensagem enviada terça, 10:12, pelo botão do anúncio. Resposta às 10:59.",fx:"Resposta automática em 1 minuto com o horário da loja e uma pergunta, e alerta para o vendedor da vez.",k:"a",w:.32},
-    {s:"r",sis:"Ignição",t:"O anúncio promete desconto e a página abre na home",ev:"Anúncio: \"Colchão casal com 30% off\". A página não fala em 30% em nenhum lugar da primeira tela.",fx:"Página própria para a campanha que repete \"30% off no casal\" no título, com os 3 modelos da oferta.",k:"a",w:.24},
-    {s:"y",sis:"Câmbio",t:"7 toques até conseguir pagar",ev:"Cadastro obrigatório antes do frete, CEP pedido duas vezes.",fx:"Frete calculado na página do produto e compra sem cadastro, com Pix em destaque.",k:"a",w:.16},
-    {s:"y",sis:"Retorno",t:"Quem não compra não deixa contato",ev:"Nenhum formulário, nenhuma isca. O visitante sai e não volta.",fx:"\"Descubra seu colchão em 4 perguntas\" com o resultado enviado no WhatsApp.",k:"a",w:.1},
-    {s:"y",sis:"Motor",t:"A loja física não aparece na página",ev:"Endereço só no rodapé. Nenhuma foto da loja.",fx:"\"Venha deitar antes de comprar\" com mapa e foto da loja na primeira tela.",k:"a",w:.08},
-    {s:"y",sis:"Câmbio",t:"Botão de WhatsApp some ao rolar no celular",ev:"No iPhone 13, o botão fica só no topo da página.",fx:"Botão fixo no rodapé da tela em todas as páginas.",k:"a",w:.06},
-    {s:"y",sis:"Transmissão",t:"Página de obrigado não diz o que acontece agora",ev:"Depois do pedido: \"Obrigado!\" e mais nada.",fx:"Confirmar o pedido, dar a data de entrega e mandar um guia \"primeiras noites\".",k:"a",w:.04}
-  ];
+  /* exemplos por tipo de negócio */
+  var R="r",Y="y",G="g";
+  var EX={
+    loja:{nome:"Casa do Sono Campinas",curto:"Casa do Sono",tipo:"Loja física",
+      site:"casadosonocampinas.com.br",ig:"@casadosono.cps",
+      desc:"Loja física de colchões com e-commerce. Anuncia no Google e no Instagram. Nota 4,7 com 812 avaliações no Google.",
+      nota:"6,5",meta:[["Tipo de motor","Loja física"],["Anúncios ativos","6 Google · 11 Meta"],["Resposta no WhatsApp","47 min"],["Toques até comprar","7"]],
+      luz:[[R,"0,5"],[Y,"1,5"],[G,"2"],[Y,"1"],[R,"0,5"],[R,"0"]],
+      num:{gasto:6000,cpc:1.6,ticket:2200,fecha:2,ca:.012,cr:.028,rr:.18,rf:.2},
+      fechaL:"De cada 10 conversas, quantas compram",aL:"Conversas que se perdem no caminho",bL:"Segunda compra que não acontece",
+      vaz:[
+        [R,"Retorno","Ninguém fala com o cliente depois da compra","Comprei pelo site em 22/10. Até hoje: só o e-mail da nota fiscal.","Mensagem no 7º dia sem oferta (\"como foram as primeiras noites?\") e a oferta do travesseiro no 21º.","b",1],
+        [R,"Transmissão","WhatsApp levou 47 minutos para responder","Mensagem enviada terça, 10:12, pelo botão do anúncio. Resposta às 10:59.","Resposta automática em 1 minuto com o horário da loja e uma pergunta, e alerta para o vendedor da vez.","a",.32],
+        [R,"Ignição","O anúncio promete desconto e a página abre na home","Anúncio: \"Colchão casal com 30% off\". A página não fala em 30% na primeira tela.","Página própria da campanha que repete \"30% off no casal\" no título, com os 3 modelos da oferta.","a",.24],
+        [Y,"Câmbio","7 toques até conseguir pagar","Cadastro obrigatório antes do frete, CEP pedido duas vezes.","Frete calculado na página do produto e compra sem cadastro, com Pix em destaque.","a",.16],
+        [Y,"Retorno","Quem não compra não deixa contato","Nenhum formulário, nenhuma isca. O visitante sai e não volta.","\"Descubra seu colchão em 4 perguntas\" com o resultado enviado no WhatsApp.","a",.1],
+        [Y,"Motor","A loja física não aparece na página","Endereço só no rodapé. Nenhuma foto da loja.","\"Venha deitar antes de comprar\" com mapa e foto da loja na primeira tela.","a",.08],
+        [Y,"Câmbio","Botão de WhatsApp some ao rolar no celular","No iPhone 13, o botão fica só no topo da página.","Botão fixo no rodapé da tela em todas as páginas.","a",.06],
+        [Y,"Transmissão","Página de obrigado não diz o que acontece agora","Depois do pedido: \"Obrigado!\" e mais nada.","Confirmar o pedido, dar a data de entrega e mandar um guia \"primeiras noites\".","a",.04]],
+      motores:[["\"Vem deitar na loja\"","anúncio → página com oferta resgatável → WhatsApp agenda horário → loja → 7 dias depois","≈ R$ 210 por venda · leva o cliente para onde você converte melhor"],
+        ["Quiz \"Como você dorme?\"","anúncio → quiz de 4 perguntas → modelo indicado → WhatsApp com o modelo → Pix","≈ R$ 260 por venda · bom para quem compra online"],
+        ["30 noites sem risco","anúncio → página da garantia → checkout curto → régua de 30 noites","≈ R$ 290 por venda · precisa de logística de devolução"],
+        ["Primeira compra pequena","anúncio → travesseiro por R$ 89 no Pix → régua → colchão em 60 dias","≈ R$ 120 por 1ª venda · mais lento para o ticket alto"]],
+      postits:[["O anúncio","\"Teste 3 colchões deitado, com café\"","pede nada"],["A página","Promessa + nota 4,7 + mapa","pede nada"],["O WhatsApp","\"Que dia fica bom pra você vir?\"","pede um horário"],["A loja","Vendedor recebe o nome e o quiz","cobra"],["7 dias","\"Como foram as primeiras noites?\"","ainda não escrito"]],
+      hl:{base:[["Deite em 3 colchões antes de escolher o seu. Com café.","Recomendada. Leva para a loja, onde vocês vendem 3x mais que no site."],["O colchão certo para como você dorme, em 4 perguntas.","Boa para quem compra pelo celular à noite."],["30% no colchão casal até domingo. Venha testar.","Usa a oferta do anúncio atual, mas envelhece com a promoção."]],
+        forte:[["Você passa 1/3 da vida nele. Teste deitado antes de pagar.","Mais forte: o custo de errar vem antes da oferta."],["Escolheu errado? Em 30 noites a gente troca.","Mais forte: a garantia vira a promessa."]],
+        simples:[["Venha deitar antes de comprar.","Mais simples: 4 palavras, uma ação."],["Teste o colchão na loja. É de graça.","Mais simples, com o preço do teste."]],
+        dinheiro:[["Colchão casal a partir de R$ 1.890 no Pix. Teste antes.","Começa pelo dinheiro: preço e forma de pagamento na frente."],["30% no casal até domingo. Deite antes de pagar.","Começa pelo desconto do anúncio."]]}},
+
+    marca:{nome:"Café Serra Alta",curto:"Café Serra Alta",tipo:"Marca de produto",
+      site:"cafeserraalta.com.br",ig:"@cafeserraalta",
+      desc:"Marca de café especial que vende pelo site e pelo Instagram. Anuncia quase só no Meta. Nota 4,9 com 640 avaliações na loja.",
+      nota:"7",meta:[["Tipo de motor","Marca de produto"],["Anúncios ativos","2 Google · 24 Meta"],["Resposta no WhatsApp","18 min"],["Toques até comprar","6"]],
+      luz:[[Y,"1"],[Y,"1,5"],[Y,"1"],[Y,"1,5"],[Y,"1,5"],[R,"0,5"]],
+      num:{gasto:8000,cpc:.9,ticket:120,fecha:5,ca:.02,cr:.035,rr:.35,rf:1},
+      fechaL:"De cada 10 carrinhos, quantos viram compra",aL:"Visitas que não chegam ao carrinho",bL:"Recompra que não acontece",
+      vaz:[
+        [R,"Retorno","Ninguém lembra o cliente de comprar de novo","Comprei 250 g em 05/10. O café acaba em umas 3 semanas e até hoje não chegou nenhuma mensagem.","Lembrete no dia 18 com 1 clique para repetir o pedido e oferta de assinatura com 10% off.","b",1],
+        [R,"Ignição","O anúncio do kit presente cai na página de todos os cafés","Anúncio: \"Kit presente com 3 cafés\". A página abre com 14 produtos e nenhum kit à vista.","Página própria do kit, com o kit na primeira tela e o preço já com frete.","a",.3],
+        [Y,"Suspensão","As avaliações estão no fim da página do produto","4,9 com 640 avaliações, mas elas só aparecem depois de 4 rolagens.","Estrelas e número de avaliações logo abaixo do título, com 2 comentários curtos.","a",.2],
+        [Y,"Câmbio","O frete só aparece no último passo","R$ 24 de frete surpresa na tela de pagamento.","Barra no topo: \"frete grátis acima de R$ 149, faltam R$ 29\".","a",.17],
+        [Y,"Motor","Não fica claro qual café escolher","14 cafés com nomes de fazenda e nenhuma ajuda para decidir.","Quiz \"qual café é a sua cara\" em 3 perguntas, com o kit indicado no fim.","a",.13],
+        [Y,"Retorno","Quem abandona o carrinho não recebe nada","Deixei 2 cafés no carrinho no dia 12. Nenhum e-mail, nenhuma mensagem.","Mensagem em 1 hora e em 24 horas, a segunda com frete grátis.","a",.1],
+        [Y,"Transmissão","WhatsApp levou 18 minutos para responder","Pergunta sobre moagem enviada sábado, 11:03. Resposta às 11:21.","Respostas prontas para as 5 perguntas mais comuns, em menos de 1 minuto.","a",.06],
+        [Y,"Transmissão","Página de obrigado não entrega nada","Depois do pagamento: \"Pedido recebido\" e mais nada.","Guia de preparo do café comprado e a data prevista de entrega.","a",.04]],
+      motores:[["Quiz \"Qual café é a sua cara?\"","anúncio → quiz de 3 perguntas → kit indicado → Pix → lembrete de recompra no dia 18","≈ R$ 38 por venda · resolve a dúvida de quem chega"],
+        ["Kit de primeira compra","anúncio → 3 cafés por R$ 79 → guia de preparo → assinatura oferecida no dia 18","≈ R$ 31 por 1ª venda · ganha na recompra"],
+        ["Assinatura com 1º mês pela metade","anúncio → página da assinatura → checkout → régua mensal","≈ R$ 55 por assinante · receita previsível"],
+        ["Página de história","anúncio → texto \"por que seu café de mercado é velho\" → kit → checkout","≈ R$ 46 por venda · bom para público frio"]],
+      postits:[["O anúncio","\"Descubra seu café em 3 perguntas\"","pede nada"],["O quiz","Doce ou encorpado? Coado ou espresso?","pede 3 cliques"],["O kit","3 cafés pro seu gosto, R$ 79","cobra"],["O obrigado","Guia de preparo + data de entrega","pede nada"],["Dia 18","\"Seu café está acabando? Repita com 1 clique\"","ainda não escrito"]],
+      hl:{base:[["Descubra o café que é a sua cara em 3 perguntas.","Recomendada. Resolve a maior dúvida de quem chega: qual escolher."],["Café especial torrado esta semana, na sua porta em 2 dias.","Boa para quem já sabe o que quer."],["3 cafés pra provar por R$ 79. Frete grátis.","Começa pelo kit de entrada."]],
+        forte:[["O café do mercado foi torrado há meses. O nosso, há 5 dias.","Mais forte: o problema vem antes do produto."],["Prove 3 cafés. Se nenhum for o seu, devolvemos o dinheiro.","Mais forte: a garantia vira a promessa."]],
+        simples:[["Café fresco, do jeito que você gosta.","Mais simples: uma ideia só."],["Qual café combina com você? Descubra em 1 minuto.","Mais simples, com o tempo do quiz."]],
+        dinheiro:[["3 cafés especiais por R$ 79, com frete grátis.","Começa pelo dinheiro: preço e frete na frente."],["Menos de R$ 2 por xícara de café especial.","Começa pelo preço por dia."]]}},
+
+    servico:{nome:"Clima Certo Ar-Condicionado",curto:"Clima Certo",tipo:"Serviço local",
+      site:"climacerto.com.br",ig:"@climacerto.cps",
+      desc:"Instalação e manutenção de ar-condicionado em Campinas, para casas e empresas. Anuncia no Google. Nota 4,8 com 356 avaliações.",
+      nota:"6",meta:[["Tipo de motor","Serviço local"],["Anúncios ativos","9 Google · 3 Meta"],["Resposta no WhatsApp","1h05"],["Toques até pedir orçamento","5"]],
+      luz:[[R,"0,5"],[Y,"1"],[G,"2"],[Y,"1"],[R,"0,5"],[Y,"1"]],
+      num:{gasto:5000,cpc:4.5,ticket:1800,fecha:3,ca:.03,cr:.055,rr:.25,rf:.3},
+      fechaL:"De cada 10 orçamentos, quantos fecham",aL:"Pedidos de orçamento que se perdem",bL:"Manutenção que ninguém oferece",
+      vaz:[
+        [R,"Transmissão","WhatsApp levou 1 hora e 5 minutos para responder","Pedi orçamento de instalação numa segunda, 9:40. A resposta chegou às 10:45, quando eu já tinha fechado com outro.","Resposta automática em 1 minuto pedindo foto do local e a potência do aparelho, e alerta para o técnico de plantão.","a",.34],
+        [R,"Ignição","O anúncio de \"instalação no mesmo dia\" cai na home","A home fala de 9 serviços. \"Mesmo dia\" não aparece em lugar nenhum.","Página própria da campanha com \"instalação hoje\" no título e os bairros atendidos.","a",.24],
+        [R,"Retorno","Ninguém oferece a manutenção depois da instalação","Aparelho instalado há 7 meses. Nenhuma mensagem sobre limpeza.","Lembrete aos 6 meses e plano anual de manutenção (contrato de PMOC para empresas).","b",1],
+        [Y,"Motor","Não existe um primeiro passo com preço","Tudo é \"sob consulta\". Quem quer só uma limpeza não sabe quanto custa.","\"Higienização completa por R$ 149 no Pix\" como porta de entrada.","a",.15],
+        [Y,"Motor","Não dá para ter ideia do preço da instalação","Nenhuma faixa de preço na página.","Orçamento na hora: 3 perguntas e uma faixa de preço antes do WhatsApp.","a",.11],
+        [Y,"Câmbio","O telefone só aparece no rodapé","No celular, é preciso rolar 4 telas para achar como ligar.","Botões fixos de ligar e de WhatsApp no rodapé da tela.","a",.08],
+        [Y,"Retorno","Quem pede orçamento e não fecha some","Orçamento enviado em 14/10. Nenhum retorno depois disso.","Mensagem em 2 dias perguntando se ficou alguma dúvida, e outra antes do verão.","a",.05],
+        [Y,"Câmbio","O formulário pede 9 campos","Nome, CPF, endereço completo e mais 6 campos antes de pedir orçamento.","Só nome, WhatsApp e bairro. O resto o técnico pergunta.","a",.03]],
+      motores:[["Check grátis do aparelho","anúncio → página do check → WhatsApp agenda a visita → orçamento na hora → manutenção a cada 6 meses","≈ R$ 160 por serviço fechado · entra pela porta do problema"],
+        ["Higienização por R$ 149","anúncio → página com preço → Pix → visita → oferta de instalação ou contrato","≈ R$ 95 por 1ª venda · paga o anúncio"],
+        ["Orçamento na hora","anúncio → 3 perguntas → faixa de preço → WhatsApp → visita","≈ R$ 180 por serviço fechado · mata a ansiedade com preço"],
+        ["Quiz \"consertar ou trocar?\"","anúncio → idade do aparelho, defeito e conta de luz → recomendação → visita","≈ R$ 210 por troca fechada · bom para ticket alto"]],
+      postits:[["O anúncio","\"Seu ar está gastando luz à toa? Check grátis\"","pede nada"],["A página","Promessa + nota 4,8 + bairros","pede nada"],["O WhatsApp","\"Qual dia e período ficam bons?\"","pede um horário"],["A visita","Técnico faz o check e o orçamento na hora","cobra"],["6 meses","\"Hora da limpeza do seu ar\"","ainda não escrito"]],
+      hl:{base:[["Seu ar-condicionado está gastando luz à toa? Check grátis.","Recomendada. A isca é um diagnóstico, e quem aceita já tem o problema em casa."],["Instalação de ar-condicionado hoje, em Campinas.","Boa para a busca de urgência."],["Higienização completa por R$ 149.","Começa pelo primeiro passo com preço."]],
+        forte:[["Ar-condicionado sujo faz mal e gasta até 30% mais luz.","Mais forte: o custo do problema vem primeiro."],["Instalado hoje ou você não paga a visita.","Mais forte: a garantia vira a promessa."]],
+        simples:[["Seu ar gelando de novo. Hoje.","Mais simples: o resultado em uma linha."],["Limpeza e conserto de ar-condicionado em Campinas.","Mais simples: o que faz e onde."]],
+        dinheiro:[["Higienização completa por R$ 149 no Pix.","Começa pelo dinheiro: preço e pagamento na frente."],["Instalação a partir de R$ 450. Orçamento em 2 minutos.","Começa pela faixa de preço."]]}},
+
+    clinica:{nome:"Sorriso Pleno Odontologia",curto:"Sorriso Pleno",tipo:"Clínica ou consultório",
+      site:"sorrisopleno.com.br",ig:"@sorrisopleno",
+      desc:"Clínica de implantes e ortodontia. Anuncia no Google e no Instagram. Nota 4,9 com 1.040 avaliações. O laudo segue as regras do CFO: nada de antes e depois nem promessa de resultado.",
+      nota:"7",meta:[["Tipo de motor","Clínica"],["Anúncios ativos","5 Google · 14 Meta"],["Resposta no WhatsApp","32 min"],["Toques até agendar","6"]],
+      luz:[[Y,"1"],[Y,"1,5"],[G,"2"],[R,"0,5"],[Y,"1"],[Y,"1"]],
+      num:{gasto:7000,cpc:3.2,ticket:4500,fecha:2,ca:.025,cr:.05,rr:.3,rf:.08},
+      fechaL:"De cada 10 avaliações, quantas viram tratamento",aL:"Pedidos de avaliação que se perdem",bL:"Paciente que não volta para o retorno",
+      vaz:[
+        [R,"Câmbio","Agendar a avaliação exige 6 toques e um telefonema","O botão \"agendar\" abre um formulário, que manda ligar no fixo.","Agenda com os horários livres na primeira tela, com confirmação pelo WhatsApp.","a",.34],
+        [R,"Transmissão","WhatsApp levou 32 minutos para responder","Pergunta sobre implante enviada quarta, 19:20. Resposta às 19:52.","Resposta em 1 minuto com os próximos horários de avaliação e o endereço.","a",.24],
+        [R,"Retorno","Paciente de limpeza não é chamado para o retorno de 6 meses","Limpeza feita em abril. Nenhum contato desde então.","Régua de retorno aos 6 meses, com o horário sugerido na própria mensagem.","b",1],
+        [Y,"Ignição","O anúncio de implante cai numa página com todos os serviços","Anúncio: \"Implante dentário em Campinas\". A página lista 12 tratamentos.","Página só de implante: como funciona, quanto tempo leva, quem faz.","a",.15],
+        [Y,"Motor","O preço do implante é um mistério","Nenhuma faixa de valor nem forma de pagamento.","Faixa de valor, parcelamento e avaliação inicial sem custo, dentro das regras do CFO.","a",.12],
+        [Y,"Câmbio","O formulário pede CPF antes de agendar","CPF e data de nascimento obrigatórios só para pedir horário.","Pedir só nome e WhatsApp. O resto, na recepção.","a",.08],
+        [Y,"Retorno","Quem pede orçamento e não agenda não recebe retorno","Pedi valores de alinhador em 03/10. Nenhuma mensagem depois.","Mensagem em 2 dias com as dúvidas mais comuns e um horário livre.","a",.05],
+        [Y,"Transmissão","Não existe lembrete da consulta","Avaliação marcada para 28/10. Nenhuma mensagem no dia anterior.","Lembrete na véspera com opção de confirmar ou remarcar.","a",.02]],
+      motores:[["Avaliação com hora marcada","anúncio → página do tratamento → agenda na 1ª tela → lembrete na véspera → retorno em 6 meses","≈ R$ 340 por tratamento fechado · tira o atrito do telefone"],
+        ["Quiz \"qual tratamento é pra você?\"","anúncio → 4 perguntas → tratamento indicado → avaliação","≈ R$ 390 por tratamento · bom para alinhador e estética"],
+        ["Vídeo do dentista","anúncio → vídeo de 3 min explicando o implante → agenda","≈ R$ 360 por tratamento · constrói confiança em decisão cara"],
+        ["Régua de retorno","pacientes antigos → mensagem de 6 meses → limpeza → avaliação de outros tratamentos","≈ R$ 60 por paciente de volta · o mais barato de todos"]],
+      postits:[["O anúncio","\"Implante em Campinas: avaliação com hora marcada\"","pede nada"],["A página","Como funciona + quem faz + nota 4,9","pede nada"],["A agenda","Horários livres na primeira tela","pede um horário"],["A véspera","\"Te esperamos amanhã às 15h\"","pede confirmação"],["6 meses","\"Hora do seu retorno\"","ainda não escrito"]],
+      hl:{base:[["Implante dentário em Campinas. Avaliação com hora marcada.","Recomendada. Diz o que é, onde é e o próximo passo, sem prometer resultado."],["Entenda o implante em 3 minutos, com quem faz.","Boa para quem ainda está com medo."],["Avaliação inicial sem custo. Escolha o horário.","Começa pelo primeiro passo."]],
+        forte:[["Voltar a mastigar sem pensar nisso começa com uma avaliação.","Mais forte: fala do que muda na vida, sem prometer resultado."],["Tire todas as dúvidas sobre implante antes de decidir.","Mais forte: ataca o medo."]],
+        simples:[["Implante dentário. Marque sua avaliação.","Mais simples: o que é e o que fazer."],["Escolha o horário da sua avaliação.","Mais simples: só a ação."]],
+        dinheiro:[["Implante com parcelamento em até 18x. Avaliação sem custo.","Começa pelo dinheiro, dentro das regras do CFO."],["Avaliação inicial sem custo e orçamento no mesmo dia.","Começa pelo que é grátis."]]}},
+
+    curso:{nome:"Escola Vende Mais",curto:"Vende Mais",tipo:"Curso ou consultoria",
+      site:"escolavendemais.com.br",ig:"@escolavendemais",
+      desc:"Curso online de vendas para lojistas, com turma ao vivo e consultoria para redes de lojas. Vende pelo Instagram e por anúncios no Meta. 85 mil seguidores.",
+      nota:"5,5",meta:[["Tipo de motor","Curso ou consultoria"],["Anúncios ativos","0 Google · 19 Meta"],["Resposta no WhatsApp","2h20"],["Tempo até a 1ª oferta","1 minuto"]],
+      luz:[[R,"0,5"],[Y,"1"],[Y,"1"],[Y,"1,5"],[R,"0,5"],[Y,"1"]],
+      num:{gasto:10000,cpc:1.2,ticket:1497,fecha:1,ca:.02,cr:.035,rr:.12,rf:3},
+      fechaL:"De cada 10 conversas de venda, quantas compram",aL:"Interessados que esfriam no caminho",bL:"Aluno que não recebe o próximo passo",
+      vaz:[
+        [R,"Retorno","Quem pega a aula grátis recebe a oferta em 1 minuto e depois nada","Cadastro às 20:14. Às 20:15, e-mail \"compre agora com 50%\". Depois, silêncio.","Sequência de 7 dias que ensina primeiro, com a oferta no P.S. a partir do 4º dia.","a",.3],
+        [R,"Ignição","O anúncio promete aula grátis e a página pede dados para falar com consultor","Anúncio: \"Aula grátis: venda mais na sua loja\". A página pede nome, cargo, faturamento e telefone.","Página só com a aula, o dia de começar e um campo de e-mail.","a",.25],
+        [R,"Transmissão","WhatsApp de vendas levou 2 horas e 20 minutos","Mensagem sobre a consultoria enviada segunda, 14:05. Resposta às 16:25.","Resposta em 1 minuto com um vídeo curto do professor e o link para marcar a conversa.","a",.18],
+        [Y,"Retorno","Aluno que termina o curso não recebe o próximo passo","Concluí o último módulo em setembro. Nenhuma oferta da turma avançada ou da consultoria.","Convite para a consultoria ou a turma avançada para quem concluiu, com o caso de um aluno.","b",1],
+        [Y,"Suspensão","Os depoimentos não têm nome nem número","\"Mudou minha vida!\" sem nome, loja ou resultado.","3 casos com nome, loja, cidade e o que mudou nas vendas.","a",.12],
+        [Y,"Motor","A promessa é vaga","\"Transforme suas vendas\" na primeira tela.","Uma promessa que dá para medir, como \"mais 1 venda por vendedor por dia em 30 dias\", desde que vocês consigam provar.","a",.08],
+        [Y,"Câmbio","O checkout não tem Pix","Só cartão em 12x ou boleto.","Pix com desconto em destaque e cartão parcelado.","a",.04],
+        [Y,"Transmissão","A página depois do cadastro só diz obrigado","Depois do cadastro: \"Obrigado, em breve você recebe novidades\".","Confirmar o dia da aula, dizer para quem é e entregar um checklist para usar já.","a",.03]],
+      motores:[["Desafio de 5 dias","anúncio → inscrição com dia de começar → 5 aulas curtas → oferta no P.S. do dia 4 → turma","≈ R$ 210 por aluno · a espera vende"],
+        ["Aula ao vivo","anúncio → inscrição → lembretes → aula de 60 min → oferta no fim → WhatsApp","≈ R$ 240 por aluno · converte bem em ticket médio"],
+        ["Diagnóstico grátis da loja","anúncio → 5 perguntas → nota da loja → conversa com consultor","≈ R$ 900 por contrato de consultoria · para redes de lojas"],
+        ["Guia grátis + sequência","anúncio → guia em PDF → 7 e-mails → oferta","≈ R$ 280 por aluno · o mais barato de montar"]],
+      postits:[["O anúncio","\"5 dias para seus vendedores venderem mais\"","pede nada"],["A inscrição","Dia de começar + para quem é","pede o e-mail"],["As aulas","1 aula curta por dia no WhatsApp","pede nada"],["Dia 4","A turma aparece no P.S.","cobra"],["Depois do curso","Convite para a consultoria","ainda não escrito"]],
+      hl:{base:[["5 dias para seus vendedores venderem mais. Começa segunda.","Recomendada. A coisa grátis tem dia para começar, e a espera vende."],["A aula que eu dava para os vendedores da minha loja.","Boa se o professor tiver história própria."],["Diagnóstico grátis: descubra onde sua loja perde venda.","Começa pela consultoria."]],
+        forte:[["Seu vendedor tem vergonha de vender. Em 5 dias, isso muda.","Mais forte: nomeia o problema real."],["Se em 5 dias nada mudar, você não paga a turma.","Mais forte: a garantia vira a promessa."]],
+        simples:[["Venda mais na sua loja. 5 dias, grátis.","Mais simples: resultado, prazo, preço."],["Aulas curtas de vendas para lojistas.","Mais simples: o que é e para quem."]],
+        dinheiro:[["Mais 1 venda por vendedor por dia já paga a turma.","Começa pelo dinheiro: a conta do retorno."],["Turma de vendas por R$ 1.497 ou 12x. Comece pelo desafio grátis.","Começa pelo preço."]]}}
+  };
+  var cur="loja";
   var brl=function(n){return "R$ "+Math.round(n).toLocaleString("pt-BR");};
-  var ids=["gasto","cpc","ticket","fecha"];
+  var SIS=["Ignição","Motor","Suspensão","Câmbio","Transmissão","Retorno"];
+  var esc=function(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");};
+
+  function setTipo(k,fill){
+    if(!EX[k]) return; cur=k; var e=EX[k];
+    document.getElementById("f-motor").value=k;
+    document.getElementById("l-motor").value=k;
+    if(fill){document.getElementById("f-site").value=e.site;document.getElementById("f-ig").value=e.ig;}
+    document.getElementById("l-nome").textContent=e.nome;
+    document.getElementById("l-desc").textContent=e.desc;
+    document.getElementById("l-nota").textContent=e.nota;
+    document.getElementById("l-meta").innerHTML=e.meta.map(function(m){return '<div><div class="label">'+esc(m[0])+'</div><div class="v">'+esc(m[1])+'</div></div>';}).join("");
+    document.getElementById("l-painel").innerHTML=e.luz.map(function(l,i){return '<div class="luz"><i class="'+l[0]+'"></i><b>'+SIS[i]+'</b><span>'+l[1]+' / 2</span></div>';}).join("");
+    document.getElementById("s-fecha-l").textContent=e.fechaL;
+    document.getElementById("vz-a-l").textContent=e.aL;
+    document.getElementById("vz-b-l").textContent=e.bL;
+    var n=e.num;
+    document.getElementById("s-gasto").value=n.gasto; document.getElementById("s-cpc").value=n.cpc;
+    var st=document.getElementById("s-ticket"); st.min=n.ticket<500?50:200; st.step=n.ticket<500?10:100; st.value=n.ticket;
+    document.getElementById("s-fecha").value=n.fecha;
+    document.getElementById("o-proj").textContent="Oficina · projeto "+e.curto+" (exemplo)";
+    document.getElementById("motores").innerHTML=e.motores.map(function(m,i){return '<button class="card" type="button" aria-pressed="'+(i===0)+'" data-m="'+i+'"><span class="ribbon'+(i?" alt":"")+'">'+(i?"Outro caminho":"Recomendado")+'</span><h3>'+esc(m[0])+'</h3><span class="flow">'+esc(m[1])+'</span><span class="cpv">'+esc(m[2])+'</span></button>';}).join("");
+    document.querySelectorAll("#motores .card").forEach(function(c){
+      c.addEventListener("click",function(){
+        document.querySelectorAll("#motores .card").forEach(function(x){x.setAttribute("aria-pressed","false");});
+        c.setAttribute("aria-pressed","true"); toast("Motor escolhido. O agente já recebeu.");
+      });
+    });
+    document.getElementById("postits").innerHTML=e.postits.map(function(p){return '<div class="postit"><b>'+esc(p[0])+'</b><span>'+esc(p[1])+'</span><small>'+esc(p[2])+'</small></div>';}).join("");
+    renderHl("base"); calc();
+  }
+
   function calc(){
+    var e=EX[cur], n=e.num;
     var g=+document.getElementById("s-gasto").value, c=+document.getElementById("s-cpc").value,
         t=+document.getElementById("s-ticket").value, f=+document.getElementById("s-fecha").value/10;
     document.getElementById("o-gasto").textContent=brl(g);
     document.getElementById("o-cpc").textContent="R$ "+c.toFixed(2).replace(".",",");
     document.getElementById("o-ticket").textContent=brl(t);
     document.getElementById("o-fecha").textContent=Math.round(f*10)+" de 10";
-    var visitas=g/c, convAtual=.012, convRef=.028;
-    var perdidas=visitas*(convRef-convAtual);
-    var a=perdidas*f*t;
-    var vendasMes=visitas*convAtual*f;
-    var b=vendasMes*.18*Math.max(350,t*.2);
+    var visitas=g/c;
+    var a=visitas*(n.cr-n.ca)*f*t;
+    var b=visitas*n.ca*f*n.rr*t*n.rf;
     var tot=a+b;
     document.getElementById("vz-total").textContent=brl(tot);
     document.getElementById("vz-faixa").textContent="faixa provável: "+brl(tot*.6)+" a "+brl(tot*1.3)+" por mês";
     document.getElementById("vz-a").textContent=brl(a);
     document.getElementById("vz-b").textContent=brl(b);
     var box=document.getElementById("lista-vaz"); box.innerHTML="";
-    vaz.forEach(function(v,i){
-      var base=v.k==="b"?b:a*v.w;
+    e.vaz.forEach(function(v,i){
+      var val=v[5]==="b"?b:a*v[6];
       var d=document.createElement("div"); d.className="vz";
-      d.innerHTML='<div class="rank">'+(i+1)+'</div><div><span class="tag">'+v.sis+'</span><h3>'+v.t+'</h3><p class="ev">'+v.ev+'</p><p class="fix"><b>Conserto</b>'+v.fx+'</p></div><div class="cost" style="color:var(--'+(v.s==="r"?"bad":"warn")+')">'+brl(base)+'/mês</div>';
+      d.innerHTML='<div class="rank">'+(i+1)+'</div><div><span class="tag">'+esc(v[1])+'</span><h3>'+esc(v[2])+'</h3><p class="ev">'+esc(v[3])+'</p><p class="fix"><b>Conserto</b>'+esc(v[4])+'</p></div><div class="cost" style="color:var(--'+(v[0]===R?"bad":"warn")+')">'+brl(val)+'/mês</div>';
       box.appendChild(d);
     });
   }
-  ids.forEach(function(id){document.getElementById("s-"+id).addEventListener("input",calc);}); calc();
+  ["gasto","cpc","ticket","fecha"].forEach(function(id){document.getElementById("s-"+id).addEventListener("input",calc);});
+
+  document.getElementById("f-motor").addEventListener("change",function(){setTipo(this.value,true);});
+  document.getElementById("l-motor").addEventListener("change",function(){setTipo(this.value,true);});
 
   /* oficina */
-  document.querySelectorAll("#motores .card").forEach(function(c){
-    c.addEventListener("click",function(){
-      document.querySelectorAll("#motores .card").forEach(function(x){x.setAttribute("aria-pressed","false");});
-      c.setAttribute("aria-pressed","true"); toast("Motor escolhido. O agente já recebeu.");
-    });
-  });
-  var hl={
-    base:[["Deite em 3 colchões antes de escolher o seu. Com café.","Recomendada. Leva para a loja, onde vocês vendem 3x mais que no site."],["O colchão certo para como você dorme, em 4 perguntas.","Boa para quem compra pelo celular à noite."],["30% no colchão casal até domingo. Venha testar.","Usa a oferta do anúncio atual, mas envelhece com a promoção."]],
-    forte:[["Você passa 1/3 da vida nele. Teste deitado antes de pagar.","Mais forte: o custo de errar vem antes da oferta."],["Escolheu errado? Em 30 noites a gente troca.","Mais forte: a garantia vira a promessa."],["Deite em 3 colchões antes de escolher o seu. Com café.","A recomendada, mantida para comparar."]],
-    simples:[["Venha deitar antes de comprar.","Mais simples: 4 palavras, uma ação."],["Teste o colchão na loja. É de graça.","Mais simples, com o preço do teste."],["Deite em 3 colchões antes de escolher o seu. Com café.","A recomendada, mantida para comparar."]],
-    dinheiro:[["Colchão casal a partir de R$ 1.890 no Pix. Teste antes.","Começa pelo dinheiro: preço e forma de pagamento na frente."],["30% no casal até domingo. Deite antes de pagar.","Começa pelo desconto do anúncio."],["Deite em 3 colchões antes de escolher o seu. Com café.","A recomendada, mantida para comparar."]]
-  };
   function renderHl(k){
+    var e=EX[cur], list=e.hl[k].slice();
+    if(k!=="base") list.push([e.hl.base[0][0],"A recomendada, mantida para comparar."]);
     var box=document.getElementById("headlines"); box.innerHTML="";
-    hl[k].forEach(function(h,i){
+    list.forEach(function(h,i){
       var id="hl-"+k+"-"+i;
       var l=document.createElement("label"); l.className="opt"; l.setAttribute("for",id);
-      l.innerHTML='<input type="radio" name="hl" id="'+id+'"'+(i===0?" checked":"")+'><span><b>'+h[0]+'</b><br><span class="why">Por quê: '+h[1]+'</span></span>';
+      l.innerHTML='<input type="radio" name="hl" id="'+id+'"'+(i===0?" checked":"")+'><span><b>'+esc(h[0])+'</b><br><span class="why">Por quê: '+esc(h[1])+'</span></span>';
       box.appendChild(l);
     });
   }
-  renderHl("base");
+  setTipo("loja",false);
+
   document.querySelectorAll(".refine .chipbtn").forEach(function(b){b.addEventListener("click",function(){renderHl(b.dataset.r); toast("O agente reescreveu as opções.");});});
   document.querySelectorAll("#estilos .estilo").forEach(function(e){
     e.addEventListener("click",function(){
