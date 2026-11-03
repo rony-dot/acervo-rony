@@ -83,3 +83,18 @@ Abre a câmera. Fala do teu produto. Aprende CapCut em 15 minutos (hoje a IA aju
 > Quem cocria com você se sente parte. Se ele se sente parte, ele compra de você porque ele é seu sócio.
 
 E: **"a diferença entre os que conseguem e os que não conseguem são os que fazem."** A gente fica travado esperando uma fórmula melhor do que a que já dá pra usar agora. Existe um bilhão de fórmulas. A melhor é começar.
+
+## Os três pilares de uma marca contemporânea
+
+A resposta mais organizada que ele já deu sobre o que sustenta uma marca hoje. São três, na ordem em que ele colocou.
+
+**1. Lucro é liberdade.** *(frase que ele credita a Guilherme Benchimol)* Se você deve a alguém, seja um investidor a quem presta satisfação, seja um banco, você não está livre — e quem não está livre não entrega a maior potência. A conclusão dele é direta: **você só vai ser realmente livre para construir uma marca contemporânea se der lucro e não depender do dinheiro dos outros.** Querer um sócio por outro motivo é legítimo; o que não pode é o negócio não dar lucro.
+
+**2. Seja criativo no modelo, não só no produto.** Ver `financas-e-modelo.md`.
+
+**3. Seja bom naquilo, e coloque a sua voz.** A probabilidade de dar certo está diretamente correlacionada a você ser bom no que está fazendo. E o fechamento, que é a parte que mais interessa a quem usa IA para produzir:
+
+> Se você não coloca a sua voz, se não é o que você acredita, não vai ser uma marca contemporânea.
+
+O que ele chama de "a sua voz" é concreto, não abstrato: suas características estéticas, seu linguajar, sua forma de falar, sua forma de brincar. É isso que vira bordão, que vira ritual, que vira o jeito de receber alguém.
+*(Deep Story FilmCast, 19/10/2026)*

@@ -90,8 +90,21 @@ Quatro camadas simultâneas: **rua** (gíria, palavrão, humor), **técnica** (m
 - Eu estudo porque eu tenho medo.
 - O mundo é sempre uma valsa: dois passos para a frente, um para trás. *(David Feffer)*
 - Vocês têm que enriquecer **com** o negócio, não com a **venda** do negócio.
+- Quem vive pelo destino morre na praia. Viva pelo percurso.
+- Vendedor de esperança e assassino do medo. *(já no acervo; em out/2026 ele acrescenta o contrário: "o que a gente mais encontra é o vendedor de medo e o assassino de esperança")*
+- Processo é encanamento para passar informação. Processo é comunicação.
+- Faz o que você é bom, você vai amar por consequência.
+- Ninguém que não é humilde é curioso.
+- Estudar não é decorar, estudar é aprender. *(da mãe)*
+- A IA te responde a média de todas as respostas que ela dá para os outros.
+- Ninguém é tão resiliente a desaforo quanto eu.
+- Você não faz grandes apostas, você faz muitas minúsculas apostas.
+- Eu sou muito bom de aceitar desaforo. Quem aguenta mais chega do outro lado.
+- Nossa cultura vai invadir a Matrix da B3.
 
 ## Referências que ele cita repetidamente
+
+**Filmes que ele usa como referência:** *A Vida É Bela* (o pai que protege o filho no campo de concentração — ele usa para falar dos próprios pais), *Lord of War* ("faço isso porque sou bom nisso"), *Defiance* (os partisans judeus, a história do avô).
 
 **Pessoas/autores:** o pai (Luiz Meisler) acima de todos, Pedro Damasceno (Dinamo, o segundo maior mentor, já falecido), David Feffer, Chris Voss (*Never Split the Difference*), Jeff Bezos, Jack Welch, Steve Jobs (Connecting the Dots em Stanford — ele manda assistir), Mr. Beast (os 1.000 vídeos), Arthur Brooks (*From Strength to Strength*), James Clear (*Hábitos Atômicos*), Matthew Walker (*Por que nós dormimos*), Rory Sutherland (falácia do porteiro), Rick Rubin (*O Ato Criativo*), Will Guidara (*Unreasonable Hospitality* — e o field guide, que ele acha melhor que o livro), Brené Brown, Codie Sanchez (boring business), Brad Jacobs, Greg Isenberg, Pieter Levels, Warren Buffett, Jorge Paulo Lemann/Marcel/Beto, Guilherme Benchimol, Natália Beauty, Marcelo e Kátia (Farm), Anderson Birman, Alexandre Birman, Marcos Leta, Jesse Cole (Savannah Bananas), Sam Altman, Evan Spiegel, Brian Chesky/Paul Graham (founder mode).
 

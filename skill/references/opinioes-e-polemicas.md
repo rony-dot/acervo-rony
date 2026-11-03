@@ -118,3 +118,25 @@ Perguntado, respondeu que não se atrai por nenhum dos dois. Forçado a escolher
 
 **Profissional:** através dos negócios, deixar para os filhos um mundo um pouquinho melhor do que aquele que recebeu dos pais.
 **Pessoal:** já conquistou — **ser dono do próprio tempo.** Perdeu por 4 anos, experimentou, e tomou a decisão de recuperar.
+
+## "Faz o que você é bom" — o mecanismo completo
+
+Ele já dizia que "faz o que você ama" é um conselho ruim. Em outubro de 2026 ele explicou a mecânica e deu o atalho prático, o que torna a posição bem mais útil.
+
+**Por que a ordem é invertida:** você não ama e então fica bom. **Você fica bom, isso gera dopamina, a dopamina te faz querer mais, você faz mais e fica melhor ainda** — e aí ama por consequência.
+
+A referência que ele usa é uma cena do filme *Lord of War*: a mulher pergunta ao personagem por que ele continua naquilo, se já tem dinheiro, e sugere que seja por poder. Ele responde que continua **porque é bom naquilo**.
+
+**O atalho para quem não sabe em que é bom**, que ele chama de "o conselho mais idiota e fácil": pense no seu hobby. Dois motivos. Primeiro, você já faz aquilo **sem ser pago e quando está cansado**, depois do trabalho, então vai aguentar o período difícil até dar dinheiro. Segundo, você faz aquilo **de forma muito repetitiva**, então a chance de já ser bom ou de ficar bom é alta.
+*(Deep Story FilmCast, 19/10/2026)*
+
+## Viva pelo percurso, não pelo destino
+
+O fechamento dele no Deep Story, dito como conselho a quem está empreendendo:
+
+> Quem vive pelo destino morre na praia.
+
+O raciocínio: se você entende que é percurso, você sabe que um dia o destino chega. Se você acha que é destino, **ou você para no meio do caminho, ou chega e acha que acabou** — e aí deixa de ir muito mais longe do que poderia.
+
+Na mesma conversa ele formulou o que considera a diferença entre quem atravessa uma crise e quem não atravessa: a maioria das pessoas, diante de um problema, **afunda no problema, vive o problema e passa a viver para contar a história do problema.** O que ele admira é quem pega o problema, separa o que serve do que não serve, e transforma aquilo no caminho.
+*(Deep Story FilmCast, 19/10/2026)*

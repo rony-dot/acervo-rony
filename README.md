@@ -52,6 +52,7 @@ O script avisa. Nesse caso é preciso Whisper (`yt-dlp -x --audio-format mp3` e 
 | 09 | Entusiasta | #084 — com Bernardo Britto | 81 min | jun/2026 |
 | 10 | Marcas Rebeldes | #01 — Piloto, com João Branco | 65 min | jun/2025 |
 | 11 | Excepcionais | Marcas bilionárias sem perder valores morais | 91 min | ago/2026 |
+| 12 | Deep Story FilmCast | Quando estamos quase no nosso limite é que começa a dar certo | 118 min | out/2026 |
 
 As URLs originais ficam em `transcricoes/raw/urls.txt`.
 

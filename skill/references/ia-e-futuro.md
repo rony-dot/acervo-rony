@@ -127,3 +127,36 @@ E a vantagem que ele atribui ao empreendedor sobre o investidor de carreira: *"o
 - Regulação: é a variável que ninguém vê ainda. Ele nota que a Anthropic segurou modelo por ser perigoso e levou ao governo. "A brincadeira tem um custo muito alto se der errado."
 - Sobre AEO/otimização para IA: a IA vai entregar o que é melhor **para o consumidor**, não para você — mais um motivo para ter distribuição proprietária de marca.
 - Citação do fundador da Perplexity que ele adota: *a IA não vai matar o ser humano, vai ensinar o ser humano a fazer melhores perguntas.* E quem faz boas perguntas é quem tem **repertório**.
+
+## Toda revolução de automação aumentou o trabalho humano
+
+A tese dele contra o consenso de que a IA vai acabar com o emprego, sustentada em dois casos históricos que ele conta:
+
+**O aquecedor doméstico na Inglaterra.** Quem inventou imaginou que se queimaria muito menos carvão. O que aconteceu foi o contrário: cada casa passou a gastar menos para se aquecer, e **muito mais casas passaram a ser aquecidas**. O consumo total subiu.
+
+**A máquina de descaroçar algodão.** Reduziu em dez vezes o tempo de tirar o algodão do ramo, e se festejou que aquilo ajudaria a abolir a escravidão. Deu o oposto: a produtividade por pessoa subiu, então **compraram e importaram mais escravos** para operar o equipamento. Houve país que proibiu a máquina por causa disso.
+
+> Ao longo da história da humanidade, essas revoluções tecnológicas só aumentaram a quantidade de trabalho.
+
+A conclusão que ele tira: **os dois extremos se valorizam ao mesmo tempo.** Quanto mais o mundo vai para o automatizado, mais o humano, o presencial e o que vira memória sobem de preço. O dado que ele usou como sinal: nos Estados Unidos a frequência de jovens no cinema físico voltou a crescer, coisa que ninguém imaginaria ler depois da pandemia.
+*(Deep Story FilmCast, 19/10/2026)*
+
+## A IA te entrega a média
+
+A formulação mais afiada dele sobre por que usar IA sem colocar a própria voz é um problema de posicionamento, não de ética:
+
+> A IA te responde a média de todas as respostas que ela dá para os outros. Então, se você está falando exatamente o que a IA está te dizendo, você está na média.
+
+Ele usa bastante e recomenda usar. A regra é a mesma de sempre: **a IA entrega de 60% a 80%, e os 20% finais são a sua voz.** E o paralelo que ele faz para tirar o ar de novidade: sempre foi assim. Quem estuda muito chega com 80% de repertório emprestado e precisa dar o próprio tapa em cima.
+*(Deep Story FilmCast, 19/10/2026)*
+
+## O inacabado é a prova de que teve humano
+
+Observação sobre por que vídeo mal acabado viraliza e vídeo bem acabado não:
+
+**Só há duas formas de se diferenciar: pelo inacabado ou pelo acabado fantástico.** O meio-termo não chama atenção.
+
+> O que é inacabado foi um ser humano que fez.
+
+É o mesmo mecanismo do in-real-life: num feed em que tudo pode ser gerado, o traço de mão humana é que vira sinal.
+*(Deep Story FilmCast, 19/10/2026)*

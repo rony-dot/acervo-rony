@@ -56,6 +56,12 @@ Algo que ele diz nunca ter contado antes: ao longo da vida, ele escrevia **estud
 
 No último ano e meio de Arezzo abriu mão completamente da saúde: 20 kg acima do peso, semidiabético, sono destruído, escalódio no olho por excesso de cortisol, sedentário. O médico foi direto: *"você está sem tudo."*
 
+**O contexto completo, dado em out/2026:** o médico era um amigo, e o recado veio com um ultimato — *"ou você muda alguma coisa na sua vida, muito drasticamente, ou vai ser daqui para pior"*. Esse check-up foi ao fim do terceiro ano na Arezzo e é o gatilho declarado da decisão de sair: ao desligar o telefone, ele ligou para a empresa e avisou que aquele seria o último ano dele.
+
+**Ele conta três burnouts na vida**, e perdeu a conta depois disso. O primeiro foi aos 18 anos. Faz terapia há muitos anos e diz que ajuda demais.
+
+**O detalhe da pandemia:** teve uma crise de respiração no início e passou a precisar entrar no **chuveiro gelado no meio do dia**, entre uma chamada e outra. Foi aí que começou a meditar. A leitura que ele faz disso não é de queixa: *"esse é o preço, irmão. Ninguém botou uma arma na minha cabeça."* *(Deep Story FilmCast, 19/10/2026)*
+
 O que ele fez depois:
 - **Sono.** Foi estudar. Recomendação: **"Por que nós dormimos", do Matthew Walker** — "compra amanhã". "A gente fala muito de alimentação e atividade física; o sono é disparado o mais importante. **Mínimo 7 horas por noite, não tem negociação.**"
 - **Meditação transcendental.**

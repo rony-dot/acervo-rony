@@ -100,6 +100,12 @@ Ele nunca terceirizou na Ásia e nunca verticalizou. Produzia essencialmente no 
 
 Foi cadeia de fornecimento intacta, mais do que eficiência ou capital, que sustentou o salto de R$ 400 mi (2020) para R$ 2 bi (2024). Tomaram share de todo mundo, inclusive do grande varejo, **sendo um produto caro**.
 
+Em outubro de 2026 ele quantificou isso pela primeira vez:
+
+> 90% do share que eu ganhei na pandemia foi por falta de estoque da concorrência.
+
+E completou a leitura da decisão original: o compromisso com a indústria brasileira foi assumido **quando a empresa tinha três anos**, por gratidão a fornecedores que os ajudaram no começo, e é a única decisão grande que ele lembra de ter tomado **sem nenhuma resposta financeira**. Conforme cresceram, a economia de escala da Ásia ficou gigantesca e mesmo assim não mudaram — passaram a explicar ao cliente que o produto era mais caro por ser feito aqui. *(Deep Story FilmCast, 19/10/2026)*
+
 **Por que isso é tão decisivo em moda:** a cadeia tem **ciclo de ano e meio** — você começa a desenvolver o produto com um ano e meio de antecedência.
 
 > Na pandemia, quem quebrou foi quem parou um mês. Se você para um mês, descarrilha o trem — e você só volta para essa batida três anos depois. Perdeu duas coleções e quebrou. **Não foi o mais genial que sobreviveu; foi o que não parou.**
@@ -113,3 +119,27 @@ A moral que ele tira: *o bem vence e prospera.* A decisão foi emocional, de con
 - O empreendedor brasileiro só enriquece de fato **num evento de liquidez**. Até lá, vende almoço para pagar jantar.
 - **97% dos empreendedores brasileiros não fazem calendário comercial** (número que ele também cita como 90%+). E calendário é o *início* do processo, porque tem cadeia de fornecimento (ou de desenvolvimento de software) atrás.
 - Brasil = "treinar com bola de areia". Quem passa a arrebentação aqui joga com bola normal lá fora.
+
+## Catorze anos sem botar dinheiro no bolso
+
+O dado que ele usa para explicar por que varejo de moda é diferente de quase todo negócio, e que contextualiza a venda da empresa.
+
+Moda carrega **estoque, sazonalidade e grade**. Por causa disso, o que sobra no fim do ano para reinvestir não é escolha, é obrigação, e é sempre maior do que o mínimo que o dono gostaria de tirar.
+
+> Você não coloca dinheiro no bolso. Você só coloca dinheiro no bolso em evento de liquidez.
+
+Daí a frase que resume os quinze anos até a venda: **vender almoço para pagar jantar.** Quando a pandemia chegou, com a empresa já em torno de catorze anos de vida, ele estava **rico na empresa e com zero no banco.**
+
+É esse o raciocínio que o levou a concluir, no meio da crise, que precisaria fazer alguma liquidez. E a ressalva que ele faz à tese de que o empreendedor deve devolver tudo ao negócio: eles abriam de vinte a quarenta lojas por ano; **abrir dez ou vinte a menos e guardar um pouco não teria resolvido a vida, mas teria evitado a exposição.**
+*(Deep Story FilmCast, 19/10/2026)*
+
+## Seja criativo no modelo, não só no produto
+
+Um dos três pilares que ele dá para quem está construindo marca hoje, e o que ele considera mais negligenciado.
+
+> As pessoas se preocupam pouco em ser criativas com o modelo de negócio. É no modelo que se faz o negócio.
+
+O caso próprio: **varejo é um negócio desfinanciado.** Em vez de abrir loja de cara, começaram vendendo **B2B para multimarcas** — margem menor, mas faz caixa. Com o caixa desse negócio, abriram a primeira loja. Isso é modelo, não produto.
+
+E o conselho de pesquisa, com a imagem de como ele fazia antes da internet resolver isso: sem dinheiro, sentava numa revistaria que tinha revistas do mundo inteiro, pagava só o cafezinho e lia tudo, atrás de modelos de negócio do segmento que queria.
+*(Deep Story FilmCast, 19/10/2026)*

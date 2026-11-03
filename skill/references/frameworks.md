@@ -99,3 +99,50 @@ Além da rotina, **rituais por stakeholder**. Exemplo do franqueado: sindicato d
 O princípio: **não copie playbook — olhe a jornada do seu stakeholder e desenhe o ritual em cima da dor dele.** Ele chegou a criar um cargo de BPO (processos) responsável por desenhar a jornada com base em dados e apresentá-la à companhia uma vez por mês, gerando brainstorm de oportunidades.
 
 > A gente brainstorma muita ideia para lançamento e para produto, e pouca para **modelo**. No mundo em que a gente vive, o branding é o modelo de negócio. Qual é o branding do Uber? Você pede um carro no aplicativo.
+
+## O não risco dentro do risco — muitas apostas minúsculas
+
+A resposta dele a quem diz que empreender é tomar risco. Ele concorda, mas acha o enquadramento perigoso, porque enquanto existir uma alternativa sem risco a pessoa vai para ela.
+
+**A forma como eles empreenderam foi a de menor risco possível dentro do risco.** Não por prudência: porque havia pouco dinheiro e era obrigatório vencer.
+
+> Você não faz grandes apostas. Você faz muitas minúsculas apostas.
+
+A imagem que ele usa: é uma corrida de espermatozoides. A maioria morre no caminho e não tem problema nenhum, **só precisa que um acerte** — e quando acerta, é desproporcional.
+
+O que isso exige do empreendedor é **humildade intelectual**: reconhecer rápido a aposta que não deu e migrar o foco para a que deu, em vez de insistir para não admitir o erro.
+
+E a consequência organizacional: quando esse jeito de pensar entra na empresa, ela deixa de ter medo de errar, e aí não precisa existir uma área de inovação. **Todo mundo inova.** Na Reserva havia projetos em fase um, fase dois e fase três rodando ao mesmo tempo.
+*(Deep Story FilmCast, 19/10/2026)*
+
+## Premiar quem erra
+
+A prática de liderança que sustenta o item acima.
+
+Quando alguém erra, a expectativa da pessoa é ser punida ou demitida. Se você pune, não pune só ela: **todos os outros passam a ter medo de errar.** E aí, na leitura dele, o líder é que falhou.
+
+> Tem vezes em que a gente acerta e tem outras vezes em que a gente aprende.
+
+Ao premiar, a mensagem para o time inteiro é que **errar tentando acertar está certo**. A única cláusula é não repetir o mesmo erro, "porque aí é burrice".
+*(Deep Story FilmCast, 19/10/2026)*
+
+## Testar antes de ter operação
+
+O método que ele diz usar até hoje, inclusive com capital próprio sobrando.
+
+O Manual de Donos foi lançado **sem operação nenhuma**. Havia uma ideia. Venderam a ideia, usaram esse dinheiro para financiar a construção, e **ele estava pronto para devolver o dinheiro** se não tivesse dado certo. Era um teste. Deu market fit, e só então construíram a operação.
+
+É o mesmo raciocínio que ele aplicaria hoje para abrir uma marca de roupa: fotos de modelo geradas por IA no site, um mínimo de pedidos definido, o cliente compra, e **a produção só acontece se o mínimo for batido** — senão devolve o dinheiro. Varejo operado como atacado.
+
+> A gente lançou uma ideia. Vendemos essa ideia, financiamos essa ideia.
+
+*(Deep Story FilmCast, 19/10/2026)*
+
+## Processo é encanamento
+
+A definição que ele usa para tirar o processo do lugar de burocracia:
+
+> Processo não é coisa chata. Processo é encanamento para passar informação. Processo é comunicação.
+
+É daí que vem o argumento dele contra crescer sem lucro: quando você monta os encanamentos para crescer sem dar lucro, **as pessoas aprendem a operar aqueles encanamentos.** Virar a chave depois não é mudar uma meta, é trocar o time.
+*(Deep Story FilmCast, 19/10/2026)*

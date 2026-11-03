@@ -36,7 +36,7 @@
 - Investimento total dos fundadores no negócio, para sempre: **R$ 6.000** (3 mil cada)
 - Venda para a Arezzo: **R$ 715 milhões** (dez/2020) — reportagens citam "~R$ 1 bilhão a valores atualizados"
 - Faturamento na venda: **~R$ 400 mi/ano**; na saída: **~R$ 2 bi/ano**
-- Lucro líquido: **10-12% → 16-18%** (ele às vezes diz "+40%", às vezes "+60%" de ganho de rentabilidade)
+- Lucro líquido: **10-12% → 16-18%** (ele às vezes diz "+40%", às vezes "+60%" de ganho de rentabilidade). Em out/2026 deu a versão **11% → 15-16%**, com "+40% de ganho de imagem". A faixa oscila conforme a conversa; **confira antes de publicar**
 - 17 dos 18 anos com lucro e caixa; único prejuízo (pequeno) em 2020
 - Alavancagem: **meia vez EBITDA** (setor opera com 3-4x)
 - Markup: **6** (compra a 10, vende entre 50 e 60, deixa 13-15% de lucro)
@@ -45,8 +45,8 @@
 - Régua dos 7 dias: **~97% de probabilidade de retorno em 30 dias**
 - Custa **8x menos** fazer um cliente voltar do que ganhar um novo
 - Reserva INK: **120 mil lojistas**
-- Newsletter (e-mail do Rony): **~2,8 milhões de assinantes, 40% de abertura** (mercado: 12-13%)
-- Manual de Donos: **R$ 197/mês** no lançamento, **R$ 297/mês** depois; **~6.000 alunos** em 40 dias; ~25% líderes em organizações
+- Newsletter (e-mail do Rony): **~2,8 milhões de assinantes, 40% de abertura** (mercado: 12-13%). Em out/2026 ele disse "quase 2 milhões e meio" e **1 milhão de pessoas lendo por semana**. Antes de se chamar e-mail do Rony, chamava-se **Biz of Brands**
+- Manual de Donos: **R$ 197/mês** no lançamento, **R$ 297/mês** depois; ~25% líderes em organizações. Alunos: ~6.000 em 40 dias (ago/2026) e **8.500** em out/2026. O preço-alvo que ele diz ter fixado na cabeça desde o início era **R$ 200/mês**, "um valor que cabe no bolso do cara"
 - Rebels (ago/2026): **R$ 78 mi investidos**, 100% capital próprio, **8 empresas**, portfólio a valor corrigido de **R$ 100-120 mi**, pipeline de 15-20 negócios
 - Simple Gym: **1 → 13 lojas** e **~R$ 200 mi/ano em 2 anos**
 - Good Day: **R$ 12 mi (2024) → R$ 80 mi (2025) → R$ 130-140 mi (2026)**; o canal B2B gerou +50% do faturamento no ano de estreia
@@ -99,3 +99,20 @@
 **Livro dele:** *Rebeldes Têm Asas*.
 
 **Ranking:** 5º palestrante mais requisitado do Brasil (ranking DMT), à frente do João Branco (6º).
+
+## 17 de março de 2020 — o dia mais difícil do negócio
+
+Ele nomeia a data sem hesitar como o pior momento dos vinte anos, e tem vídeo do dia.
+
+- **17 de março:** a equipe aglomerada numa sala decidindo fechar todas as lojas, sem nenhuma noção do que viria.
+- **18 de março:** lojas fechadas. O e-commerce era 20% da receita, acima da média do mercado e ainda assim pouco. **Perderam 80% do faturamento em um dia.**
+- Na manhã do dia 18, no café da manhã, a mulher dele disse: *"amor, a gente vai quebrar."* Ele tinha três filhos, catorze anos de empresa e **zero no banco**.
+
+A resposta que ele deu, e que atribui aos avós:
+
+> Nossos avós passaram o que passaram e sobreviveram. Você acha que isso vai derrubar a gente? A gente vai sair maior desse negócio.
+
+O que ele reconhece ter existido antes disso é uma **percepção implícita de imortalidade** — "balança mas não cai" —, alimentada por anos acertando com uma marca anti-establishment. Ele chama a atenção para o risco dessa dopamina do sucesso, que faz a pessoa repetir o que deu certo sem perceber quando o contexto mudou.
+
+Daquela manhã saíram duas coisas: o modo sobrevivência (sentar no caixa, não demitir ninguém) e a decisão de que precisaria haver, em algum momento, um evento de liquidez. *"Naquela manhã eu amadureci dez anos."*
+*(Deep Story FilmCast, 19/10/2026)*

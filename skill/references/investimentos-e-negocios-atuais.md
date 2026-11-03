@@ -137,3 +137,31 @@ Ele deu spoiler de que "muito em breve você vai entender por quê" — sinaliza
 ## A missão declarada
 
 > Usar a força do empreendedorismo para resolver a vida do empreendedor brasileiro.
+
+## O filtro de sócio — o que ele viu em 300 entrevistas
+
+Desde o lançamento da Rebels, em maio de 2025, até outubro de 2026 eles entrevistaram **mais de 300 empreendedores**. A observação que ele traz dessa amostra é dura e é o filtro número um:
+
+> Desses 300, uns 250 só falaram. Não escutaram.
+
+A tese formal da casa existe — marcas de lifestyle, ou serviço, mídia e tecnologia que sirvam para distribuir marca, porque **nenhuma marca sem distribuição proprietária sobrevive ao futuro**; entrada depois do market fit, com lucro e caixa, em empresas de R$ 3 a 50 milhões. Mas ele é explícito de que a tese não é o que decide:
+
+> Sinceramente, eu estou cagando para tese de negócio. Eu invisto no empreendedor.
+
+**O que ele procura na pessoa:** capacidade de pivotar, resiliência, gosto por trabalhar, valores fortes (*"se você não tem valor, na hora da queda te destroem"*), humildade absurda, curiosidade absurda e escuta real. Quem tem isso, estando dentro ou fora da tese, chega a algum lugar grande.
+
+E a razão de ser venture builder e não fundo: competitividade. *"Eu ia levar 30 anos para ser melhor do que o pior fundo. O que eu sou bom é empreender junto com empreendedor."*
+*(Deep Story FilmCast, 19/10/2026)*
+
+## Clube de Donos — para onde o Manual está indo
+
+Em outubro de 2026 ele descreveu a evolução do produto, que deixa de ser só educação.
+
+**O desenho atual:** 8.500 alunos, dois e-mails por semana (micro estudo de caso na terça) e três aulas semanais ao vivo. As aulas técnicas são dadas por empreendedores ou especialistas, mais uma aula por mês com um empreendedor convidado. A base é **clusterizada por perfil** — o exemplo que ele deu foi uma aula sobre a escala 6x1 com um tributarista, mostrando o efeito para cada cluster, porque para o varejo pequeno aquilo não atrapalha, **quebra**, e o dono costuma não ter planejamento tributário nem contador com experiência para perceber.
+
+**Para onde vai:** vira plataforma e muda de nome para **Clube de Donos**, com marketplace de serviços e facilities curados e com desconto negociado, marketplace de negócios entre os próprios alunos e fóruns técnicos. A definição que ele deu:
+
+> É um Sebrae privado dos novos tempos.
+
+**Por que o preço é baixo de propósito.** Ele diz que poderia montar um clube de 200 ou 300 empresários e cobrar um valor que "nem sei dizer aqui". A escolha foi outra: são **47 milhões de micro, pequenos e médios empreendedores no Brasil**, a quem falta crédito, investimento, sistemas, educação e mentoria, e o único olhando para eles é o Sebrae. O produto foi desenhado de trás para frente a partir do preço que cabe no bolso dessa pessoa — daí dois e-mails em vez de aplicativo, porque *"às vezes o cara não tem dados, não sabe baixar aplicativo"*.
+*(Deep Story FilmCast, 19/10/2026)*

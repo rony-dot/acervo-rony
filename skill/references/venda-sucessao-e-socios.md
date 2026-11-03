@@ -48,12 +48,14 @@ Todas as decisões foram coletivas, porque era simultaneamente o fim de um ciclo
 
 ## O paper de Harvard (o banho de realidade)
 
-Um amigo (em algumas versões, o pai) mandou um estudo antes do fechamento. Os números como ele conta:
+Um amigo mandou um estudo antes do fechamento, dias depois de o pai ter dito intuitivamente a mesma coisa — o paper provou a tese do pai. Os números como ele conta:
 
-- Em **1% dos casos** de M&A estratégico, a empresa ainda existe **4 anos depois**.
-- Desses casos, em **~2%** os fundadores ainda estão lá.
+- Em **2% dos casos** de M&A estratégico, a empresa ainda existe **4 anos depois**.
+- Desses casos, em **1%** os sócios ainda estão lá.
 
-Ou seja: a probabilidade de ele estar lá em 4 anos era ~0,002%.
+Como ele mesmo resume: *"eu tinha 1% de 2% de estar lá"* — ou seja, da ordem de 0,02%.
+
+**Atenção ao citar:** em versões anteriores do acervo os dois percentuais apareciam invertidos (1% das empresas existem, 2% com os fundadores), com a conta fechando em 0,002%. A formulação acima é a de outubro de 2026, a mais recente e a mais explícita, e é a que fecha com a frase dele. Os dois números são pequenos e o argumento não muda, mas **confira no vídeo antes de usar em público.**
 
 O efeito foi o oposto do desânimo:
 > Deus existe, mas não faz milagre. Já que a maior probabilidade é a de que a gente não esteja aqui, **vamos devolver para caceta** por essa empresa ter acreditado em nós e pago o que pagou.
@@ -119,7 +121,8 @@ Ele fala disso como saber parar no auge — analogia de futebol: é muito rápid
 - Comunicada ao mercado em **agosto de 2024**.
 - Saída efetiva em **janeiro de 2025** (31/12/2024).
 - **~8 meses de transição feita "de sombra".**
-- Trouxeram um CEO de mercado (Rui, ex-CEO da Allos, que tinha sido fornecedor deles por anos) — escolha do Alexandre Birman.
+- Trouxeram um CEO de mercado (Rui Cadima, que ele cita como ex-CEO da BRMalls em out/2026 e como ex-CEO da Allos em versões anteriores — as duas coisas são compatíveis, já que a BRMalls deu origem à Allos; foi fornecedor e amigo deles por 20 anos) — escolha do Alexandre Birman.
+- **O segundo nível foi exigência do próprio sucessor:** *"o segundo layer tem que ser de gente de casa, a gente está saindo e você já é de fora."*
 - Abaixo dele, ~8-9 diretores. **A pessoa com menos tempo de casa tinha 10 anos** — numa empresa de 18.
 - Essa geração veio do **Programa de Notáveis** (~30 sócios feitos ao longo do ciclo).
 - Trimestre a trimestre depois da saída, as marcas seguiram crescendo. "Pra gente é um orgulho danado."
@@ -133,8 +136,8 @@ Quatro sócios: **Rony** (venda e marca), **Fernando "Nandão"** (planejamento e
 Ele chama a atenção para o quanto isso é raro: fala-se muito de partnership, mas 99,99% são de curto prazo — gente entra, gente sai. O conceito foi popularizado pelo trio do Banco Garantia (Jorge Paulo, Marcel, Beto) — e ele usa como benchmark: você consegue imaginar qualquer um deles fazendo algo sem os outros?
 
 **Os ingredientes, na ordem que ele dá:**
-1. **Alinhamento de valores** (Deus, família, lealdade, fraternidade, ética, respeito, empatia). "Se acontecesse algo no cantinho da sala, os quatro levantavam juntos sem um chamar o outro."
-2. **Complementaridade técnica.**
+1. **Alinhamento de valores** (Deus, família, lealdade, fraternidade, ética, respeito, empatia). A definição operacional que ele deu depois: valor é **onde você quer viver, onde você quer morar, que utopia de mundo você acredita**. A analogia: não há nada de errado com praia nem com montanha, mas um sócio querendo praia e outro querendo montanha não sustenta casamento; dois querendo campo, um a cinco e outro a dez quilômetros de altura, se encontram no meio do caminho. *(Deep Story FilmCast, 19/10/2026)* "Se acontecesse algo no cantinho da sala, os quatro levantavam juntos sem um chamar o outro."
+2. **Complementaridade técnica.** Em outubro de 2026 ele explicou o mecanismo, e é o melhor argumento que ele tem sobre isso: o problema humano é a vaidade. **Se vocês dois dominam a mesma técnica, enquanto um fala o outro já está formulando a resposta.** Se o outro não faz ideia do que você fez tecnicamente, ele escuta para aprender. Daí a frase que já estava no acervo ganhar causa: *"quando o burrinho fala, os outros três abaixam a orelha"*. Na prática, cada sócio vira a fonte de consulta da casa no assunto dele. *(Deep Story FilmCast, 19/10/2026)*
 3. **Humildade, desapego e crença no longo prazo** — porque numa iniciativa você entrega mais valor e na outra menos, mas **o pote é o mesmo**.
 
 **Sobre brigar:** eles brigam para caramba. E citando o pai: *"casal que não briga se separa. O problema não é brigar, é não falar."* Tudo que é falado é resolvido — e se for para terminar, termina pacificamente porque foi falado. Com o Alexandre Birman, discordâncias houve; **briga, nunca.**
@@ -142,3 +145,24 @@ Ele chama a atenção para o quanto isso é raro: fala-se muito de partnership, 
 E o teste de mercado que ele conta: quando explica o partnership nas casas de investimento, ouve *"eu boto o dinheiro que você quiser nesse fundo, porque é isso aí; o resto é resto."*
 
 > Você não consegue criar um bom sócio. Quando é nativo, é natural. É que nem namorar com alguém que você quer que seja outra pessoa — vai dar merda lá na frente.
+
+## "Nossa cultura vai invadir a Matrix da B3"
+
+O propósito que ele deu ao time para a fase de executivo, e que explica por que o resultado veio.
+
+O enquadramento que ele fez para a equipe logo depois da venda:
+
+> Antes a gente era um negócio grande dentro de um negócio que era nosso. Agora a gente é um negócio pequeno dentro de um negócio que não é nosso.
+
+E a conclusão: só existe uma forma de a cultura deles sobreviver e prosperar ali dentro sem que ninguém atrapalhe, que é **crescimento e resultado**. Daí o mote — a cultura deles ia invadir a bolsa.
+
+Ele usa esse episódio para corrigir o que entende como um mal-entendido sobre propósito:
+
+> Às vezes a pessoa acha que propósito é só a parte de impacto socioambiental. Não tem nada a ver. Propósito é saber o porquê. Está todo mundo alinhado no porquê?
+
+Somou a isso um combustível competitivo: o mercado dizia que a Arezzo tinha pago caro. Ele repassou isso ao time como meta — **fazer todo mundo perceber que tinha sido barato.**
+
+**O plano que destravou o crescimento** era simples e já estava pronto antes da venda, montado para um IPO que não aconteceu. Uma pesquisa mostrou que a classe B tinha muito reconhecimento da marca, mas toda a capilaridade de lojas estava na classe A. Os números que ele cita: **classe A no Brasil é cerca de 1 milhão de CPFs; classe B, 10 milhões.** O mercado endereçável multiplicava por mais de dez só indo onde o B estava, com loja própria ou franquia, posicionando as outras marcas para cobrir eventual perda de share no A.
+
+O resultado, nas palavras dele: o plano de negócios combinado era ir de R$ 400 milhões a R$ 800 milhões em quatro anos, e **chegaram a R$ 2 bilhões**, com lucro saindo de 11% para 15-16% e o engajamento interno subindo. *(Ver `trajetoria-e-numeros.md` para a divergência entre as versões desses percentuais.)*
+*(Deep Story FilmCast, 19/10/2026)*
